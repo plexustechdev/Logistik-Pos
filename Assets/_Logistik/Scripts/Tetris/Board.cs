@@ -21,6 +21,8 @@ public class Board : MonoBehaviour
 
     public TetrominoData nextPiece;
 
+
+
     private void Awake()
     {
 
@@ -48,7 +50,7 @@ public class Board : MonoBehaviour
         }
         else
         {
-            GameOver();
+            LevelManager.instance.GameOver();
         }
     }
 
@@ -59,11 +61,15 @@ public class Board : MonoBehaviour
 
         nextPiece = data;
         LevelManager.instance.SetNextPiecePreview(nextPiece.tetromino);
-        Debug.Log(nextPiece.tetromino);
     }
 
-    private void GameOver()
+    public void GameOver()
     {
+        ClearBoard();
+        LevelManager.instance.Restart();
+    }
+
+    public void ClearBoard(){
         this.tilemap.ClearAllTiles();
     }
 
@@ -72,10 +78,10 @@ public class Board : MonoBehaviour
         for (int i = 0; i < piece.cells.Length; i++)
         {
             Vector3Int tilePos = piece.cells[i] + piece.position;
-            for(int pattern = 0; pattern < piece.data.tile.Length; pattern++){
-                this.tilemap.SetTile(tilePos, piece.data.tile[pattern]);
-            }
-            
+            // for(int pattern = 0; pattern < piece.data.tile.Length; pattern++){
+                
+            // }
+            this.tilemap.SetTile(tilePos, piece.data.tile[i]);           
         }
     }
 
@@ -119,7 +125,7 @@ public class Board : MonoBehaviour
             if (IsLineFull(row))
             {
                 LineClear(row);
-                LevelManager.instance.SetScore(10);
+                LevelManager.instance.SetScore(LevelManager.instance.scorePerColumn);
                 Debug.Log("Hancur");
             }
             else
