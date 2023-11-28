@@ -25,12 +25,4 @@ public class Quest
     public bool IsFinished;
 }
 
-[Serializable]
-public enum Transportation
-{
-    MOTORCYCLE,
-    VAN,
-    TRUCK,
-    SHIPS,
-    PLANE
-}
+

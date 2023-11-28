@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text score_txt;
     [SerializeField] private TMP_Text time_txt;
     [SerializeField] private SO_DataPreview dataPreview;
+    [SerializeField] private Transform resultScreen;
 
 
 
@@ -103,6 +104,8 @@ public class LevelManager : MonoBehaviour
     public void Finish()
     {
         Debug.Log("Finish");
+        board.GetComponent<Piece>().enabled = false;
+        resultScreen.gameObject.SetActive(true);
     }
     public void FillBar(float amount)
     {
