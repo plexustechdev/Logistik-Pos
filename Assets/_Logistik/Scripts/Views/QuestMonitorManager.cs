@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class QuestMonitorManager : MonoBehaviour
 {
-    [SerializeField] private Customer _customer;
-    [SerializeField] private QuestInfo _questInfo;
-    [SerializeField] private GameObject _questContainer;
+    [SerializeField] private CustomerCharacter _customer;
+    [SerializeField] private QuestActiveView _questActiveView;
+    [SerializeField] private GameObject _questListContainer, _questListTitle;
+    [SerializeField] private CustomerCharacter _questCharacter;
+    [SerializeField] private QuestController _questControl;
 
-    private void Start()
+    private void OnEnable()
     {
-
+        if (_questControl.activeQuest != null)
+        {
+            _customer.ShowActiveQuest();
+            ShowActiveQuest();
+        }
     }
 
-    public void ShowActiveQuest(string title, string description, string amount, string destination)
+    public void ShowActiveQuest()
     {
-        _questInfo.SetActiveQuest(title, description, amount, destination);
-        _questContainer.SetActive(false);
+        _questActiveView.SetActiveQuest(_questControl.activeQuest.Description);
+
+        _questListContainer.gameObject.SetActive(false);
+        _questListTitle.gameObject.SetActive(false);
+        _questActiveView.gameObject.SetActive(true);
     }
 
-    public void DisplayQuest()
+    public void HideActiveQuest()
     {
-        _customer.gameObject.SetActive(true);
-    }
-
-    public void SetCustomerDialogueBox(string title, string description)
-    {
-        _customer.EnableDialogueBox(title, description);
-    }
-
-    public void ActivateQuest()
-    {
-
+        _questListContainer.gameObject.SetActive(true);
+        _questListTitle.gameObject.SetActive(true);
     }
 }
