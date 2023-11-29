@@ -7,16 +7,20 @@ using System;
 
 public class CustomerCharacter : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _titleTmp;
-    [SerializeField] private TextMeshProUGUI _descriptionTmp;
+    [SerializeField] private TextMeshProUGUI _descriptionTMP;
+    [SerializeField] private TextMeshProUGUI _narrativeTmp;
+    [Space]
+    [SerializeField] private Image _characterImage;
     [SerializeField] private Image _boxDialogueImg;
+    [Space]
     public Button AcceptBtn;
     public Button DenyBtn;
 
-    public void ShowQuest(string title, string description)
+    public void ShowQuest(string description, string narrative, Sprite characterSprite)
     {
-        _titleTmp.text = title;
-        _descriptionTmp.text = description;
+        _descriptionTMP.text = description;
+        _narrativeTmp.text = narrative;
+        _characterImage.sprite = characterSprite;
         _boxDialogueImg.gameObject.SetActive(true);
     }
 
@@ -27,21 +31,27 @@ public class CustomerCharacter : MonoBehaviour
     }
 
 
-    public void AcceptOrder(Quest quest, QuestController questController, QuestMonitorManager questView)
+    public void AcceptOrder(Quest quest, QuestActiveController questController, QuestMonitorManager questView)
     {
         AcceptBtn.onClick.AddListener(() =>
         {
             quest.IsActive = true;
             questController.SetActiveQuest(quest);
             questView.ShowActiveQuest();
+            AcceptBtn.gameObject.SetActive(false);
             DenyBtn.gameObject.SetActive(true);
         });
     }
 
-    public void CancelOrder(QuestController quest)
+    public void CancelOrder(Quest quest, QuestActiveController questController, QuestMonitorManager questView)
     {
-        quest.SetActiveQuest(null);
-        DenyBtn.gameObject.SetActive(false);
-        AcceptBtn.gameObject.SetActive(true);
+        DenyBtn.onClick.AddListener(() =>
+        {
+            quest.IsActive = false;
+            questController.SetActiveQuest(null);
+            questView.HideActiveQuest();
+            DenyBtn.gameObject.SetActive(false);
+            AcceptBtn.gameObject.SetActive(true);
+        });
     }
 }

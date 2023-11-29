@@ -12,33 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer4
   m_EditorClassIdentifier: 
-  CustomerName: Bonita
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: c9feb262f2aff764a9a66f26f996f4fa, type: 3}
+  CustomerName: Mega
+  SpriteCharacter: {fileID: 21300000, guid: dddf24b7af8d8d1439e5e5a8f0f02590, type: 3}
+  SpriteTable: {fileID: 21300000, guid: e494ce58e6157b842836fa80c8e0408c, type: 3}
   quests:
   - Level: 7
-    GoodsAmount: 45
-    LoadTime: 10
-    Description: pengiriman daging
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: banten
+    GoodsAmount: 700
+    Description: Mega - Siap-siap guys! Ada 700 paket dikirim ke Pontianak! - Kapal
+      Laut
+    Narrative: Susun 70 baris kotak paket untuk menyelesaikan misi pesanan ini!
+    Destination: Pontianak
     TransportationType: 3
+    Timer: 0
     IsActive: 0
     IsFinished: 0
+    IsUsingTimer: 0
   - Level: 8
-    GoodsAmount: 10
-    LoadTime: 5
-    Description: pengiriman kubis
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: surabaya
+    GoodsAmount: 700
+    Description: Mega - Siap-siap guys! Ada 700 paket dikirim ke Pontianak dalam
+      waktu 5 hari!
+    Narrative: Susun 70 baris kotak paket dalam waktu kurang dari 5 menit untuk menyelesaikan
+      misi pesanan ini.
+    Destination: Pontianak
     TransportationType: 3
+    Timer: 5
     IsActive: 0
     IsFinished: 0
+    IsUsingTimer: 1

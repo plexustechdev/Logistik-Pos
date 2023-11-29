@@ -16,13 +16,16 @@ public class Quest
 {
     public int Level;
     public float GoodsAmount;
-    public float LoadTime;
+    [TextArea]
     public string Description;
+    [TextArea]
     public string Narrative;
     public string Destination;
     public Transportation TransportationType;
+    public float Timer;
     public bool IsActive;
     public bool IsFinished;
+    public bool IsUsingTimer;
 }
 
 [Serializable]

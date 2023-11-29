@@ -12,33 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer1
   m_EditorClassIdentifier: 
-  CustomerName: Roni
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: 44c06472f19adc04b8502b6ede71e69b, type: 3}
+  CustomerName: Budi
+  SpriteCharacter: {fileID: 21300000, guid: 98725af1e379c1f478ca14e72e700a96, type: 3}
+  SpriteTable: {fileID: 21300000, guid: eb1bf01e6c37cf1468c04d394a6491b4, type: 3}
   quests:
   - Level: 1
-    GoodsAmount: 20
-    LoadTime: 20
-    Description: pengiriman kain
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: surakarta
+    GoodsAmount: 100
+    Description: Budi - Kirimkan 100 paket ke Sukabumi! - Sepeda Motor
+    Narrative: Susun 10 baris kotak paket untuk menyelesaikan misi pesanan ini!
+    Destination: Sukabumi
     TransportationType: 0
+    Timer: 0
     IsActive: 0
     IsFinished: 0
+    IsUsingTimer: 0
   - Level: 2
-    GoodsAmount: 10
-    LoadTime: 25
-    Description: pengiriman karet
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: trenggalek
+    GoodsAmount: 100
+    Description: Budi - Kirimkan 100 paket ke Sukabumi dalam waktu 2 hari!
+    Narrative: Susun 10 baris kotak paket dalam waktu kurang dari 2 menit untuk menyelesaikan
+      misi pesanan ini.
+    Destination: Sukabumi
     TransportationType: 0
+    Timer: 2
     IsActive: 0
     IsFinished: 0
+    IsUsingTimer: 1
