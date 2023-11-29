@@ -28,12 +28,4 @@ public class Quest
     public bool IsUsingTimer;
 }
 
-[Serializable]
-public enum Transportation
-{
-    MOTORCYCLE,
-    VAN,
-    TRUCK,
-    SHIPS,
-    PLANE
-}
+
