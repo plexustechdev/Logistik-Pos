@@ -24,7 +24,7 @@ public class CustomerCharacter : MonoBehaviour
         _boxDialogueImg.gameObject.SetActive(true);
     }
 
-    public void ShowActiveQuest()
+    public void QuestActiveView()
     {
         _boxDialogueImg.gameObject.SetActive(false);
         gameObject.SetActive(true);
@@ -37,7 +37,10 @@ public class CustomerCharacter : MonoBehaviour
         {
             quest.IsActive = true;
             questController.SetActiveQuest(quest);
+            questView.SetActiveQuest(quest.Description);
             questView.ShowActiveQuest();
+
+            _boxDialogueImg.gameObject.SetActive(false);
             AcceptBtn.gameObject.SetActive(false);
             DenyBtn.gameObject.SetActive(true);
         });
@@ -50,8 +53,12 @@ public class CustomerCharacter : MonoBehaviour
             quest.IsActive = false;
             questController.SetActiveQuest(null);
             questView.HideActiveQuest();
+
+            _boxDialogueImg.gameObject.SetActive(true);
             DenyBtn.gameObject.SetActive(false);
             AcceptBtn.gameObject.SetActive(true);
+
+            gameObject.SetActive(false);
         });
     }
 }

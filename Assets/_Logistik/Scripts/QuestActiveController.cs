@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestActiveController : MonoBehaviour
 {
-    public Quest ActiveQuest { get; set; }
+    public Quest ActiveQuest { get; private set; }
 
     public void SetActiveQuest(Quest quest)
     {

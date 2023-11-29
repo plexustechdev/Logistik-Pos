@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 379361127761411884}
   - component: {fileID: 7503633025566580528}
   - component: {fileID: 1046792093793966911}
-  - component: {fileID: 1757424931691725874}
   m_Layer: 0
   m_Name: Panel Popup
   m_TagString: Untagged
@@ -154,20 +153,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1757424931691725874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634372127490739849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd3b276fd380f4a408f1bee4f94dda14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _titleTMP: {fileID: 8953700721183455508}
-  _descriptionTMP: {fileID: 4470074199216291514}
 --- !u!1 &2164085186987306511
 GameObject:
   m_ObjectHideFlags: 0

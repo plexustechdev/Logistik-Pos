@@ -14,17 +14,20 @@ public class QuestMonitorManager : MonoBehaviour
     {
         if (_questControl.ActiveQuest is null) return;
 
-        _customer.ShowActiveQuest();
+        _customer.QuestActiveView();
         ShowActiveQuest();
     }
 
     public void ShowActiveQuest()
     {
-        _questActiveView.SetActiveQuest(_questControl.ActiveQuest.Description);
-
         _questListContainer.gameObject.SetActive(false);
         _questListTitle.gameObject.SetActive(false);
         _questActiveView.gameObject.SetActive(true);
+    }
+
+    public void SetActiveQuest(string description)
+    {
+        _questActiveView.SetActiveQuest(description);
     }
 
     public void HideActiveQuest()
