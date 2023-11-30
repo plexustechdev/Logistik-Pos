@@ -6,9 +6,25 @@ using UnityEngine.UI;
 public class LoadingView : MonoBehaviour
 {
     [SerializeField] private Image _loadingImage;
+    [SerializeField] private Image _motorcycleImage;
+
+    private void OnEnable()
+    {
+        AnimateBar();
+    }
 
     private void Update()
     {
-        _loadingImage.fillAmount += Time.deltaTime * 0.5f;
+        _loadingImage.fillAmount += Time.deltaTime * 0.2f;
+        AnimateBar();
+    }
+
+    private void AnimateBar()
+    {
+        float width = _loadingImage.GetComponent<RectTransform>().rect.width;
+        Vector3 tempV = _motorcycleImage.GetComponent<RectTransform>().anchoredPosition;
+        tempV.x = -width / 2;
+        tempV.x += width * _loadingImage.fillAmount;
+        _motorcycleImage.GetComponent<RectTransform>().anchoredPosition = tempV;
     }
 }
