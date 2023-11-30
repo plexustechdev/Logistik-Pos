@@ -1090,6 +1090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107467541}
   - component: {fileID: 107467542}
+  - component: {fileID: 107467543}
   m_Layer: 0
   m_Name: Customer Manager
   m_TagString: Untagged
@@ -1128,6 +1129,7 @@ MonoBehaviour:
   _customerViewPrefab: {fileID: 1844817790616813634, guid: 789913bdf2345e04b924ec95030f5081, type: 3}
   _customerContainer: {fileID: 574632893}
   _character: {fileID: 1119268171}
+  tweening: {fileID: 107467543}
   customers:
   - {fileID: 11400000, guid: 7ca317db60b197b4f9d72d27a8a8f91b, type: 2}
   - {fileID: 11400000, guid: a3401289ca8e7bf429c54bb3c63ea207, type: 2}
@@ -1139,6 +1141,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2fa35f67ccc92734f9de98bf2f273e25, type: 2}
   - {fileID: 11400000, guid: 6e37b674b599b864f9e1157c54c8b210, type: 2}
   - {fileID: 11400000, guid: 6abbc45cf9f5588468adf6c8d006a3c0, type: 2}
+--- !u!114 &107467543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107467540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0043c08b45dc84cb2df524696dba6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &111829266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,6 +2449,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213083593}
   m_CullTransparentMesh: 1
+--- !u!1 &236273360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236273361}
+  m_Layer: 0
+  m_Name: End Animation Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &236273361
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236273360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1926045322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &261543944
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,6 +3660,41 @@ Transform:
   - {fileID: 2143538984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416973519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416973520}
+  m_Layer: 0
+  m_Name: Start Animation Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &416973520
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416973519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1926045322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -380, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &421219063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5341,7 +5425,7 @@ Transform:
   m_GameObject: {fileID: 613230895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 171.654, y: 55.001633, z: 0.7444157}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8028,7 +8112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1119268168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8048,7 +8132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78, y: 33}
+  m_AnchoredPosition: {x: 75, y: 33}
   m_SizeDelta: {x: 1290, y: 1512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119268169
@@ -8064,7 +8148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8105,8 +8189,10 @@ MonoBehaviour:
   _narrativeTmp: {fileID: 2015825937}
   _characterImage: {fileID: 1119268169}
   _boxDialogueImg: {fileID: 1318414943}
-  AcceptBtn: {fileID: 1716629000}
-  DenyBtn: {fileID: 1146222803}
+  _acceptBtn: {fileID: 1716629000}
+  _denyBtn: {fileID: 1146222803}
+  _startPos: {fileID: 416973520}
+  _endPos: {fileID: 236273361}
 --- !u!1 &1119846655
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,8 +10003,8 @@ RectTransform:
   m_GameObject: {fileID: 1318414941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 264264876}
   - {fileID: 2015825936}
@@ -10100,6 +10186,8 @@ MonoBehaviour:
   - Logistik, sebagai bagian dari Supply Chain Management (SCM) yang mencakup aktivitas
     bisnis dari perencanaan hingga distribusi produk. Berfokus pada perpindahan,
     penyimpanan, dan pengiriman barang dengan berbagai jenis transportasi.
+  - Loquestic ini adalah sebuah minigame yang terdiri dari logistik, quest, dan taktik
+    sebagai pengenalan ilmu logistik yang menghibur dan menyenangkan.
   - 'Selamat sekarang anda sedang ada di halaman <font="C800">Overworld!</font>
 
     Di
@@ -12447,8 +12535,8 @@ RectTransform:
   m_GameObject: {fileID: 1716628996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2089060114}
   m_Father: {fileID: 1119268168}
@@ -13874,6 +13962,8 @@ RectTransform:
   - {fileID: 979284915}
   - {fileID: 262375958}
   - {fileID: 1119268168}
+  - {fileID: 236273361}
+  - {fileID: 416973520}
   m_Father: {fileID: 1744915250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

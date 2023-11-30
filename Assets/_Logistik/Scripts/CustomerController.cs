@@ -6,10 +6,15 @@ public class CustomerController : MonoBehaviour
 {
     // [SerializeField] private QuestActiveController _questControl;
     [SerializeField] private QuestMonitorManager _questView;
+
     [Space]
     [SerializeField] private CustomerQuestView _customerViewPrefab;
     [SerializeField] private Transform _customerContainer;
     [SerializeField] private CustomerCharacter _character;
+
+    [Space]
+    [SerializeField] private Tweening tweening;
+
     [Space]
     [SerializeField] private List<SO_Customer> customers = new();
 
@@ -21,7 +26,14 @@ public class CustomerController : MonoBehaviour
 
             customerView.QuestBtn.onClick.AddListener(() =>
             {
-                _character.gameObject.SetActive(true);
+                StartCoroutine(tweening.ShowCustomer(_character.transform,
+                    _character.StartAnimPos,
+                    _character.EndAnimPos,
+                    _character.CharacterImage,
+                    _character.DialogueImage,
+                    _character.AcceptBtn
+                ));
+                // _character.gameObject.SetActive(true);
                 foreach (var quest in customer.quests)
                 {
                     if (!quest.IsActive && !quest.IsFinished)
