@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_Logistik/Scenes/Login.unity
+    guid: a102de10732863c4e9093eec870ab819
+  - enabled: 1
+    path: Assets/_Logistik/Scenes/Tetris.unity
+    guid: 35230219b8adb4d4a8a9ddb0b86cbdac
   m_configObjects: {}

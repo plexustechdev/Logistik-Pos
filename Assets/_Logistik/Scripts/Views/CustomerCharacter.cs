@@ -31,12 +31,13 @@ public class CustomerCharacter : MonoBehaviour
     }
 
 
-    public void AcceptOrder(Quest quest, QuestActiveController questController, QuestMonitorManager questView)
+    public void AcceptOrder(Quest quest, QuestMonitorManager questView)
     {
         AcceptBtn.onClick.AddListener(() =>
         {
             quest.IsActive = true;
-            questController.SetActiveQuest(quest);
+            // questController.SetActiveQuest(quest);
+            QuestActiveController.SetActiveQuest(quest);
             questView.SetActiveQuest(quest.Description);
             questView.ShowActiveQuest();
 
@@ -46,12 +47,13 @@ public class CustomerCharacter : MonoBehaviour
         });
     }
 
-    public void CancelOrder(Quest quest, QuestActiveController questController, QuestMonitorManager questView)
+    public void CancelOrder(Quest quest, QuestMonitorManager questView)
     {
         DenyBtn.onClick.AddListener(() =>
         {
             quest.IsActive = false;
-            questController.SetActiveQuest(null);
+            // questController.SetActiveQuest(null);
+            QuestActiveController.SetActiveQuest(quest);
             questView.HideActiveQuest();
 
             _boxDialogueImg.gameObject.SetActive(true);

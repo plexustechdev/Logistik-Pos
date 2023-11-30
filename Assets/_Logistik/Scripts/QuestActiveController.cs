@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestActiveController : MonoBehaviour
+public static class QuestActiveController
 {
-    public Quest ActiveQuest { get; private set; }
+    public static Quest ActiveQuest { get; private set; }
 
-    public void SetActiveQuest(Quest quest)
+    public static void SetActiveQuest(Quest quest)
     {
         if (ActiveQuest != null) return;
 

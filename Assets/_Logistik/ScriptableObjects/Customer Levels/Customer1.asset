@@ -23,8 +23,8 @@ MonoBehaviour:
     Destination: Sukabumi
     TransportationType: 0
     Timer: 0
-    IsActive: 0
-    IsFinished: 0
+    IsActive: 1
+    IsFinished: 1
     IsUsingTimer: 0
   - Level: 2
     GoodsAmount: 100
@@ -34,6 +34,6 @@ MonoBehaviour:
     Destination: Sukabumi
     TransportationType: 0
     Timer: 2
-    IsActive: 0
+    IsActive: 1
     IsFinished: 0
     IsUsingTimer: 1

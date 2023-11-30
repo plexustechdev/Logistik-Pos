@@ -8,11 +8,11 @@ public class QuestMonitorManager : MonoBehaviour
     [SerializeField] private QuestActiveView _questActiveView;
     [SerializeField] private GameObject _questListContainer, _questListTitle;
     [SerializeField] private CustomerCharacter _questCharacter;
-    [SerializeField] private QuestActiveController _questControl;
+    // [SerializeField] private QuestActiveController _questControl;
 
     private void OnEnable()
     {
-        if (_questControl.ActiveQuest is null) return;
+        if (QuestActiveController.ActiveQuest is null) return;
 
         _customer.QuestActiveView();
         ShowActiveQuest();

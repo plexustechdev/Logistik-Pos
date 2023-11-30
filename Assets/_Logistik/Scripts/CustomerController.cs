@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomerController : MonoBehaviour
 {
-    [SerializeField] private QuestActiveController _questControl;
+    // [SerializeField] private QuestActiveController _questControl;
     [SerializeField] private QuestMonitorManager _questView;
     [Space]
     [SerializeField] private CustomerQuestView _customerViewPrefab;
@@ -27,8 +27,8 @@ public class CustomerController : MonoBehaviour
                     if (!quest.IsActive && !quest.IsFinished)
                     {
                         _character.ShowQuest(quest.Description, quest.Narrative, customer.SpriteCharacter);
-                        _character.AcceptOrder(quest, _questControl, _questView);
-                        _character.CancelOrder(quest, _questControl, _questView);
+                        _character.AcceptOrder(quest, _questView);
+                        _character.CancelOrder(quest, _questView);
                         break;
                     }
                 }

@@ -984,7 +984,6 @@ GameObject:
   m_Component:
   - component: {fileID: 107467541}
   - component: {fileID: 107467542}
-  - component: {fileID: 107467543}
   m_Layer: 0
   m_Name: Customer Manager
   m_TagString: Untagged
@@ -1019,7 +1018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16eaaced1f49c5f46bbcb5363a338901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questControl: {fileID: 107467543}
   _questView: {fileID: 1685330323}
   _customerViewPrefab: {fileID: 1844817790616813634, guid: 789913bdf2345e04b924ec95030f5081, type: 3}
   _customerContainer: {fileID: 574632893}
@@ -1030,18 +1028,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 83f984dbc30fb26428c42ae33f12797d, type: 2}
   - {fileID: 11400000, guid: b606476f6ad65444ca6e2669b61cd894, type: 2}
   - {fileID: 11400000, guid: a7ae777062821b549bd6f512219f08a1, type: 2}
---- !u!114 &107467543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107467540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576fa7f1ccd906a45895509475f70ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &111829266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,6 +4100,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &613230895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613230897}
+  - component: {fileID: 613230896}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &613230896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613230895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98155c1ad7cd7f4a8dfb2cb52c8fecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &613230897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613230895}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 171.654, y: 55.001633, z: 0.7444157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643099639
 GameObject:
   m_ObjectHideFlags: 0
@@ -7365,7 +7395,7 @@ MonoBehaviour:
         m_MethodName: CancelOrder
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 107467543}
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: QuestController, Logistik
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10845,7 +10875,6 @@ MonoBehaviour:
   _questListContainer: {fileID: 66328158}
   _questListTitle: {fileID: 1914805580}
   _questCharacter: {fileID: 1119268171}
-  _questControl: {fileID: 107467543}
 --- !u!114 &1685330324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11680,7 +11709,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1891670400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 613230896}
+        m_TargetAssemblyTypeName: GameManager, Logistik
+        m_MethodName: GoWerehouse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1914805580
 GameObject:
   m_ObjectHideFlags: 0
@@ -13308,3 +13349,4 @@ SceneRoots:
   - {fileID: 1113811917}
   - {fileID: 385878586}
   - {fileID: 107467541}
+  - {fileID: 613230897}

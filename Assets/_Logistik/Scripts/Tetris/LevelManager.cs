@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text score_txt;
     [SerializeField] private TMP_Text time_txt;
     [SerializeField] private SO_DataPreview dataPreview;
-    [SerializeField] private Transform resultScreen;
+    [SerializeField] private ResultScreen resultScreen;
 
 
 
@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
 
     private float timeRemaining = 60;
     [SerializeField] private bool usingTimer = false;
+    [SerializeField] private bool isPlaying = false;
 
 
     public float score;
@@ -45,7 +46,7 @@ public class LevelManager : MonoBehaviour
         if (!usingTimer)
             return;
 
-        if (timeRemaining > 0)
+        if (timeRemaining > 0 && isPlaying)
         {
             timeRemaining -= Time.deltaTime;
             SetTime(timeRemaining);
@@ -56,14 +57,32 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void Start(){
+    public void Start()
+    {
+        Initialize();
         timeRemaining = maxTimer;
+
+        SetTime(timeRemaining);
+        Play();
     }
 
-    public void Restart(){
+    public void Initialize()
+    {
+        maxTimer = QuestActiveController.ActiveQuest.Timer * 60;
+        usingTimer = QuestActiveController.ActiveQuest.IsUsingTimer;
+
+    }
+
+    public void Play(){
+        isPlaying = true;
+    }
+
+    public void Restart()
+    {
         spriteRenderer.sprite = null;
         timeRemaining = maxTimer;
         score = 0;
+        Play();
     }
 
 
@@ -97,15 +116,18 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        board.GameOver();
+        isPlaying = false;
+        resultScreen.ShowSuccess(false);
+        // board.GameOver();
         Debug.Log("GameOver");
     }
 
     public void Finish()
     {
         Debug.Log("Finish");
+        isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
-        resultScreen.gameObject.SetActive(true);
+        resultScreen.ShowSuccess(true);
     }
     public void FillBar(float amount)
     {
