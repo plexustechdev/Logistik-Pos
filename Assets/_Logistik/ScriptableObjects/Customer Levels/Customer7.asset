@@ -12,33 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer7
   m_EditorClassIdentifier: 
-  CustomerName: Brodi
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: 44c06472f19adc04b8502b6ede71e69b, type: 3}
+  CustomerName: Mega
+  SpriteCharacter: {fileID: 21300000, guid: 422f3f1e54f8ffc488be58c6de45cf0c, type: 3}
+  SpriteTable: {fileID: 21300000, guid: 0f177667b0d4fad41a981ee8f7f13847, type: 3}
   quests:
-  - Level: 13
-    GoodsAmount: 14
-    LoadTime: 10
-    Description: pengiriman padi
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: banjarmasin
+  - Level: 7
+    GoodsAmount: 700
+    Description: Susun 70 baris kotak paket untuk menyelesaikan misi pesanan ini!
+    Narrative: Siap-siap guys! Ada 700 paket dikirim ke Pontianak!
+    Destination: Pontianak
     TransportationType: 3
+    Timer: 0
     IsActive: 0
     IsFinished: 0
-  - Level: 14
-    GoodsAmount: 16
-    LoadTime: 12
-    Description: pengiriman kelapa sawit
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: medan
-    TransportationType: 4
-    IsActive: 0
-    IsFinished: 0
+    IsUsingTimer: 0

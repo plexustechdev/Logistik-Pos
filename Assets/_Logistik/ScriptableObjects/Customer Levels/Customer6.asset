@@ -12,33 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer6
   m_EditorClassIdentifier: 
-  CustomerName: Beta
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: 0f177667b0d4fad41a981ee8f7f13847, type: 3}
+  CustomerName: Wawan
+  SpriteCharacter: {fileID: 21300000, guid: f57032ded034c034aace45f353003a95, type: 3}
+  SpriteTable: {fileID: 21300000, guid: d8187632f66bc1343a382842c48008fd, type: 3}
   quests:
-  - Level: 11
-    GoodsAmount: 60
-    LoadTime: 20
-    Description: pengiriman diesel
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: papua
-    TransportationType: 4
+  - Level: 6
+    GoodsAmount: 400
+    Description: "Ada 40 baris kotak paket untuk dirangkai dalam waktu kurang dari
+      4 menit untuk menyelesaikan misi pesanan ini!\r"
+    Narrative: "Tok, Tok, Tok! bisa kirim 400 paket ke Magelang dalam waktu 4 hari?\r"
+    Destination: Magelang
+    TransportationType: 2
+    Timer: 4
     IsActive: 0
     IsFinished: 0
-  - Level: 12
-    GoodsAmount: 20
-    LoadTime: 5
-    Description: pengiriman sagu
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: bali
-    TransportationType: 4
-    IsActive: 0
-    IsFinished: 0
+    IsUsingTimer: 1

@@ -12,33 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer9
   m_EditorClassIdentifier: 
-  CustomerName: Beta
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: 0f177667b0d4fad41a981ee8f7f13847, type: 3}
+  CustomerName: Sapta
+  SpriteCharacter: {fileID: 21300000, guid: 50d9ccd5792b30941b1643e1283e2246, type: 3}
+  SpriteTable: {fileID: 21300000, guid: 44c06472f19adc04b8502b6ede71e69b, type: 3}
   quests:
-  - Level: 17
-    GoodsAmount: 45
-    LoadTime: 20
-    Description: pengiriman kelapa
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: sorong
-    TransportationType: 3
-    IsActive: 0
-    IsFinished: 0
-  - Level: 18
-    GoodsAmount: 20
-    LoadTime: 5
-    Description: pengiriman tahu
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: samarinda
+  - Level: 9
+    GoodsAmount: 1000
+    Description: 'Susun 100 baris kotak paket untuk menyelesaikan misi pesanan ini!
+
+'
+    Narrative: 1000 paket siap meluncur ke Merauke!
+    Destination: Merauke
     TransportationType: 4
+    Timer: 0
     IsActive: 0
     IsFinished: 0
+    IsUsingTimer: 0

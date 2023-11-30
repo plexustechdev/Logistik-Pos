@@ -16,27 +16,14 @@ MonoBehaviour:
   SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
   SpriteTable: {fileID: 21300000, guid: c9feb262f2aff764a9a66f26f996f4fa, type: 3}
   quests:
-  - Level: 3
-    GoodsAmount: 200
-    Description: "Nina - Ada 200 paket untuk dikirim ke Jakarta nih\u2026 - Mobil
-      Van"
-    Narrative: Susun 20 baris kotak paket untuk menyelesaikan menyelesaikan misi
-      pesanan ini.
-    Destination: Jakarta
-    TransportationType: 1
-    Timer: 0
-    IsActive: 0
-    IsFinished: 0
-    IsUsingTimer: 0
-  - Level: 4
-    GoodsAmount: 200
-    Description: Nina - Ada 200 paket untuk dikirim ke Jakarta nih dalam waktu 3
-      hari!
-    Narrative: Susun 20 baris kotak paket dalam waktu kurang dari 3 menit untuk menyelesaikan
-      misi pesanan ini.
-    Destination: Jakarta
-    TransportationType: 1
-    Timer: 3
+  - Level: 2
+    GoodsAmount: 100
+    Description: Susun 10 baris kotak paket dalam waktu kurang dari 2 menit untuk
+      menyelesaikan misi pesanan ini.
+    Narrative: Kirimkan 100 paket ke Sukabumi dalam waktu 2 hari!
+    Destination: Sukabumi
+    TransportationType: 0
+    Timer: 2
     IsActive: 0
     IsFinished: 0
     IsUsingTimer: 1
