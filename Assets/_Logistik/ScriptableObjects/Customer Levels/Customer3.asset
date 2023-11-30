@@ -16,28 +16,14 @@ MonoBehaviour:
   SpriteCharacter: {fileID: 21300000, guid: 3691176a9791e9d41bc893b3204f0db7, type: 3}
   SpriteTable: {fileID: 21300000, guid: 02469ddfd61ce424cb93a5a5b81d91ca, type: 3}
   quests:
-  - Level: 5
-    GoodsAmount: 400
-    Description: Linda - Tok, Tok, Tok! bisa kirim 400 paket ke Magelang? - Truk
-    Narrative: "Ada 40 baris kotak paket untuk dirangkai dalam menyelesaikan misi
-      pesanan ini!\r"
-    Destination: Magelang
-    TransportationType: 2
+  - Level: 3
+    GoodsAmount: 200
+    Description: Susun 20 baris kotak paket untuk menyelesaikan menyelesaikan misi
+      pesanan ini.
+    Narrative: "Ada 200 paket untuk dikirim ke Jakarta nih\u2026"
+    Destination: Jakarta
+    TransportationType: 1
     Timer: 0
     IsActive: 0
     IsFinished: 0
     IsUsingTimer: 0
-  - Level: 6
-    GoodsAmount: 400
-    Description: 'Linda - Tok, Tok, Tok! bisa kirim 400 paket ke Magelang dalam waktu
-      4 hari?
-
-'
-    Narrative: "Ada 40 baris kotak paket untuk dirangkai dalam waktu kurang dari
-      4 menit untuk menyelesaikan misi pesanan ini!\r"
-    Destination: Magelang
-    TransportationType: 2
-    Timer: 4
-    IsActive: 0
-    IsFinished: 0
-    IsUsingTimer: 1

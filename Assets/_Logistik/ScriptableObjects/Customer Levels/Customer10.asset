@@ -12,33 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer10
   m_EditorClassIdentifier: 
-  CustomerName: Budi
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: c9feb262f2aff764a9a66f26f996f4fa, type: 3}
+  CustomerName: Bima
+  SpriteCharacter: {fileID: 21300000, guid: d2c2368bae9aaa647894cde263e6468a, type: 3}
+  SpriteTable: {fileID: 21300000, guid: 9d9361d9baca04941b747f90687b4bf0, type: 3}
   quests:
-  - Level: 19
-    GoodsAmount: 10
-    LoadTime: 0
-    Description: pengiriman buku
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: padang
-    TransportationType: 1
+  - Level: 10
+    GoodsAmount: 1000
+    Description: 'Susun 100 baris kotak paket dalam waktu kurang dari 6 menit untuk
+      menyelesaikan misi pesanan ini.
+
+'
+    Narrative: 1000 paket siap meluncur ke Merauke dalam waktu 6 hari!
+    Destination: Merauke
+    TransportationType: 4
+    Timer: 6
     IsActive: 0
     IsFinished: 0
-  - Level: 12
-    GoodsAmount: 5
-    LoadTime: 10
-    Description: pengiriman besi
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: banten
-    TransportationType: 0
-    IsActive: 0
-    IsFinished: 0
+    IsUsingTimer: 1

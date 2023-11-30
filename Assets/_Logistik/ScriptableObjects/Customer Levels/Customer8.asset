@@ -12,33 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
   m_Name: Customer8
   m_EditorClassIdentifier: 
-  CustomerName: Banu
-  SpriteCharacter: {fileID: 21300000, guid: 987d63574b83fa54aa710c83a3a89582, type: 3}
-  SpriteTable: {fileID: 21300000, guid: eb1bf01e6c37cf1468c04d394a6491b4, type: 3}
+  CustomerName: Kusuma
+  SpriteCharacter: {fileID: 21300000, guid: 583050b2198bb7b499f6a89d2bfec663, type: 3}
+  SpriteTable: {fileID: 21300000, guid: 3a47ef1dfd046e841b64b545ea6ac0ff, type: 3}
   quests:
-  - Level: 15
-    GoodsAmount: 55
-    LoadTime: 10
-    Description: pengiriman kopi
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: gorontalo
-    TransportationType: 4
+  - Level: 8
+    GoodsAmount: 700
+    Description: Susun 70 baris kotak paket dalam waktu kurang dari 5 menit untuk
+      menyelesaikan misi pesanan ini.
+    Narrative: Siap-siap guys! Ada 700 paket dikirim ke Pontianak dalam waktu 5 hari!
+    Destination: Pontianak
+    TransportationType: 3
+    Timer: 5
     IsActive: 0
     IsFinished: 0
-  - Level: 16
-    GoodsAmount: 55
-    LoadTime: 25
-    Description: pengiriman bata
-    Narrative: pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris
-      pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend
-      quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-      viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus
-      turpis in eu
-    Destination: lombok
-    TransportationType: 2
-    IsActive: 0
-    IsFinished: 0
+    IsUsingTimer: 1

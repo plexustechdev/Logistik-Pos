@@ -18,8 +18,8 @@ MonoBehaviour:
   quests:
   - Level: 1
     GoodsAmount: 100
-    Description: Budi - Kirimkan 100 paket ke Sukabumi! - Sepeda Motor
-    Narrative: Susun 10 baris kotak paket untuk menyelesaikan misi pesanan ini!
+    Description: Susun 10 baris kotak paket untuk menyelesaikan misi pesanan ini!
+    Narrative: Kirimkan 100 paket ke Sukabumi!
     Destination: Sukabumi
     TransportationType: 0
     Timer: 0
