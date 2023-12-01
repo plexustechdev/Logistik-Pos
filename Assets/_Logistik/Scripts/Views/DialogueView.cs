@@ -8,11 +8,11 @@ public class DialogueView : MonoBehaviour
     [SerializeField] private NarrativeDialogue _dialogueData;
     [SerializeField] private TextMeshProUGUI _dialogueTmp;
 
-    private bool isShowing = false;
+    private bool isShowing = true;
 
     private void OnEnable()
     {
-        if (!isShowing) _dialogueTmp.text = _dialogueData.GetDialogue;
+        ShowDialogue();
     }
 
     public void OnNextDialogue(GameObject panelDialogue)
@@ -21,9 +21,19 @@ public class DialogueView : MonoBehaviour
         else DeactivateDialogue(panelDialogue);
     }
 
+    public void ShowDialogue(DialogueView dialogueView)
+    {
+        dialogueView.gameObject.SetActive(isShowing);
+    }
+
+    public void ShowDialogue()
+    {
+        if (isShowing) _dialogueTmp.text = _dialogueData.GetDialogue;
+    }
+
     public void DeactivateDialogue(GameObject panelDialogue)
     {
-        isShowing = true;
+        isShowing = false;
         panelDialogue.SetActive(false);
     }
 }
