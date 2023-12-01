@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class DestinationPosition : MonoBehaviour
 {
-    [SerializeField] private List<Transform> positionList = new List<Transform>();
+    [SerializeField] private List<Transform> smallMapPosList = new List<Transform>();
+    [SerializeField] private List<Transform> largeMapPosList = new List<Transform>();
 
-    public Transform GetDestination(string name)
+    public Transform GetDestination(string name, bool isSmallMap)
     {
-        var destination = positionList.First(pos => pos.name.ToLower() == name.ToLower());
+        Transform destination = isSmallMap ? smallMapPosList.First(pos => pos.name.ToLower() == name.ToLower()) : largeMapPosList.First(pos => pos.name.ToLower() == name.ToLower());
+
         return destination;
     }
 }
