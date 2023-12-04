@@ -673,10 +673,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1685330320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 235, y: -36.4025}
+  m_SizeDelta: {x: 446, y: 48.805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66328160
 MonoBehaviour:
@@ -2720,18 +2720,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1119268167}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &264264875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,7 +2756,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -95}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 247.33, y: 74.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264264877
 MonoBehaviour:
@@ -3692,7 +3680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: 0}
+  m_AnchoredPosition: {x: -819, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &421219063
@@ -5416,6 +5404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98155c1ad7cd7f4a8dfb2cb52c8fecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataCustomer: {fileID: 11400000, guid: af66721342e0c574bb0a2f1574c09ec3, type: 2}
+  customerController: {fileID: 107467542}
 --- !u!4 &613230897
 Transform:
   m_ObjectHideFlags: 0
@@ -8173,8 +8163,6 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1318414942}
-  - {fileID: 1716628997}
-  - {fileID: 1146222800}
   m_Father: {fileID: 1926045322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8861,17 +8849,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146222799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99099106, y: 0.99099106, z: 0.99099106}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1798868799}
-  m_Father: {fileID: 1119268168}
+  m_Father: {fileID: 1150758786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 5, y: -145}
+  m_AnchoredPosition: {x: 230.1802, y: 290.5262}
   m_SizeDelta: {x: 532, y: 254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1146222801
@@ -8956,13 +8944,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1119268171}
-        m_TargetAssemblyTypeName: CustomerCharacter, Logistik
+      - m_Target: {fileID: 1685330323}
+        m_TargetAssemblyTypeName: QuestMonitorManager, Logistik
         m_MethodName: CancelOrder
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: QuestController, Logistik
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8999,6 +8987,8 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1685330320}
+  - {fileID: 1146222800}
+  - {fileID: 1716628997}
   - {fileID: 560353780}
   m_Father: {fileID: 1926045322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9473,7 +9463,7 @@ RectTransform:
   m_Father: {fileID: 1949720717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12523,11 +12513,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a1b09730abb054596931f281aaede3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availableQuest:
+    Level: 0
+    GoodsAmount: 0
+    Description: 
+    Narrative: 
+    destination: 0
+    TransportationType: 0
+    Timer: 0
+    IsActive: 0
+    IsFinished: 0
+    IsUsingTimer: 0
   _customer: {fileID: 1119268171}
   _questActiveView: {fileID: 1963822128}
   _questListContainer: {fileID: 66328158}
   _questListTitle: {fileID: 1914805580}
   _questCharacter: {fileID: 1119268171}
+  _acceptBtn: {fileID: 1716629000}
+  _denyBtn: {fileID: 1146222803}
+  customerController: {fileID: 107467542}
+  customerCharacter: {fileID: 1119268171}
 --- !u!114 &1685330324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12580,17 +12585,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716628996}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2089060114}
-  m_Father: {fileID: 1119268168}
+  m_Father: {fileID: 1150758786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 5, y: -145}
+  m_AnchoredPosition: {x: 230.1802, y: 290.5262}
   m_SizeDelta: {x: 532, y: 254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716628998
@@ -12674,7 +12679,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1716628998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1685330323}
+        m_TargetAssemblyTypeName: QuestMonitorManager, Logistik
+        m_MethodName: AcceptOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1736840349
 GameObject:
   m_ObjectHideFlags: 0
@@ -13555,10 +13572,10 @@ RectTransform:
   - {fileID: 583741484}
   m_Father: {fileID: 1685330320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 235, y: -174.4025}
+  m_SizeDelta: {x: 446, y: 227.195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914805582
 MonoBehaviour:
@@ -14008,7 +14025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1926045322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14022,10 +14039,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 785274229}
+  - {fileID: 1119268168}
   - {fileID: 1150758786}
   - {fileID: 979284915}
   - {fileID: 262375958}
-  - {fileID: 1119268168}
   - {fileID: 236273361}
   - {fileID: 416973520}
   m_Father: {fileID: 1744915250}

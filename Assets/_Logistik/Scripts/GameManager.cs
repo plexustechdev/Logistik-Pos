@@ -4,10 +4,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public SO_Customer dataCustomer;
+    [SerializeField] private CustomerController customerController;
 
     void Start()
     {
         instance = this;
+        customerController.InitaizeCustomer();
     }
 
     public void ChangeScene(int index)

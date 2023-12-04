@@ -6,10 +6,8 @@ public static class QuestActiveController
 {
     public static Quest ActiveQuest { get; private set; }
 
-    public static void SetActiveQuest(Quest quest)
+    public static void SetActiveQuest(Quest quest = null)
     {
-        if (ActiveQuest != null) return;
-
         ActiveQuest = quest;
     }
 }
