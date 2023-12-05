@@ -1481,6 +1481,7 @@ MonoBehaviour:
   time_txt: {fileID: 106817836}
   quest_txt: {fileID: 151269363}
   countdown_txt: {fileID: 419353840}
+  mainCamera: {fileID: 1098646715}
   dataPreview: {fileID: 11400000, guid: 2d994ae5040868d4a9555d187d7fab12, type: 2}
   dataTransportation: {fileID: 11400000, guid: 1b15ace49c2aa824ba574a4feb3c47b5, type: 2}
   resultScreen: {fileID: 1968688014}
@@ -4730,7 +4731,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526285906}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289536376}
+        m_TargetAssemblyTypeName: LevelManager, Logistik
+        m_MethodName: KirimBarang
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1526285906
 MonoBehaviour:
   m_ObjectHideFlags: 0

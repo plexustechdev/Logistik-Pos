@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DeliveryController : MonoBehaviour
 {
+
+    public static DeliveryController instance;
     [Header("References")]
     [SerializeField] private TrackManager _track;
     [SerializeField] private VehicleManager _vehicle;
@@ -28,9 +30,10 @@ public class DeliveryController : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         // Example used cases for delivery and set up the destination
         // SetDelivery(Transportation.MOTORCYCLE, 20, "Jogja");
-        Shipment();
+        // Shipment();
     }
 
     /// <summary>

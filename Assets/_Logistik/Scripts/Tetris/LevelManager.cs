@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text quest_txt;
     [SerializeField] private TMP_Text countdown_txt;
 
+    [SerializeField] private Camera mainCamera;
+
     [Space(10)]
     [SerializeField] private SO_DataPreview dataPreview;
     [SerializeField] private SO_Transportation dataTransportation;
@@ -170,6 +172,13 @@ public class LevelManager : MonoBehaviour
     {
         Sprite sprite = dataPreview.GetPreview(tetromino);
         spriteRenderer.sprite = sprite;
+    }
+
+    public void KirimBarang(){
+        mainCamera.enabled = false;
+        DeliveryController.instance.SetDelivery(dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).type, targetRows, QuestActiveController.ActiveQuest.destination.ToString());
+        DeliveryController.instance.Shipment();
+
     }
 
 }
