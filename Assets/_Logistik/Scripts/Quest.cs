@@ -17,7 +17,7 @@ public enum Destination {
 public class Quest
 {
     public int Level;
-    public float GoodsAmount;
+    public int GoodsAmount;
     [TextArea]
     public string Description;
     [TextArea]

@@ -24,7 +24,7 @@ MonoBehaviour:
       destination: 0
       TransportationType: 0
       Timer: 0
-      IsActive: 0
+      IsActive: 1
       IsFinished: 0
       IsUsingTimer: 0
   - CustomerName: Nina
@@ -39,7 +39,7 @@ MonoBehaviour:
       destination: 0
       TransportationType: 0
       Timer: 2
-      IsActive: 0
+      IsActive: 1
       IsFinished: 0
       IsUsingTimer: 1
   - CustomerName: Linda
@@ -53,8 +53,8 @@ MonoBehaviour:
       Narrative: "Ada 200 paket untuk dikirim ke Jakarta nih\u2026"
       destination: 1
       TransportationType: 1
-      Timer: 3
-      IsActive: 0
+      Timer: 0
+      IsActive: 1
       IsFinished: 0
       IsUsingTimer: 0
   - CustomerName: Reni

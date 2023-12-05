@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         if (QuestActiveController.ActiveQuest != null)
         {
             ChangeScene(1);
+            // SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
         }
     }
 }

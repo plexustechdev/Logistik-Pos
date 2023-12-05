@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Logistik/Scenes/Tetris.unity
     guid: 35230219b8adb4d4a8a9ddb0b86cbdac
+  - enabled: 1
+    path: Assets/_Logistik/Scenes/MapDelivery.unity
+    guid: 22994490e772cf54b8e74d87ba725763
   m_configObjects: {}
