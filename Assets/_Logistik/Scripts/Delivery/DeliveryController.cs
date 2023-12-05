@@ -23,6 +23,37 @@ public class DeliveryController : MonoBehaviour
 
     private bool _isSmallMap;
 
+    private void Start()
+    {
+        // Example used cases for delivery and set up the destination
+        SetDelivery(Transportation.MOTORCYCLE, 20, "Jakarta");
+        Shipment();
+    }
+
+    /// <summary>
+    /// Use me to set the delivery
+    /// </summary>
+    /// <param name="vehicle">enum vehicle</param>
+    /// <param name="goodsAmount">float goods amount</param>
+    /// <param name="destination">string destination</param>
+    public void SetDelivery(Transportation vehicle, float goodsAmount, string destination)
+    {
+        _delivery.Vehicle = vehicle;
+        _delivery.GoodsAmount = goodsAmount;
+        _delivery.Destination = destination;
+    }
+
+    /// <summary>
+    /// Use me for delivery shipment process
+    /// </summary>
+    public void Shipment()
+    {
+        SetMap();
+
+        if (_delivery.Vehicle == Transportation.SHIPS) StartCoroutine(ShipsDelivery());
+        else DefaultDelivery();
+    }
+
     private void SetVehicle()
     {
         _vehicle.GetVehicle(_delivery.GetVehicle,
@@ -37,14 +68,6 @@ public class DeliveryController : MonoBehaviour
             IsFlip(start.position.x, end.position.x),
             IsFlip(start.position.y, end.position.y)
         );
-    }
-
-    private void Start()
-    {
-        SetMap();
-
-        if (_delivery.Vehicle == Transportation.SHIPS) StartCoroutine(ShipsDelivery());
-        else DefaultDelivery();
     }
 
     private void DefaultDelivery()
@@ -113,28 +136,6 @@ public class DeliveryController : MonoBehaviour
                 break;
         }
     }
-
-    // public bool IsFlipX()
-    // {
-    //     Vector3 startPos = _startPosDelivery.position;
-    //     Vector3 endPos = _endPosDelivery.position;
-
-    //     var distance = endPos.x - startPos.x;
-
-    //     if (distance < 0) return false;
-    //     else return true;
-    // }
-
-    // public bool IsFlipY()
-    // {
-    //     Vector3 startPos = _startPosDelivery.position;
-    //     Vector3 endPos = _endPosDelivery.position;
-
-    //     var distance = endPos.y - startPos.y;
-
-    //     if (distance < 0) return false;
-    //     else return true;
-    // }
 
     public bool IsFlip(float start, float end)
     {
