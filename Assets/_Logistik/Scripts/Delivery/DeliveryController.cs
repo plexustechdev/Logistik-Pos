@@ -81,12 +81,12 @@ public class DeliveryController : MonoBehaviour
 
         _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
         _vehicle.SetEffect(true);
-        yield return new WaitForSeconds(3f);
-        _vehicle.SetEffect(false);
 
+        yield return new WaitForSeconds(3f);
         _vehicle.Move(_startPosDelivery, _endPosDelivery);
 
         yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
+        _vehicle.SetEffect(false);
         popUpUI.SetActive(true);
     }
 
@@ -100,14 +100,16 @@ public class DeliveryController : MonoBehaviour
 
         _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
         _vehicle.SetEffect(true);
-        yield return new WaitForSeconds(3f);
-        _vehicle.SetEffect(false);
 
+        yield return new WaitForSeconds(3f);
         _vehicle.Move(_startPosDelivery, TEMP_middlePosDelivery);
+
         yield return new WaitForSeconds(4f);
+        _vehicle.FlipVehicleLeft();
         _vehicle.Move(TEMP_middlePosDelivery, _endPosDelivery);
 
         yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
+        _vehicle.SetEffect(false);
         popUpUI.SetActive(true);
     }
 

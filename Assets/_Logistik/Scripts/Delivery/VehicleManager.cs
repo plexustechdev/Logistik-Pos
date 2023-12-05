@@ -19,6 +19,8 @@ public class VehicleManager : MonoBehaviour
     public void SetEffect(bool isActive) => _sonarFX.gameObject.SetActive(isActive);
     public float GetTimeDeliver => timeToDeliver;
 
+    public void FlipVehicleLeft() => _vehicleSprite.flipX = false;
+
     public void GetVehicle(string name, bool isFlipX, bool isFlipY)
     {
         Vehicle vehicle = vehicles.First(v => v.Name.ToLower() == name.ToLower());
