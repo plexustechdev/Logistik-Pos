@@ -23,15 +23,9 @@ public class DeliveryController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject popUpUI;
+    [SerializeField] private Camera _camera;
 
     private bool _isSmallMap;
-
-    private void Start()
-    {
-        // Example used cases for delivery and set up the destination
-        // SetDelivery(Transportation.MOTORCYCLE, 20, "Jogja");
-        Shipment();
-    }
 
     /// <summary>
     /// Use me to set the delivery
@@ -51,6 +45,8 @@ public class DeliveryController : MonoBehaviour
     /// </summary>
     public void Shipment()
     {
+        _camera.gameObject.SetActive(true);
+
         SetMap();
 
         if (_delivery.Vehicle == Transportation.SHIPS) StartCoroutine(ShipsDelivery());
