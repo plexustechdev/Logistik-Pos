@@ -10,8 +10,14 @@ public class VehicleManager : MonoBehaviour
     [SerializeField] private SpriteRenderer _vehicleSprite;
     [SerializeField] private float timeToDeliver;
 
+    [Header("Animation")]
+    [SerializeField] public Animator _sonarFX;
+
     [Header("Vehicle Data")]
     [SerializeField] private List<Vehicle> vehicles = new List<Vehicle>();
+
+    public void SetEffect(bool isActive) => _sonarFX.gameObject.SetActive(isActive);
+    public float GetTimeDeliver => timeToDeliver;
 
     public void GetVehicle(string name, bool isFlipX, bool isFlipY)
     {

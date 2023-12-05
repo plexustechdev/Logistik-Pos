@@ -21,6 +21,9 @@ public class DeliveryController : MonoBehaviour
     [SerializeField] private Transform TEMP_middlePosDelivery;
     private Transform _endPosDelivery;
 
+    [Header("UI")]
+    [SerializeField] private GameObject popUpUI;
+
     private bool _isSmallMap;
 
     private void Start()
@@ -51,7 +54,7 @@ public class DeliveryController : MonoBehaviour
         SetMap();
 
         if (_delivery.Vehicle == Transportation.SHIPS) StartCoroutine(ShipsDelivery());
-        else DefaultDelivery();
+        else StartCoroutine(DefaultDelivery());
     }
 
     private void SetVehicle()
@@ -70,15 +73,24 @@ public class DeliveryController : MonoBehaviour
         );
     }
 
-    private void DefaultDelivery()
+    private IEnumerator DefaultDelivery()
     {
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
         SetTransportation();
         _track.Draw(_startPosDelivery, _endPosDelivery);
+
+        _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
+        _vehicle.SetEffect(true);
+        yield return new WaitForSeconds(3f);
+        _vehicle.SetEffect(false);
+
         _vehicle.Move(_startPosDelivery, _endPosDelivery);
+
+        yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
+        popUpUI.SetActive(true);
     }
 
-    public IEnumerator ShipsDelivery()
+    private IEnumerator ShipsDelivery()
     {
         _startPosDelivery = _destinationPos.GetDestination("Jakarta", _isSmallMap);
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
@@ -86,12 +98,20 @@ public class DeliveryController : MonoBehaviour
         _track.Draw(_startPosDelivery, TEMP_middlePosDelivery, _endPosDelivery);
         SetVehicle();
 
+        _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
+        _vehicle.SetEffect(true);
+        yield return new WaitForSeconds(3f);
+        _vehicle.SetEffect(false);
+
         _vehicle.Move(_startPosDelivery, TEMP_middlePosDelivery);
         yield return new WaitForSeconds(4f);
         _vehicle.Move(TEMP_middlePosDelivery, _endPosDelivery);
+
+        yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
+        popUpUI.SetActive(true);
     }
 
-    public void SetMap()
+    private void SetMap()
     {
         switch (_delivery.Vehicle)
         {
@@ -114,7 +134,7 @@ public class DeliveryController : MonoBehaviour
         }
     }
 
-    public void SetTransportation()
+    private void SetTransportation()
     {
         switch (_delivery.Vehicle)
         {
@@ -136,7 +156,7 @@ public class DeliveryController : MonoBehaviour
         }
     }
 
-    public bool IsFlip(float startPos, float endPos)
+    private bool IsFlip(float startPos, float endPos)
     {
         var distance = endPos - startPos;
 
