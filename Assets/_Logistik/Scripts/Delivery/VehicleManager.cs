@@ -8,6 +8,7 @@ using UnityEngine;
 public class VehicleManager : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _vehicleSprite;
+    [SerializeField] private float timeToDeliver;
 
     [Header("Vehicle Data")]
     [SerializeField] private List<Vehicle> vehicles = new List<Vehicle>();
@@ -30,7 +31,7 @@ public class VehicleManager : MonoBehaviour
     public void Move(Transform startPosition, Transform endPosition)
     {
         transform.position = startPosition.position;
-        transform.DOMove(endPosition.position, 2f);
+        transform.DOMove(endPosition.position, timeToDeliver);
     }
 }
 

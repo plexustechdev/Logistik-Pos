@@ -18,7 +18,7 @@ public class DeliveryController : MonoBehaviour
 
     [Header("Delivery")]
     private Transform _startPosDelivery;
-    private Transform _middlePosDelivery;
+    [SerializeField] private Transform TEMP_middlePosDelivery;
     private Transform _endPosDelivery;
 
     private bool _isSmallMap;
@@ -26,7 +26,7 @@ public class DeliveryController : MonoBehaviour
     private void Start()
     {
         // Example used cases for delivery and set up the destination
-        SetDelivery(Transportation.MOTORCYCLE, 20, "Jakarta");
+        // SetDelivery(Transportation.MOTORCYCLE, 20, "Jogja");
         Shipment();
     }
 
@@ -80,16 +80,15 @@ public class DeliveryController : MonoBehaviour
 
     public IEnumerator ShipsDelivery()
     {
-        _middlePosDelivery = _destinationPos.GetDestination("Jakarta", _isSmallMap);
+        _startPosDelivery = _destinationPos.GetDestination("Jakarta", _isSmallMap);
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
 
-        SetVehicle("Van", _startPosDelivery, _middlePosDelivery);
-        _track.Draw(_startPosDelivery, _middlePosDelivery, _endPosDelivery);
-        _vehicle.Move(_startPosDelivery, _middlePosDelivery);
-
-        yield return new WaitForSeconds(2f);
+        _track.Draw(_startPosDelivery, TEMP_middlePosDelivery, _endPosDelivery);
         SetVehicle();
-        _vehicle.Move(_middlePosDelivery, _endPosDelivery);
+
+        _vehicle.Move(_startPosDelivery, TEMP_middlePosDelivery);
+        yield return new WaitForSeconds(4f);
+        _vehicle.Move(TEMP_middlePosDelivery, _endPosDelivery);
     }
 
     public void SetMap()
@@ -137,9 +136,10 @@ public class DeliveryController : MonoBehaviour
         }
     }
 
-    public bool IsFlip(float start, float end)
+    public bool IsFlip(float startPos, float endPos)
     {
-        var distance = end - start;
+        var distance = endPos - startPos;
+
         if (distance < 0) return false;
         else return true;
     }
