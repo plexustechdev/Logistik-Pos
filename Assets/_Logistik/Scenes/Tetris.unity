@@ -1489,6 +1489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 427256013}
+  bgSprite: {fileID: 402536823}
   score_txt: {fileID: 1653672297}
   time_txt: {fileID: 106817836}
   quest_txt: {fileID: 151269363}

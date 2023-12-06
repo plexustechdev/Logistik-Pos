@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer bgSprite;
     [SerializeField] private TMP_Text score_txt;
     [SerializeField] private TMP_Text time_txt;
     [SerializeField] private TMP_Text quest_txt;
@@ -91,6 +92,7 @@ public class LevelManager : MonoBehaviour
         targetRows = QuestActiveController.ActiveQuest.GoodsAmount;
         siluetArmada.sprite = dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).Siluet;
         fillArmada.sprite = dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).fillImg;
+        bgSprite.sprite = QuestActiveController.ActiveQuest.spriteBg;
 
     }
 
