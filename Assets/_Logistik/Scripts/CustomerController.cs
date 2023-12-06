@@ -1,10 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CustomerController : MonoBehaviour
 {
     // [SerializeField] private QuestActiveController _questControl;
+    private Customer _selectedCustomer;
+    public Customer selectedCustomer
+    {
+        get { return _selectedCustomer; }
+        set
+        {
+            _selectedCustomer = value;
+            if (value != null)
+                _questView.availableQuest = value.GetAvailableQuest();
+        }
+    }
     [SerializeField] private QuestMonitorManager _questView;
 
     [Space]
@@ -13,46 +23,42 @@ public class CustomerController : MonoBehaviour
     [SerializeField] private CustomerCharacter _character;
 
     [Space]
-    [SerializeField] private Tweening tweening;
+    [SerializeField] public Tweening tweening;
 
     [Space]
     [SerializeField] private List<SO_Customer> customers = new();
 
-    private void Start()
+
+    public void InitaizeCustomer()
     {
-        foreach (var customer in customers)
+        foreach (var customer in GameManager.instance.dataCustomer.Customers)
         {
             CustomerQuestView customerView = CreateCustomerView(customer);
 
             customerView.QuestBtn.onClick.AddListener(() =>
             {
+                if (selectedCustomer != null && selectedCustomer == customer)
+                    return;
                 StartCoroutine(tweening.ShowCustomer(_character.transform,
                     _character.StartAnimPos,
                     _character.EndAnimPos,
                     _character.CharacterImage,
-                    _character.DialogueImage,
-                    _character.AcceptBtn
+                    _character.DialogueImage
                 ));
-                // _character.gameObject.SetActive(true);
-                foreach (var quest in customer.quests)
-                {
-                    if (!quest.IsActive && !quest.IsFinished)
-                    {
-                        _character.ShowQuest(quest.Description, quest.Narrative, customer.SpriteCharacter);
-                        _character.AcceptOrder(quest, _questView);
-                        _character.CancelOrder(quest, _questView);
-                        break;
-                    }
-                }
+                selectedCustomer = customer;
+                _questView.ShowAcceptButton(true);
+                Quest availQuest = selectedCustomer.GetAvailableQuest();
+                _character.ShowQuest(availQuest.Description, availQuest.Narrative, selectedCustomer.SpriteCharacter);
+
             });
         }
     }
 
-    private CustomerQuestView CreateCustomerView(SO_Customer customer)
+    private CustomerQuestView CreateCustomerView(Customer customer)
     {
         CustomerQuestView customerView = Instantiate(_customerViewPrefab, _customerContainer);
 
-        customerView.SetCustomer(customer.SpriteTable, customer.CustomerName);
+        customerView.SetCustomer(customer.SpriteThumbnail, customer.CustomerName);
         return customerView;
     }
 }

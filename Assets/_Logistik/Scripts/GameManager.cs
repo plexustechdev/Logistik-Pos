@@ -4,10 +4,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public SO_Customer dataCustomer;
+    [SerializeField] private CustomerController customerController;
 
     void Start()
     {
         instance = this;
+        customerController.InitaizeCustomer();
     }
 
     public void ChangeScene(int index)
@@ -15,11 +18,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync(index);
     }
 
+    public void UnloadScene(int index)
+    {
+        SceneManager.UnloadSceneAsync(index);
+    }
+
     public void GoWerehouse()
     {
         if (QuestActiveController.ActiveQuest != null)
         {
             ChangeScene(1);
+            SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
         }
+    }
+
+    public void ChangeSceneNormal(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }

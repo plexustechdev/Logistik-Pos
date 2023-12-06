@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4fca0e79172144da8eb6c975a1e770, type: 3}
+  m_Name: Data Customer
+  m_EditorClassIdentifier: 
+  customers:
+  - CustomerName: Budi
+    SpriteCharacter: {fileID: 21300000, guid: edb0933215734584698be23e664c08f3, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 350e899b38d7089418a27a9e663b102d, type: 3}
+    quests:
+    - Level: 1
+      GoodsAmount: 10
+      Description: Susun 10 baris kotak paket untuk menyelesaikan misi pesanan ini!
+      Narrative: Kirimkan 100 paket ke Sukabumi!
+      destination: 0
+      TransportationType: 0
+      Timer: 0
+      IsActive: 1
+      IsFinished: 0
+      IsUsingTimer: 0
+  - CustomerName: Nina
+    SpriteCharacter: {fileID: 21300000, guid: 26df6781eebedcb4d9b6eb6507aa055b, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: c9feb262f2aff764a9a66f26f996f4fa, type: 3}
+    quests:
+    - Level: 2
+      GoodsAmount: 10
+      Description: Susun 10 baris kotak paket dalam waktu kurang dari 2 menit untuk
+        menyelesaikan misi pesanan ini.
+      Narrative: Kirimkan 100 paket ke Sukabumi dalam waktu 2 hari
+      destination: 0
+      TransportationType: 0
+      Timer: 2
+      IsActive: 1
+      IsFinished: 0
+      IsUsingTimer: 1
+  - CustomerName: Linda
+    SpriteCharacter: {fileID: 21300000, guid: 3691176a9791e9d41bc893b3204f0db7, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 02469ddfd61ce424cb93a5a5b81d91ca, type: 3}
+    quests:
+    - Level: 3
+      GoodsAmount: 20
+      Description: Susun 20 baris kotak paket untuk menyelesaikan menyelesaikan misi
+        pesanan ini.
+      Narrative: "Ada 200 paket untuk dikirim ke Jakarta nih\u2026"
+      destination: 1
+      TransportationType: 1
+      Timer: 0
+      IsActive: 1
+      IsFinished: 0
+      IsUsingTimer: 0
+  - CustomerName: Reni
+    SpriteCharacter: {fileID: 21300000, guid: 583050b2198bb7b499f6a89d2bfec663, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 3a47ef1dfd046e841b64b545ea6ac0ff, type: 3}
+    quests:
+    - Level: 4
+      GoodsAmount: 20
+      Description: Susun 20 baris kotak paket dalam waktu kurang dari 3 menit untuk
+        menyelesaikan misi pesanan ini.
+      Narrative: Ada 200 paket untuk dikirim ke Jakarta nih dalam waktu 3 hari!
+      destination: 1
+      TransportationType: 1
+      Timer: 3
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 1
+  - CustomerName: Sugeng
+    SpriteCharacter: {fileID: 21300000, guid: 98725af1e379c1f478ca14e72e700a96, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: eb1bf01e6c37cf1468c04d394a6491b4, type: 3}
+    quests:
+    - Level: 5
+      GoodsAmount: 40
+      Description: Ada 40 baris kotak paket untuk dirangkai dalam menyelesaikan misi
+        pesanan ini!
+      Narrative: Tok, Tok, Tok! bisa kirim 400 paket ke Jogja?
+      destination: 2
+      TransportationType: 2
+      Timer: 0
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 0
+  - CustomerName: Wawan
+    SpriteCharacter: {fileID: 21300000, guid: 50d9ccd5792b30941b1643e1283e2246, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 44c06472f19adc04b8502b6ede71e69b, type: 3}
+    quests:
+    - Level: 6
+      GoodsAmount: 40
+      Description: Ada 40 baris kotak paket untuk dirangkai dalam waktu kurang dari
+        4 menit untuk menyelesaikan misi pesanan ini!
+      Narrative: Tok, Tok, Tok! bisa kirim 400 paket ke Magelang dalam waktu 4 hari?
+      destination: 2
+      TransportationType: 2
+      Timer: 4
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 1
+  - CustomerName: Mega
+    SpriteCharacter: {fileID: 21300000, guid: 422f3f1e54f8ffc488be58c6de45cf0c, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 0f177667b0d4fad41a981ee8f7f13847, type: 3}
+    quests:
+    - Level: 7
+      GoodsAmount: 70
+      Description: Susun 70 baris kotak paket untuk menyelesaikan misi pesanan ini!
+      Narrative: Siap-siap guys! Ada 700 paket dikirim ke Pontianak!
+      destination: 3
+      TransportationType: 3
+      Timer: 0
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 0
+  - CustomerName: Kusuma
+    SpriteCharacter: {fileID: 21300000, guid: f57032ded034c034aace45f353003a95, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: d8187632f66bc1343a382842c48008fd, type: 3}
+    quests:
+    - Level: 8
+      GoodsAmount: 70
+      Description: Susun 70 baris kotak paket dalam waktu kurang dari 5 menit untuk
+        menyelesaikan misi pesanan ini.
+      Narrative: Siap-siap guys! Ada 700 paket dikirim ke Pontianak dalam waktu 5
+        hari!
+      destination: 3
+      TransportationType: 3
+      Timer: 5
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 1
+  - CustomerName: Sapta
+    SpriteCharacter: {fileID: 21300000, guid: dddf24b7af8d8d1439e5e5a8f0f02590, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: e494ce58e6157b842836fa80c8e0408c, type: 3}
+    quests:
+    - Level: 9
+      GoodsAmount: 100
+      Description: Susun 100 baris kotak paket untuk menyelesaikan misi pesanan ini!
+      Narrative: 1000 paket siap meluncur ke Papua!
+      destination: 4
+      TransportationType: 4
+      Timer: 0
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 0
+  - CustomerName: Bima
+    SpriteCharacter: {fileID: 21300000, guid: d2c2368bae9aaa647894cde263e6468a, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 9d9361d9baca04941b747f90687b4bf0, type: 3}
+    quests:
+    - Level: 10
+      GoodsAmount: 100
+      Description: Susun 100 baris kotak paket dalam waktu kurang dari 6 menit untuk
+        menyelesaikan misi pesanan ini.
+      Narrative: 1000 paket siap meluncur ke Merauke dalam waktu 6 hari!
+      destination: 4
+      TransportationType: 4
+      Timer: 6
+      IsActive: 0
+      IsFinished: 0
+      IsUsingTimer: 1

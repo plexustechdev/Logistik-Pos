@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DeliveryController : MonoBehaviour
 {
+
+    public static DeliveryController instance;
     [Header("References")]
     [SerializeField] private TrackManager _track;
     [SerializeField] private VehicleManager _vehicle;
@@ -18,10 +20,48 @@ public class DeliveryController : MonoBehaviour
 
     [Header("Delivery")]
     private Transform _startPosDelivery;
-    private Transform _middlePosDelivery;
+    [SerializeField] private Transform TEMP_middlePosDelivery;
     private Transform _endPosDelivery;
 
+    [Header("UI")]
+    [SerializeField] private GameObject popUpUI;
+    [SerializeField] private Camera _camera;
+
     private bool _isSmallMap;
+
+    private void Start()
+    {
+        instance = this;
+        // Example used cases for delivery and set up the destination
+        // SetDelivery(Transportation.MOTORCYCLE, 20, "Jogja");
+        // Shipment();
+    }
+
+    /// <summary>
+    /// Use me to set the delivery
+    /// </summary>
+    /// <param name="vehicle">enum vehicle</param>
+    /// <param name="goodsAmount">float goods amount</param>
+    /// <param name="destination">string destination</param>
+    public void SetDelivery(Transportation vehicle, float goodsAmount, string destination)
+    {
+        _delivery.Vehicle = vehicle;
+        _delivery.GoodsAmount = goodsAmount;
+        _delivery.Destination = destination;
+    }
+
+    /// <summary>
+    /// Use me for delivery shipment process
+    /// </summary>
+    public void Shipment()
+    {
+        _camera.enabled = true;
+
+        SetMap();
+
+        if (_delivery.Vehicle == Transportation.SHIPS) StartCoroutine(ShipsDelivery());
+        else StartCoroutine(DefaultDelivery());
+    }
 
     private void SetVehicle()
     {
@@ -39,37 +79,47 @@ public class DeliveryController : MonoBehaviour
         );
     }
 
-    private void Start()
-    {
-        SetMap();
-
-        if (_delivery.Vehicle == Transportation.SHIPS) StartCoroutine(ShipsDelivery());
-        else DefaultDelivery();
-    }
-
-    private void DefaultDelivery()
+    private IEnumerator DefaultDelivery()
     {
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
         SetTransportation();
         _track.Draw(_startPosDelivery, _endPosDelivery);
+
+        _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
+        _vehicle.SetEffect(true);
+
+        yield return new WaitForSeconds(3f);
         _vehicle.Move(_startPosDelivery, _endPosDelivery);
+
+        yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
+        _vehicle.SetEffect(false);
+        popUpUI.SetActive(true);
     }
 
-    public IEnumerator ShipsDelivery()
+    private IEnumerator ShipsDelivery()
     {
-        _middlePosDelivery = _destinationPos.GetDestination("Jakarta", _isSmallMap);
+        _startPosDelivery = _destinationPos.GetDestination("Jakarta", _isSmallMap);
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
 
-        SetVehicle("Van", _startPosDelivery, _middlePosDelivery);
-        _track.Draw(_startPosDelivery, _middlePosDelivery, _endPosDelivery);
-        _vehicle.Move(_startPosDelivery, _middlePosDelivery);
-
-        yield return new WaitForSeconds(2f);
+        _track.Draw(_startPosDelivery, TEMP_middlePosDelivery, _endPosDelivery);
         SetVehicle();
-        _vehicle.Move(_middlePosDelivery, _endPosDelivery);
+
+        _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
+        _vehicle.SetEffect(true);
+
+        yield return new WaitForSeconds(3f);
+        _vehicle.Move(_startPosDelivery, TEMP_middlePosDelivery);
+
+        yield return new WaitForSeconds(4f);
+        _vehicle.FlipVehicleLeft();
+        _vehicle.Move(TEMP_middlePosDelivery, _endPosDelivery);
+
+        yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
+        _vehicle.SetEffect(false);
+        popUpUI.SetActive(true);
     }
 
-    public void SetMap()
+    private void SetMap()
     {
         switch (_delivery.Vehicle)
         {
@@ -92,7 +142,7 @@ public class DeliveryController : MonoBehaviour
         }
     }
 
-    public void SetTransportation()
+    private void SetTransportation()
     {
         switch (_delivery.Vehicle)
         {
@@ -114,31 +164,10 @@ public class DeliveryController : MonoBehaviour
         }
     }
 
-    // public bool IsFlipX()
-    // {
-    //     Vector3 startPos = _startPosDelivery.position;
-    //     Vector3 endPos = _endPosDelivery.position;
-
-    //     var distance = endPos.x - startPos.x;
-
-    //     if (distance < 0) return false;
-    //     else return true;
-    // }
-
-    // public bool IsFlipY()
-    // {
-    //     Vector3 startPos = _startPosDelivery.position;
-    //     Vector3 endPos = _endPosDelivery.position;
-
-    //     var distance = endPos.y - startPos.y;
-
-    //     if (distance < 0) return false;
-    //     else return true;
-    // }
-
-    public bool IsFlip(float start, float end)
+    private bool IsFlip(float startPos, float endPos)
     {
-        var distance = end - start;
+        var distance = endPos - startPos;
+
         if (distance < 0) return false;
         else return true;
     }

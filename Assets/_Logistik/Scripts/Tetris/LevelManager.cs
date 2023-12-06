@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
@@ -10,8 +11,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private TMP_Text score_txt;
     [SerializeField] private TMP_Text time_txt;
+    [SerializeField] private TMP_Text quest_txt;
+    [SerializeField] private TMP_Text countdown_txt;
+
+    [SerializeField] private Camera mainCamera;
+
+    [Space(10)]
     [SerializeField] private SO_DataPreview dataPreview;
+    [SerializeField] private SO_Transportation dataTransportation;
     [SerializeField] private ResultScreen resultScreen;
+
 
 
 
@@ -20,18 +29,19 @@ public class LevelManager : MonoBehaviour
     [Space(10)]
 
     [Header("Level Params")]
-    public float targetRows;
+    public int targetRows;
     public float scorePerColumn;
 
     [Space(10)]
     [SerializeField] Board board;
 
     [SerializeField] private Image fillArmada;
+    [SerializeField] private Image siluetArmada;
     public float maxTimer;
 
     private float timeRemaining = 60;
     [SerializeField] private bool usingTimer = false;
-    [SerializeField] private bool isPlaying = false;
+    public bool isPlaying = false;
 
 
     public float score;
@@ -43,6 +53,11 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.K))
+        {
+            Play();
+        }
+
         if (!usingTimer)
             return;
 
@@ -64,17 +79,24 @@ public class LevelManager : MonoBehaviour
 
         SetTime(timeRemaining);
         Play();
+
     }
 
     public void Initialize()
     {
+        Debug.Log(QuestActiveController.ActiveQuest.Description);
         maxTimer = QuestActiveController.ActiveQuest.Timer * 60;
         usingTimer = QuestActiveController.ActiveQuest.IsUsingTimer;
+        quest_txt.text = QuestActiveController.ActiveQuest.Description;
+        targetRows = QuestActiveController.ActiveQuest.GoodsAmount;
+        siluetArmada.sprite = dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).Siluet;
+        fillArmada.sprite = dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).fillImg;
 
     }
 
-    public void Play(){
-        isPlaying = true;
+    public void Play()
+    {
+        StartCoroutine(Countdown(3));
     }
 
     public void Restart()
@@ -97,9 +119,21 @@ public class LevelManager : MonoBehaviour
     {
         this.score += score;
         score_txt.text = this.score.ToString();
-
+        FillBar(1f / (float)targetRows);
         CheckTarget();
-        FillBar(this.score);
+
+    }
+
+    IEnumerator Countdown(int i)
+    {
+        do
+        {
+            i--;
+            countdown_txt.text = (i + 1).ToString();
+            yield return new WaitForSeconds(1);
+        } while (i >= 0);
+        isPlaying = true;
+        countdown_txt.gameObject.SetActive(false);
     }
 
     private void CheckTarget()
@@ -108,7 +142,7 @@ public class LevelManager : MonoBehaviour
         {
             Finish();
         }
-        else if (timeRemaining <= 0)
+        else if (timeRemaining <= 0 && usingTimer)
         {
             GameOver();
         }
@@ -131,13 +165,21 @@ public class LevelManager : MonoBehaviour
     }
     public void FillBar(float amount)
     {
-        fillArmada.fillAmount = amount / 100;
+        fillArmada.fillAmount += amount;
     }
 
     public void SetNextPiecePreview(Tetromino tetromino)
     {
         Sprite sprite = dataPreview.GetPreview(tetromino);
         spriteRenderer.sprite = sprite;
+    }
+
+    public void KirimBarang()
+    {
+        mainCamera.enabled = false;
+        DeliveryController.instance.SetDelivery(dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).type, targetRows, QuestActiveController.ActiveQuest.destination.ToString());
+        DeliveryController.instance.Shipment();
+        GameManager.instance.UnloadScene(1);
     }
 
 }

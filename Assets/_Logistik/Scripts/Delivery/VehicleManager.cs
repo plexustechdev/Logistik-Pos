@@ -8,9 +8,18 @@ using UnityEngine;
 public class VehicleManager : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _vehicleSprite;
+    [SerializeField] private float timeToDeliver;
+
+    [Header("Animation")]
+    [SerializeField] public Animator _sonarFX;
 
     [Header("Vehicle Data")]
     [SerializeField] private List<Vehicle> vehicles = new List<Vehicle>();
+
+    public void SetEffect(bool isActive) => _sonarFX.gameObject.SetActive(isActive);
+    public float GetTimeDeliver => timeToDeliver;
+
+    public void FlipVehicleLeft() => _vehicleSprite.flipX = false;
 
     public void GetVehicle(string name, bool isFlipX, bool isFlipY)
     {
@@ -30,7 +39,7 @@ public class VehicleManager : MonoBehaviour
     public void Move(Transform startPosition, Transform endPosition)
     {
         transform.position = startPosition.position;
-        transform.DOMove(endPosition.position, 2f);
+        transform.DOMove(endPosition.position, timeToDeliver);
     }
 }
 
