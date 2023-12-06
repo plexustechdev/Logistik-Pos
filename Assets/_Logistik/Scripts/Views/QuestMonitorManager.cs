@@ -21,12 +21,19 @@ public class QuestMonitorManager : MonoBehaviour
     [SerializeField] private CustomerController customerController;
     [SerializeField] private CustomerCharacter customerCharacter;
 
-    private void OnEnable()
+    private void Start()
     {
         if (QuestActiveController.ActiveQuest is null) return;
 
         _customer.QuestActiveView();
+        SetActiveQuest(QuestActiveController.ActiveQuest.Description);
+        customerController.selectedCustomer = GameManager.instance.dataCustomer.Customers[QuestActiveController.ActiveQuest.Level - 1];
+        _customer.GetComponent<Image>().sprite = customerController.selectedCustomer.SpriteCharacter;
+        ShowAcceptButton(false);
+        _customer.GetComponent<Image>().color = Color.white;
         ShowActiveQuest();
+
+        print(customerController.selectedCustomer.SpriteCharacter);
     }
 
     public void ShowActiveQuest()

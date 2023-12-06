@@ -1,5 +1,4 @@
 using System.Linq;
-using Codice.Client.BaseCommands.BranchExplorer;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -69,7 +68,8 @@ public class Board : MonoBehaviour
         LevelManager.instance.Restart();
     }
 
-    public void ClearBoard(){
+    public void ClearBoard()
+    {
         this.tilemap.ClearAllTiles();
     }
 
@@ -79,9 +79,9 @@ public class Board : MonoBehaviour
         {
             Vector3Int tilePos = piece.cells[i] + piece.position;
             // for(int pattern = 0; pattern < piece.data.tile.Length; pattern++){
-                
+
             // }
-            this.tilemap.SetTile(tilePos, piece.data.tile[i]);           
+            this.tilemap.SetTile(tilePos, piece.data.tile[i]);
         }
     }
 

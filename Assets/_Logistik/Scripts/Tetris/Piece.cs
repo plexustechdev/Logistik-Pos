@@ -1,4 +1,3 @@
-using log4net.Core;
 using UnityEngine;
 
 public class Piece : MonoBehaviour

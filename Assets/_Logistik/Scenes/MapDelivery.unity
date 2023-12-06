@@ -1048,8 +1048,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1371868353}
-        m_TargetAssemblyTypeName: SceneHandler, Logistik
+      - m_Target: {fileID: 1436862502}
+        m_TargetAssemblyTypeName: SceneHandlerView, Logistik
         m_MethodName: btn_BackLoginScene
         m_Mode: 1
         m_Arguments:
@@ -1936,7 +1936,6 @@ GameObject:
   - component: {fileID: 1371868348}
   - component: {fileID: 1371868352}
   - component: {fileID: 1371868350}
-  - component: {fileID: 1371868353}
   m_Layer: 0
   m_Name: Delivery Manager
   m_TagString: Untagged
@@ -2025,13 +2024,69 @@ MonoBehaviour:
   - {fileID: 1815888197}
   - {fileID: 1034583947}
   - {fileID: 1002359657}
---- !u!114 &1371868353
-MonoBehaviour:
+--- !u!1001 &1436862501
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204016003336296943, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372917732117677912, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+      propertyPath: m_Name
+      value: Scene Handler
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+--- !u!114 &1436862502 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5721278884673696038, guid: 0e5edc5aa1b46ee4f8c4d7bb21913506, type: 3}
+  m_PrefabInstance: {fileID: 1436862501}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371868347}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a0355e13a6191245a86635c885fa976, type: 3}
@@ -2203,3 +2258,4 @@ SceneRoots:
   - {fileID: 911470576}
   - {fileID: 1371868349}
   - {fileID: 704682821}
+  - {fileID: 1436862501}

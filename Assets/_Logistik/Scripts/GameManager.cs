@@ -31,4 +31,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
         }
     }
+
+    public void ChangeSceneNormal(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
 }
