@@ -28,16 +28,15 @@ public class DataLogin
 public class ResponseRegister
 {
     public string Status { get; set; }
-    // public string Message { get; set; }
+    public List<Message> Message { get; set; }
     public DataRegister Data { get; set; }
     public string Error_code { get; set; }
 }
 
 public class Message
 {
-    public List<string> Email { get; set; }
-    public List<string> Phone_number { get; set; }
-    public List<string> Username { get; set; }
+    public string Key { get; set; }
+    public string Value { get; set; }
 }
 
 [Serializable]
