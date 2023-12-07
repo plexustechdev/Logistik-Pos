@@ -155,6 +155,7 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
+        AudioManager.instance.PlayWin(false);
         isPlaying = false;
         resultScreen.ShowSuccess(false);
         // board.GameOver();
@@ -163,6 +164,7 @@ public class LevelManager : MonoBehaviour
 
     public void Finish()
     {
+        AudioManager.instance.PlayWin(true);
         Debug.Log("Finish");
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
