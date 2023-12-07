@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
 
+    [SerializeField] private IntructionPopUp popUp;
+
     [Space(10)]
     [SerializeField] private SO_DataPreview dataPreview;
     [SerializeField] private SO_Transportation dataTransportation;
@@ -74,11 +76,13 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
+        popUp.SetContent(QuestActiveController.ActiveQuest.destination, targetRows, QuestActiveController.ActiveQuest.Timer);
+        popUp.gameObject.SetActive(true);
         Initialize();
         timeRemaining = maxTimer;
 
         SetTime(timeRemaining);
-        Play();
+        // Play();
 
     }
 
