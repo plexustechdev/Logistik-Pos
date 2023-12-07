@@ -17980,6 +17980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b653fbeff992d4bbb71bcd0fc0e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loginView: {fileID: 261543944}
+  _overworldView: {fileID: 486419129}
 --- !u!1 &1736840349
 GameObject:
   m_ObjectHideFlags: 0
