@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public SO_Customer dataCustomer;
     [SerializeField] private CustomerController customerController;
+    [SerializeField] private LoadingView loadingView;
 
     void Start()
     {
@@ -35,5 +36,11 @@ public class GameManager : MonoBehaviour
     public void ChangeSceneNormal(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void Btn_LoadingCanvas()
+    {
+        if (QuestActiveController.ActiveQuest != null)
+            loadingView.gameObject.SetActive(true);
     }
 }

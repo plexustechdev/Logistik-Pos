@@ -17,6 +17,10 @@ public class LoadingView : MonoBehaviour
     {
         _loadingImage.fillAmount += Time.deltaTime * 0.2f;
         AnimateBar();
+        if (_loadingImage.fillAmount == 1)
+        {
+            GameManager.instance.GoWerehouse();
+        }
     }
 
     private void AnimateBar()

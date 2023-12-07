@@ -34,8 +34,6 @@ public class RegisterView : MonoBehaviour
                 _loadingPanel.SetActive(false);
 
                 ResponseRegister response = JsonConvert.DeserializeObject<ResponseRegister>(result);
-                print(response.Status);
-                print(response.Error_code);
                 if (response.Status == "success")
                 {
                     _popUpAuth.SetWarning("Silahkan cek email anda untuk verifikasi akun");
@@ -44,7 +42,15 @@ public class RegisterView : MonoBehaviour
                 }
                 else
                 {
-                    _popUpAuth.SetWarning("Akun telah terdaftar!");
+                    foreach (var message in response.Message)
+                    {
+                        if (message.Key == "email")
+                            _popUpAuth.SetWarning("Email telah terdaftar!");
+                        else if (message.Key == "phone_number")
+                            _popUpAuth.SetWarning("Nomor telpon tidak valid!\nSilahkan masukkan nomor telepon\nminimal 10 digit");
+                        else if (message.Key == "username")
+                            _popUpAuth.SetWarning("Username telah terdaftar!");
+                    }
                 }
             });
         }
