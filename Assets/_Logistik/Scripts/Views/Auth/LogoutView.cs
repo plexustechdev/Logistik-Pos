@@ -9,20 +9,16 @@ public class LogoutView : MonoBehaviour
 
     private void Start()
     {
-        if (AuthenticationSession.GetCachedToken != null)
+        if (AuthenticationSession.GetCachedToken != string.Empty)
         {
-            SetLogged(true);
-        }
-        else
-        {
-            SetLogged(false);
+            SetLogged();
         }
     }
 
-    private void SetLogged(bool isLogin)
+    private void SetLogged()
     {
-        _loginView.SetActive(!isLogin);
-        _overworldView.SetActive(isLogin);
+        _loginView.SetActive(false);
+        _overworldView.SetActive(true);
     }
 
     public void Btn_Logout()
