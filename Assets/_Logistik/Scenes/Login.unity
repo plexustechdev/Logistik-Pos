@@ -2798,7 +2798,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7a920cc4669b984dbae24755f57b2ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa9a8a459347b142bd2f21ee783b184, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5116,10 +5116,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1261211316}
+  - {fileID: 190238462}
   - {fileID: 220935949}
   - {fileID: 1929643235}
   - {fileID: 1235128891}
-  - {fileID: 190238462}
   - {fileID: 147544411}
   - {fileID: 1800082253}
   m_Father: {fileID: 486419130}
@@ -5681,7 +5681,7 @@ PrefabInstance:
     - target: {fileID: 8078185357568797212, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0da726e220b1ba9419c109469c4cd575, type: 3}
+      objectReference: {fileID: 21300000, guid: d493be3882f3bf24b85897031dec5c57, type: 3}
     - target: {fileID: 8078185357568797212, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -8872,8 +8872,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueList:
-  - Selamat sekarang anda sedang ada di halaman <font="C800">office!</font>
-  - Selamat sekarang anda sedang ada di halaman <font="C800">office!</font>
+  - 'Selamat datang di <font="C800">office</font>.
+
+    Yuk siap-siap untuk memulai
+    misi pengiriman!
+
+
+
+    Silakan pilih pesanan dari pelanggan yang telah disiapkan,
+    ya!'
+  - 'Selamat datang di <font="C800">office</font>!
+
+    Yuk siap-siap untuk memulai
+    misi pengiriman!
+
+
+
+    Silakan pilih pesanan dari pelanggan yang telah disiapkan,
+    ya!'
 --- !u!4 &697455283
 Transform:
   m_ObjectHideFlags: 0
@@ -10675,7 +10691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805645269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16431,6 +16447,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueList:
+  - 'Selamat datang di game "Loquestic"!
+
+    Loquestic ini adalah sebuah minigame
+    yang terdiri dari Logistik, Quest, dan Taktik sebagai pengenalan ilmu logistik
+    yang menghibur dan menyenangkan.
+
+
+
+    Kita simak dulu sejarah dari PT Pos Indonesia
+    yuk!'
   - Pada 26 Agustus 1746, G.W Baron van Imhoff, Gubernur Jenderal VOC, mendirikan
     kantor pos pertama di Batavia (Jakarta). Jawatan PTT (Post, Telegraph dan Telephone),
     berubah status menjadi PT Pos Indonesia (Persero) pada 20 Juni 1995, kini memiliki
@@ -16443,18 +16469,14 @@ MonoBehaviour:
   - Logistik, sebagai bagian dari Supply Chain Management (SCM) yang mencakup aktivitas
     bisnis dari perencanaan hingga distribusi produk. Berfokus pada perpindahan,
     penyimpanan, dan pengiriman barang dengan berbagai jenis transportasi.
-  - Loquestic ini adalah sebuah minigame yang terdiri dari logistik, quest, dan taktik
-    sebagai pengenalan ilmu logistik yang menghibur dan menyenangkan.
-  - 'Selamat sekarang anda sedang ada di halaman <font="C800">Overworld!</font>
-
-    Di
-    sebelah kanan mu merupakan <font="C800">Warehouse</font> dan di sebelah kiri
-    mu adalah <font="C800">Office.</font>
+  - 'Di sebelah kananmu ada <font="C800">warehouse</font> sebagai tempat aktivitas
+    logistik, sementara di sebelah kirimu terdapat <font="C800">office</font> yang
+    menjadi pusat operasional.
 
 
 
-    Untuk memulai misi pengantaran paket
-    silahkan masuk ke <font="C800">Office!</font>'
+    Untuk memulai misi pengantaran, silahkan masuk
+    ke <font="C800">office</font> dulu ya!'
 --- !u!4 &1359351718
 Transform:
   m_ObjectHideFlags: 0
@@ -16527,7 +16549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 031f049e3082a6d43858bc8a54de691b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d037795ef850514eb1f47d456ab0f56, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20816,7 +20838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c6d096967f8aee4a8e27a88e2d61d72, type: 3}
+  m_Sprite: {fileID: -1449828288, guid: f3f1f274fbef2ec428ae306d484f3020, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24540,7 +24562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2135002628
 RectTransform:
   m_ObjectHideFlags: 0
