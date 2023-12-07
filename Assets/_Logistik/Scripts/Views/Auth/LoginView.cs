@@ -19,13 +19,13 @@ public class LoginView : MonoBehaviour
 
     public void Btn_Login()
     {
-        _loadingPanel.SetActive(true);
-
         string username = _username.text;
         string password = _password.text;
 
         if (username != string.Empty && password != string.Empty)
         {
+            _loadingPanel.SetActive(true);
+
             FormUtils.SetFormLogin(username, password);
             Authentication.instance.PostData(Gateway.URI + Path.Login, FormUtils.GetForm, (result) =>
             {
@@ -41,7 +41,7 @@ public class LoginView : MonoBehaviour
                 }
                 else
                 {
-                    if (response.Message == ErrorCode.USERNAME_OR_PASSWORD_INVALID.ToString())
+                    if (response.Error_code == ErrorCode.USERNAME_OR_PASSWORD_INVALID.ToString())
                         _popUpAuth.SetWarning("Username dan email tidak sesuai!\nSilahkan masuk kembali!");
 
                     if (response.Error_code == ErrorCode.NOT_VERIFIED.ToString())

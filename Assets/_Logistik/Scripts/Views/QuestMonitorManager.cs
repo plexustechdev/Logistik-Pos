@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class QuestMonitorManager : MonoBehaviour
 {
+    public static QuestMonitorManager instance;
+
     public Quest availableQuest;
     [SerializeField] private CustomerCharacter _customer;
     [SerializeField] private QuestActiveView _questActiveView;
@@ -23,6 +25,7 @@ public class QuestMonitorManager : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         if (QuestActiveController.ActiveQuest is null) return;
 
         _customer.QuestActiveView();
@@ -89,7 +92,6 @@ public class QuestMonitorManager : MonoBehaviour
         QuestActiveController.SetActiveQuest();
         Debug.Log(QuestActiveController.ActiveQuest);
         customerController.selectedCustomer = null;
-
 
         HideActiveQuest();
 

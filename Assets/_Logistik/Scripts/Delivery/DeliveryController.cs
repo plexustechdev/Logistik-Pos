@@ -57,10 +57,9 @@ public class DeliveryController : MonoBehaviour
     /// <summary>
     /// Use me for delivery shipment process
     /// </summary>
-    public void Shipment(float score)
+    public void Shipment()
     {
         _camera.enabled = true;
-        currentScore = score;
 
         SetMap();
 
@@ -123,8 +122,7 @@ public class DeliveryController : MonoBehaviour
         _vehicle.SetEffect(false);
         popUpUI.SetActive(true);
 
-        apiManager.PostEXP((int)currentScore);
-        
+        // apiManager.PostEXP((int)currentScore);
     }
 
     private void SetMap()
@@ -178,6 +176,11 @@ public class DeliveryController : MonoBehaviour
 
         if (distance < 0) return false;
         else return true;
+    }
+
+    public void FinishQuest()
+    {
+        QuestMonitorManager.instance.CancelOrder();
     }
 }
 

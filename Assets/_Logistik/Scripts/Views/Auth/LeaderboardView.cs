@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LeaderboardView : MonoBehaviour
 {
-    [SerializeField] private GameObject _leaderboardObj;
     [SerializeField] private LeaderboardChildView _prefabGO;
     [SerializeField] private Transform _parent;
     [SerializeField] private AuthNotifView _popUp;

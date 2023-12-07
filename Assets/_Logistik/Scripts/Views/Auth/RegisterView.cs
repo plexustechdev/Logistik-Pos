@@ -19,8 +19,6 @@ public class RegisterView : MonoBehaviour
 
     public void Btn_Register()
     {
-        _loadingPanel.SetActive(true);
-
         string username = _username.text;
         string phoneNumber = _phoneNumber.text;
         string email = _email.text;
@@ -28,6 +26,8 @@ public class RegisterView : MonoBehaviour
 
         if (username != string.Empty && phoneNumber != string.Empty && email != string.Empty && password != string.Empty)
         {
+            _loadingPanel.SetActive(true);
+
             FormUtils.SetFormRegister(username, phoneNumber, email, password);
             Authentication.instance.PostData(Gateway.URI + Path.Register, FormUtils.GetForm, (result) =>
             {

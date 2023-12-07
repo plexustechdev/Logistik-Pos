@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class APIManager : MonoBehaviour
 {
-    public string url = "https://doddi.plexustechdev.com/logistic-quest/laravel/public/api/";
+    public string url = Gateway.URI;
     [SerializeField] private string TOKEN;
 
     public void PostEXP(int score)
@@ -18,7 +18,7 @@ public class APIManager : MonoBehaviour
     {
         using (UnityWebRequest request = UnityWebRequest.Post(string.Format("{0}wallets", url), form))
         {
-            request.SetRequestHeader("token", TOKEN);
+            request.SetRequestHeader("Authorization", "Bearer " + AuthenticationSession.GetCachedToken);
             yield return request.SendWebRequest();
 
             if (request.result != UnityWebRequest.Result.Success)
