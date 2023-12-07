@@ -28,4 +28,5 @@ public class Quest
     public bool IsActive;
     public bool IsFinished;
     public bool IsUsingTimer;
+    public Sprite spriteBg;
 }

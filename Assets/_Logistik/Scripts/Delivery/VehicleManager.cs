@@ -16,6 +16,8 @@ public class VehicleManager : MonoBehaviour
     [Header("Vehicle Data")]
     [SerializeField] private List<Vehicle> vehicles = new List<Vehicle>();
 
+    
+
     public void SetEffect(bool isActive) => _sonarFX.gameObject.SetActive(isActive);
     public float GetTimeDeliver => timeToDeliver;
 

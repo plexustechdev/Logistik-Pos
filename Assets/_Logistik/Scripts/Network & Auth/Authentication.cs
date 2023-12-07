@@ -6,48 +6,124 @@ using UnityEngine.Networking;
 
 public class Authentication : MonoBehaviour
 {
+    public static Authentication instance;
+
     private string _url;
     private WWWForm _data;
-    private Response _response;
 
-    public Response GetResponse => _response;
+    private void Awake()
+    {
+        instance = this;
+    }
 
-    private IEnumerator Post()
+    private void Start()
+    {
+        if (AuthenticationSession.GetCachedToken != null)
+        {
+            // overworld
+        }
+    }
+
+    private IEnumerator Post(Action<string> callback)
     {
         UnityWebRequest request = UnityWebRequest.Post(_url, _data);
 
         yield return request.SendWebRequest();
 
-        if (request.result == UnityWebRequest.Result.ConnectionError) Debug.Log(request.error);
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(request.error);
+            yield return null;
+        }
 
-        var result = JsonConvert.DeserializeObject<Response>(request.downloadHandler.text);
-
-        _response = result;
+        callback(request.downloadHandler.text);
     }
 
-    public void PostData(string url, WWWForm data)
+    private IEnumerator PostUsingToken(Action<string> callback)
+    {
+        UnityWebRequest request = UnityWebRequest.Post(_url, _data);
+        request.SetRequestHeader("Authorization", "Bearer " + AuthenticationSession.GetCachedToken);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(request.error);
+            yield return null;
+        }
+
+        callback(request.downloadHandler.text);
+    }
+
+    public void PostData(string url, WWWForm data, Action<string> callback)
     {
         _url = url;
         _data = data;
+        StartCoroutine(Post(callback));
+    }
 
-        StartCoroutine(Post());
+    public void PostDataToken(string url, WWWForm data, Action<string> callback)
+    {
+        _url = url;
+        _data = data;
+        StartCoroutine(PostUsingToken(callback));
+    }
+
+    private IEnumerator Get(Action<string> callback)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(_url);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(request.error);
+            yield return null;
+        }
+
+        callback(request.downloadHandler.text);
+    }
+
+    private IEnumerator GetUsingToken(Action<string> callback)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(_url);
+        request.SetRequestHeader("authorization", "Bearer " + AuthenticationSession.GetCachedToken);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(request.error);
+            yield return null;
+        }
+
+        callback(request.downloadHandler.text);
+    }
+
+    public void GetData(string url, Action<string> callback)
+    {
+        _url = url;
+        StartCoroutine(Get(callback));
+    }
+
+    public void GetDataToken(string url, Action<string> callback)
+    {
+        _url = url;
+        StartCoroutine(GetUsingToken(callback));
     }
 }
 
-[Serializable]
-public class Response
+public static class AuthenticationSession
 {
-    public string Status;
-    public string Message;
-    public User GetUser;
+    private static string SESSION_TOKEN_KEY = "session_token";
+
+    public static string GetCachedToken => PlayerPrefs.GetString(SESSION_TOKEN_KEY);
+    public static void CacheToken(string sessionToken) => PlayerPrefs.SetString(SESSION_TOKEN_KEY, sessionToken);
+    public static void ClearCachedToken() => PlayerPrefs.DeleteKey(SESSION_TOKEN_KEY);
 }
 
-[Serializable]
-public class User
+public enum ErrorCode
 {
-    public string Id;
-    public string Username;
-    public string PhoneNumber;
-    public string Email;
-    public string Token;
+    NOT_VERIFIED,
+    USERNAME_OR_PASSWORD_INVALID
 }

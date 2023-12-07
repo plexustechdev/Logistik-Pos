@@ -2,13 +2,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using Newtonsoft.Json;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
+    [Header("Loading")]
+    [SerializeField] private GameObject _loadingView;
+
     [Header("UI")]
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer bgSprite;
     [SerializeField] private TMP_Text score_txt;
     [SerializeField] private TMP_Text time_txt;
     [SerializeField] private TMP_Text quest_txt;
@@ -20,11 +25,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private SO_DataPreview dataPreview;
     [SerializeField] private SO_Transportation dataTransportation;
     [SerializeField] private ResultScreen resultScreen;
-
-
-
-
-
 
     [Space(10)]
 
@@ -91,6 +91,7 @@ public class LevelManager : MonoBehaviour
         targetRows = QuestActiveController.ActiveQuest.GoodsAmount;
         siluetArmada.sprite = dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).Siluet;
         fillArmada.sprite = dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).fillImg;
+        bgSprite.sprite = QuestActiveController.ActiveQuest.spriteBg;
 
     }
 
@@ -161,8 +162,21 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Finish");
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
-        resultScreen.ShowSuccess(true);
+        _loadingView.SetActive(true);
+
+        FormUtils.SetFormWallet((int)score);
+        Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>
+        {
+            _loadingView.SetActive(false);
+            resultScreen.ShowSuccess(true);
+            ResponseWallet response = JsonConvert.DeserializeObject<ResponseWallet>(result);
+
+            if (response.Status == "success") print("success");
+            else print("error");
+        });
+        // DeliveryController.instance.Shipment(score);
     }
+
     public void FillBar(float amount)
     {
         fillArmada.fillAmount += amount;
@@ -181,5 +195,4 @@ public class LevelManager : MonoBehaviour
         DeliveryController.instance.Shipment();
         GameManager.instance.UnloadScene(1);
     }
-
 }

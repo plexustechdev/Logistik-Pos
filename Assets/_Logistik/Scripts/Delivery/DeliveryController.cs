@@ -27,7 +27,11 @@ public class DeliveryController : MonoBehaviour
     [SerializeField] private GameObject popUpUI;
     [SerializeField] private Camera _camera;
 
+    [Header("Ref")]
+    [SerializeField] private APIManager apiManager;
+
     private bool _isSmallMap;
+    public float currentScore;
 
     private void Start()
     {
@@ -117,6 +121,8 @@ public class DeliveryController : MonoBehaviour
         yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
         _vehicle.SetEffect(false);
         popUpUI.SetActive(true);
+
+        // apiManager.PostEXP((int)currentScore);
     }
 
     private void SetMap()
@@ -170,6 +176,11 @@ public class DeliveryController : MonoBehaviour
 
         if (distance < 0) return false;
         else return true;
+    }
+
+    public void FinishQuest()
+    {
+        QuestMonitorManager.instance.CancelOrder();
     }
 }
 

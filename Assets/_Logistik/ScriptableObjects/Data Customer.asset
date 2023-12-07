@@ -27,6 +27,7 @@ MonoBehaviour:
       IsActive: 1
       IsFinished: 0
       IsUsingTimer: 0
+      spriteBg: {fileID: 21300000, guid: 21a4289cbf2381142b4208aff6612615, type: 3}
   - CustomerName: Nina
     SpriteCharacter: {fileID: 21300000, guid: 26df6781eebedcb4d9b6eb6507aa055b, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: c9feb262f2aff764a9a66f26f996f4fa, type: 3}
@@ -42,6 +43,7 @@ MonoBehaviour:
       IsActive: 1
       IsFinished: 0
       IsUsingTimer: 1
+      spriteBg: {fileID: 21300000, guid: 74e3392f6a5a3164e8c5ff9ae2f05e62, type: 3}
   - CustomerName: Linda
     SpriteCharacter: {fileID: 21300000, guid: 3691176a9791e9d41bc893b3204f0db7, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: 02469ddfd61ce424cb93a5a5b81d91ca, type: 3}
@@ -57,6 +59,7 @@ MonoBehaviour:
       IsActive: 1
       IsFinished: 0
       IsUsingTimer: 0
+      spriteBg: {fileID: 21300000, guid: 62b377085236acc448cd9d9d24b50d04, type: 3}
   - CustomerName: Reni
     SpriteCharacter: {fileID: 21300000, guid: 583050b2198bb7b499f6a89d2bfec663, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: 3a47ef1dfd046e841b64b545ea6ac0ff, type: 3}
@@ -72,6 +75,7 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 1
+      spriteBg: {fileID: 21300000, guid: 21a4289cbf2381142b4208aff6612615, type: 3}
   - CustomerName: Sugeng
     SpriteCharacter: {fileID: 21300000, guid: 98725af1e379c1f478ca14e72e700a96, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: eb1bf01e6c37cf1468c04d394a6491b4, type: 3}
@@ -87,6 +91,7 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 0
+      spriteBg: {fileID: 21300000, guid: 74e3392f6a5a3164e8c5ff9ae2f05e62, type: 3}
   - CustomerName: Wawan
     SpriteCharacter: {fileID: 21300000, guid: 50d9ccd5792b30941b1643e1283e2246, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: 44c06472f19adc04b8502b6ede71e69b, type: 3}
@@ -102,6 +107,7 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 1
+      spriteBg: {fileID: 21300000, guid: 62b377085236acc448cd9d9d24b50d04, type: 3}
   - CustomerName: Mega
     SpriteCharacter: {fileID: 21300000, guid: 422f3f1e54f8ffc488be58c6de45cf0c, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: 0f177667b0d4fad41a981ee8f7f13847, type: 3}
@@ -116,6 +122,7 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 0
+      spriteBg: {fileID: 21300000, guid: 21a4289cbf2381142b4208aff6612615, type: 3}
   - CustomerName: Kusuma
     SpriteCharacter: {fileID: 21300000, guid: f57032ded034c034aace45f353003a95, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: d8187632f66bc1343a382842c48008fd, type: 3}
@@ -132,6 +139,7 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 1
+      spriteBg: {fileID: 21300000, guid: 74e3392f6a5a3164e8c5ff9ae2f05e62, type: 3}
   - CustomerName: Sapta
     SpriteCharacter: {fileID: 21300000, guid: dddf24b7af8d8d1439e5e5a8f0f02590, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: e494ce58e6157b842836fa80c8e0408c, type: 3}
@@ -146,6 +154,7 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 0
+      spriteBg: {fileID: 21300000, guid: 62b377085236acc448cd9d9d24b50d04, type: 3}
   - CustomerName: Bima
     SpriteCharacter: {fileID: 21300000, guid: d2c2368bae9aaa647894cde263e6468a, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: 9d9361d9baca04941b747f90687b4bf0, type: 3}
@@ -161,3 +170,4 @@ MonoBehaviour:
       IsActive: 0
       IsFinished: 0
       IsUsingTimer: 1
+      spriteBg: {fileID: 21300000, guid: 21a4289cbf2381142b4208aff6612615, type: 3}
