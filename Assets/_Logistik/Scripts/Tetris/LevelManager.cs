@@ -180,7 +180,7 @@ public class LevelManager : MonoBehaviour
     {
         mainCamera.enabled = false;
         DeliveryController.instance.SetDelivery(dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).type, targetRows, QuestActiveController.ActiveQuest.destination.ToString());
-        DeliveryController.instance.Shipment();
+        DeliveryController.instance.Shipment(score);
         GameManager.instance.UnloadScene(1);
     }
 
