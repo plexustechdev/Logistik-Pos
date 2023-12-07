@@ -92,6 +92,7 @@ public class LeaderboardPeringkat
 
 public class LeaderboardData
 {
+    public string Username { get; set; }
     public int PlayerId { get; set; }
     public string Total_amount { get; set; }
     public int Rank { get; set; }

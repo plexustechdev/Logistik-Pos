@@ -10,14 +10,19 @@ public class ForgotPasswordView : MonoBehaviour
 
     [SerializeField] private TMP_InputField _emailTMP;
     [SerializeField] private AuthNotifView _popUp;
+    [SerializeField] private GameObject _loadingPanel;
 
     public void Btn_ForgotPassword()
     {
+        _loadingPanel.SetActive(true);
+
         string email = _emailTMP.text;
 
         FormUtils.SetFormForgotPassword(email);
         Authentication.instance.PostData(Gateway.URI + Path.ForgotPassword, FormUtils.GetForm, (result) =>
         {
+            _loadingPanel.SetActive(false);
+
             ResponseForgotPassword response = JsonConvert.DeserializeObject<ResponseForgotPassword>(result);
             if (response.Status == "success")
             {

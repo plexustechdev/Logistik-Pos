@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LogoutView : MonoBehaviour
 {
-    [SerializeField] private GameObject _loginView, _overworldView;
+    [SerializeField] private GameObject _loginView, _overworldView, _loadingPanel;
 
     private void Start()
     {
@@ -23,8 +23,12 @@ public class LogoutView : MonoBehaviour
 
     public void Btn_Logout()
     {
+        _loadingPanel.SetActive(true);
+
         Authentication.instance.GetDataToken(Gateway.URI + Path.Logout, (result) =>
         {
+            _loadingPanel.SetActive(false);
+
             ResponseLogout response = JsonConvert.DeserializeObject<ResponseLogout>(result);
 
             if (response.Status == "success")

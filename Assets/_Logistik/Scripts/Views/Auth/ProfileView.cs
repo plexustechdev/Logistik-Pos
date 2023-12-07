@@ -36,7 +36,6 @@ public class ProfileView : MonoBehaviour
             {
                 _walletTMP.text = "0/1000000";
             }
-            _profileObj.SetActive(true);
         });
     }
 }

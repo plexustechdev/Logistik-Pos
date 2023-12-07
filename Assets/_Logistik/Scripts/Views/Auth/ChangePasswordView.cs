@@ -9,16 +9,20 @@ public class ChangePasswordView : MonoBehaviour
     [SerializeField] private TMP_InputField _oldPasswordTMP;
     [SerializeField] private TMP_InputField _newPasswordTMP;
     [SerializeField] private AuthNotifView _popUp;
-    [SerializeField] private GameObject _objView;
+    [SerializeField] private GameObject _objView, _loadingPanel;
 
     public void Btn_ChangePassword()
     {
+        _loadingPanel.SetActive(true);
+
         string oldPassword = _oldPasswordTMP.text;
         string newPassword = _newPasswordTMP.text;
 
         FormUtils.SetFormChangePassword(oldPassword, newPassword);
         Authentication.instance.PostDataToken(Gateway.URI + Path.ChangePassword, FormUtils.GetForm, (result) =>
         {
+            _loadingPanel.SetActive(false);
+
             ResponseChangePassword response = JsonConvert.DeserializeObject<ResponseChangePassword>(result);
             if (response.Status == "success")
             {

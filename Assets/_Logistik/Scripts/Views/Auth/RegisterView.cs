@@ -13,11 +13,14 @@ public class RegisterView : MonoBehaviour
     [SerializeField] private TMP_InputField _password;
 
     [Header("Pop Up")]
+    [SerializeField] private GameObject _loadingPanel;
     [SerializeField] private AuthNotifView _popUpAuth;
     [SerializeField] private GameObject _registrationPanel, _loginPanel;
 
     public void Btn_Register()
     {
+        _loadingPanel.SetActive(true);
+
         string username = _username.text;
         string phoneNumber = _phoneNumber.text;
         string email = _email.text;
@@ -28,6 +31,8 @@ public class RegisterView : MonoBehaviour
             FormUtils.SetFormRegister(username, phoneNumber, email, password);
             Authentication.instance.PostData(Gateway.URI + Path.Register, FormUtils.GetForm, (result) =>
             {
+                _loadingPanel.SetActive(false);
+
                 ResponseRegister response = JsonConvert.DeserializeObject<ResponseRegister>(result);
                 print(response.Status);
                 print(response.Error_code);

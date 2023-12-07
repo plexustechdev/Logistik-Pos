@@ -17,14 +17,13 @@ public class LeaderboardView : MonoBehaviour
             ResponseLeaderboard response = JsonConvert.DeserializeObject<ResponseLeaderboard>(result);
             if (response.Status == "success")
             {
-                _leaderboardObj.SetActive(true);
                 if (response.Data is null) print("no leaderboard data");
 
                 foreach (var data in response.Data)
                 {
                     LeaderboardChildView obj = Instantiate(_prefabGO, _parent);
 
-                    obj.SetLeaderboard(data.Rank.ToString(), "Username", data.Total_amount);
+                    obj.SetLeaderboard(data.Rank.ToString(), data.Username, data.Total_amount);
                 }
             }
             else
