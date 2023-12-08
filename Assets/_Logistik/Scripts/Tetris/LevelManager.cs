@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text time_txt;
     [SerializeField] private TMP_Text quest_txt;
     [SerializeField] private TMP_Text countdown_txt;
+    [SerializeField] private TextMeshProUGUI exp_txt;
 
     [SerializeField] private Camera mainCamera;
 
@@ -76,7 +77,7 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
-        popUp.SetContent(QuestActiveController.ActiveQuest.destination, targetRows, QuestActiveController.ActiveQuest.Timer);
+        popUp.SetContent(QuestActiveController.ActiveQuest.destination, QuestActiveController.ActiveQuest.GoodsAmount, QuestActiveController.ActiveQuest.Timer);
         popUp.gameObject.SetActive(true);
         Initialize();
         timeRemaining = maxTimer;
@@ -169,6 +170,7 @@ public class LevelManager : MonoBehaviour
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
         _loadingView.SetActive(true);
+        exp_txt.text = "Exp : " + score.ToString();
 
         FormUtils.SetFormWallet((int)score);
         Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>

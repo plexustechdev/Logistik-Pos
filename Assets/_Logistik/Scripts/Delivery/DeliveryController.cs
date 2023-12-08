@@ -30,6 +30,9 @@ public class DeliveryController : MonoBehaviour
     [Header("Ref")]
     [SerializeField] private APIManager apiManager;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _bgmAudio;
+
     private bool _isSmallMap;
     public float currentScore;
 
@@ -60,6 +63,7 @@ public class DeliveryController : MonoBehaviour
     public void Shipment()
     {
         _camera.enabled = true;
+        _bgmAudio.Play();
 
         SetMap();
 
@@ -180,7 +184,8 @@ public class DeliveryController : MonoBehaviour
 
     public void FinishQuest()
     {
-        QuestMonitorManager.instance.CancelOrder();
+        // QuestMonitorManager.instance.CancelOrder();
+        QuestActiveController.isFinished = true;
     }
 }
 

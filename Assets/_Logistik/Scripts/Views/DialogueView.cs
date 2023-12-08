@@ -21,11 +21,6 @@ public class DialogueView : MonoBehaviour
         else DeactivateDialogue(panelDialogue);
     }
 
-    public void ShowDialogue(DialogueView dialogueView)
-    {
-        dialogueView.gameObject.SetActive(isShowing);
-    }
-
     public void ShowDialogue()
     {
         if (isShowing) _dialogueTmp.text = _dialogueData.GetDialogue;

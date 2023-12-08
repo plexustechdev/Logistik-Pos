@@ -29,8 +29,8 @@ MonoBehaviour:
       IsUsingTimer: 0
       spriteBg: {fileID: 21300000, guid: 21a4289cbf2381142b4208aff6612615, type: 3}
   - CustomerName: Nina
-    SpriteCharacter: {fileID: 21300000, guid: 26df6781eebedcb4d9b6eb6507aa055b, type: 3}
-    SpriteThumbnail: {fileID: 21300000, guid: c9feb262f2aff764a9a66f26f996f4fa, type: 3}
+    SpriteCharacter: {fileID: 21300000, guid: 17458bd3419bbe548a1f0684398c6d8b, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 9916f0162c3ec22448b0543e59176228, type: 3}
     quests:
     - Level: 2
       GoodsAmount: 10
@@ -45,8 +45,8 @@ MonoBehaviour:
       IsUsingTimer: 1
       spriteBg: {fileID: 21300000, guid: 74e3392f6a5a3164e8c5ff9ae2f05e62, type: 3}
   - CustomerName: Linda
-    SpriteCharacter: {fileID: 21300000, guid: 3691176a9791e9d41bc893b3204f0db7, type: 3}
-    SpriteThumbnail: {fileID: 21300000, guid: 02469ddfd61ce424cb93a5a5b81d91ca, type: 3}
+    SpriteCharacter: {fileID: 21300000, guid: 42b9126bb770a3a4cb5d1db5f462055e, type: 3}
+    SpriteThumbnail: {fileID: 21300000, guid: 73f21bf8827c4ef46825aebfb659d8bd, type: 3}
     quests:
     - Level: 3
       GoodsAmount: 20

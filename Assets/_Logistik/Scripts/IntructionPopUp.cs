@@ -19,11 +19,11 @@ public class IntructionPopUp : MonoBehaviour
         string teks = "";
         if (QuestActiveController.ActiveQuest.Level % 2 == 1)
         {
-            teks = string.Format("Untuk mengirimkan {0} paket ke {1} kamu harus:{2} Menyusun {3} baris kotak paket.", goodsAmount * 10, destinasi.ToString(), Environment.NewLine, goodsAmount);
+            teks = string.Format("Untuk mengirimkan {0} paket ke {1} kamu harus:{2} Menyusun {3} baris kotak paket.", (goodsAmount * 10).ToString(), destinasi.ToString(), Environment.NewLine, goodsAmount.ToString());
         }
         else
         {
-            teks = string.Format("Untuk mengirimkan {0} paket ke {1} paling lambat {2} hari kamu harus:{3} Menyusun {4} baris kotak paket.", goodsAmount * 10, destinasi.ToString(), time, Environment.NewLine, goodsAmount);
+            teks = string.Format("Untuk mengirimkan {0} paket ke {1} paling lambat {2} hari kamu harus:{3} Menyusun {4} baris kotak paket.", (goodsAmount * 10).ToString(), destinasi.ToString(), time.ToString(), Environment.NewLine, goodsAmount.ToString());
         }
 
 

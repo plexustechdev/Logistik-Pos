@@ -26,6 +26,7 @@ public class QuestMonitorManager : MonoBehaviour
     private void Start()
     {
         instance = this;
+        if (QuestActiveController.isFinished) CancelOrder();
         if (QuestActiveController.ActiveQuest is null) return;
 
         _customer.QuestActiveView();
@@ -90,6 +91,7 @@ public class QuestMonitorManager : MonoBehaviour
         availableQuest.IsActive = false;
         // questController.SetActiveQuest(null);
         QuestActiveController.SetActiveQuest();
+        QuestActiveController.isFinished = false;
         Debug.Log(QuestActiveController.ActiveQuest);
         customerController.selectedCustomer = null;
 
