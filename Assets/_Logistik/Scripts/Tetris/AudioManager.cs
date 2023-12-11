@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioController : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioController instance;
     public AudioSource audioSource;
     public AudioSource as_WinLose;
     public AudioSource backsound;
@@ -11,21 +11,27 @@ public class AudioManager : MonoBehaviour
     public AudioClip audioLost;
 
 
-    void Start(){
+    void Start()
+    {
         instance = this;
     }
 
-    public void PlayPecah(){
+    public void PlayPecah()
+    {
         audioSource.clip = audioPecah;
         audioSource.Play();
     }
 
-    public void PlayWin(bool val){
+    public void PlayWin(bool val)
+    {
         backsound.Stop();
         AudioClip clip = audioWin;
-        if(val){
+        if (val)
+        {
             as_WinLose.clip = clip;
-        }else{
+        }
+        else
+        {
             as_WinLose.clip = audioLost;
         }
 

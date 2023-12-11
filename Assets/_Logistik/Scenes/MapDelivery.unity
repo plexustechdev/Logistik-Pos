@@ -1948,7 +1948,6 @@ GameObject:
   - component: {fileID: 1371868348}
   - component: {fileID: 1371868352}
   - component: {fileID: 1371868350}
-  - component: {fileID: 1371868353}
   m_Layer: 0
   m_Name: Delivery Manager
   m_TagString: Untagged
@@ -2010,7 +2009,6 @@ MonoBehaviour:
   TEMP_middlePosDelivery: {fileID: 1845536857}
   popUpUI: {fileID: 701006688}
   _camera: {fileID: 591647023}
-  apiManager: {fileID: 1371868353}
   _bgmAudio: {fileID: 1548793730}
   currentScore: 0
 --- !u!114 &1371868352
@@ -2040,20 +2038,6 @@ MonoBehaviour:
   - {fileID: 1815888197}
   - {fileID: 1034583947}
   - {fileID: 1002359657}
---- !u!114 &1371868353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371868347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d246cd53248d83b4c85e5262d7c333b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  url: 
-  TOKEN: 
 --- !u!1001 &1436862501
 PrefabInstance:
   m_ObjectHideFlags: 0

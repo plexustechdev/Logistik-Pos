@@ -160,7 +160,7 @@ public class Board : MonoBehaviour
         {
             Vector3Int position = new Vector3Int(col, row, 0);
             this.tilemap.SetTile(position, null);
-            AudioManager.instance.PlayPecah();
+            AudioController.instance.PlayPecah();
         }
 
         while (row < bounds.yMax)

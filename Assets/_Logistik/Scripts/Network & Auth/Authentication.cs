@@ -16,13 +16,13 @@ public class Authentication : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        if (AuthenticationSession.GetCachedToken != null)
-        {
-            // overworld
-        }
-    }
+    // private void Start()
+    // {
+    //     if (AuthenticationSession.GetCachedToken != null)
+    //     {
+    //         // overworld
+    //     }
+    // }
 
     private IEnumerator Post(Action<string> callback)
     {

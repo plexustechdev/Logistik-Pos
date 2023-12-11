@@ -16,8 +16,9 @@ public class ProfileView : MonoBehaviour
 
     [Header("View")]
     [SerializeField] private GameObject _officeView;
-    [SerializeField] private DialogueView _officeDialogue;
+    [SerializeField] private GameObject _officeDialogue;
     [SerializeField] private GameObject _loadingView;
+    [SerializeField] private SettingView _settingView;
 
     private int _playerExp;
 
@@ -41,8 +42,10 @@ public class ProfileView : MonoBehaviour
 
         Authentication.instance.GetDataToken(Gateway.URI + Path.Wallets, (result) =>
         {
+            _settingView.OfficePosView();
             _loadingView.gameObject.SetActive(false);
             _officeDialogue.gameObject.SetActive(true);
+            GuideView.instance.GuideOffice();
 
             ResponseWallet response = JsonConvert.DeserializeObject<ResponseWallet>(result);
 

@@ -8,27 +8,35 @@ public class DialogueView : MonoBehaviour
     [SerializeField] private NarrativeDialogue _dialogueData;
     [SerializeField] private TextMeshProUGUI _dialogueTmp;
 
-    private bool isShowing = true;
-
     private void OnEnable()
     {
-        ShowDialogue();
-    }
-
-    public void OnNextDialogue(GameObject panelDialogue)
-    {
-        if (!_dialogueData.EndDialogue) _dialogueTmp.text = _dialogueData.GetDialogue;
-        else DeactivateDialogue(panelDialogue);
+        CurrentDialogue();
     }
 
     public void ShowDialogue()
     {
-        if (isShowing) _dialogueTmp.text = _dialogueData.GetDialogue;
+        CurrentDialogue();
+        gameObject.SetActive(true);
     }
 
-    public void DeactivateDialogue(GameObject panelDialogue)
+    public void OnNextDialogue(GameObject panelDialogue)
     {
-        isShowing = false;
+        if (_dialogueData.EndDialogue) DeactivateDialogue(panelDialogue);
+        _dialogueTmp.text = _dialogueData.NextDialogue;
+    }
+
+    public void OnPrevDialogue()
+    {
+        _dialogueTmp.text = _dialogueData.PrevDialogue;
+    }
+
+    private void CurrentDialogue()
+    {
+        _dialogueTmp.text = _dialogueData.CurrentDialogue;
+    }
+
+    private void DeactivateDialogue(GameObject panelDialogue)
+    {
         panelDialogue.SetActive(false);
     }
 }

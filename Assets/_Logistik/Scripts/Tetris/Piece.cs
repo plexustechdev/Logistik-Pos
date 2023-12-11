@@ -41,29 +41,30 @@ public class Piece : MonoBehaviour
         this.board.Clear(this);
         this.lockTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Rotate(-1);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
+            // Rotate(-1);
             Rotate(1);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        // else if (Input.GetKeyDown(KeyCode.RightArrow))
+        // {
+        //     Rotate(1);
+        // }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Move(Vector2Int.left);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Move(Vector2Int.right);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Move(Vector2Int.down);
-        }
+        // if (Input.GetKeyDown(KeyCode.S))
+        // {
+        //     Move(Vector2Int.down);
+        // }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             HardDrop();
         }

@@ -39,17 +39,18 @@ public class CustomerController : MonoBehaviour
             {
                 if (selectedCustomer != null && selectedCustomer == customer)
                     return;
+
                 StartCoroutine(tweening.ShowCustomer(_character.transform,
                     _character.StartAnimPos,
                     _character.EndAnimPos,
                     _character.CharacterImage,
                     _character.DialogueImage
                 ));
+
                 selectedCustomer = customer;
                 _questView.ShowAcceptButton(true);
                 Quest availQuest = selectedCustomer.GetAvailableQuest();
                 _character.ShowQuest(availQuest.Description, availQuest.Narrative, selectedCustomer.SpriteCharacter);
-
             });
         }
     }

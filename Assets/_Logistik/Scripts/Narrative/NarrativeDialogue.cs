@@ -7,12 +7,28 @@ public class NarrativeDialogue : MonoBehaviour
     [TextArea][SerializeField] private List<string> _dialogueList = new List<string>();
     private int count = 0;
 
-    public string GetDialogue
+    public string CurrentDialogue => _dialogueList[0];
+
+    public string NextDialogue
     {
         get
         {
-            var dialogue = _dialogueList[count];
             count++;
+            if (count >= _dialogueList.Count) count = _dialogueList.Count - 1;
+            var dialogue = _dialogueList[count];
+
+            return dialogue;
+        }
+    }
+
+    public string PrevDialogue
+    {
+        get
+        {
+            count--;
+            if (count < 0) count = 0;
+            var dialogue = _dialogueList[count];
+
             return dialogue;
         }
     }
@@ -21,7 +37,7 @@ public class NarrativeDialogue : MonoBehaviour
     {
         get
         {
-            if (count > _dialogueList.Count - 1) return true;
+            if (count == _dialogueList.Count - 1) return true;
             return false;
         }
     }

@@ -84,6 +84,8 @@ public class QuestMonitorManager : MonoBehaviour
         customerCharacter.DialogueImage.gameObject.SetActive(false);
         _acceptBtn.gameObject.SetActive(false);
         _denyBtn.gameObject.SetActive(true);
+
+        GuideView.instance.GuideOffice();
     }
 
     public void CancelOrder()
@@ -100,5 +102,7 @@ public class QuestMonitorManager : MonoBehaviour
         customerCharacter.DialogueImage.gameObject.SetActive(true);
         ShowBtns(false);
         customerController.tweening.HideCustomer(_customer.CharacterImage, _customer.DialogueImage);
+
+        GuideView.instance.DeactivateGuide();
     }
 }

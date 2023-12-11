@@ -27,9 +27,6 @@ public class DeliveryController : MonoBehaviour
     [SerializeField] private GameObject popUpUI;
     [SerializeField] private Camera _camera;
 
-    [Header("Ref")]
-    [SerializeField] private APIManager apiManager;
-
     [Header("Audio")]
     [SerializeField] private AudioSource _bgmAudio;
 
@@ -91,7 +88,7 @@ public class DeliveryController : MonoBehaviour
     {
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
         SetTransportation();
-        _track.Draw(_startPosDelivery, _endPosDelivery);
+        // _track.Draw(_startPosDelivery, _endPosDelivery);
 
         _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;
         _vehicle.SetEffect(true);
@@ -109,7 +106,7 @@ public class DeliveryController : MonoBehaviour
         _startPosDelivery = _destinationPos.GetDestination("Jakarta", _isSmallMap);
         _endPosDelivery = _destinationPos.GetDestination(_delivery.Destination, _isSmallMap);
 
-        _track.Draw(_startPosDelivery, TEMP_middlePosDelivery, _endPosDelivery);
+        // _track.Draw(_startPosDelivery, TEMP_middlePosDelivery, _endPosDelivery);
         SetVehicle();
 
         _vehicle.gameObject.transform.position = _startPosDelivery.transform.position;

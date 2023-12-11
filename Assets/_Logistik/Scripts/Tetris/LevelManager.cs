@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _loadingView;
 
     [Header("UI")]
+    [SerializeField] private GameObject _pauseView;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer bgSprite;
     [SerializeField] private TMP_Text score_txt;
@@ -45,7 +46,7 @@ public class LevelManager : MonoBehaviour
     private float timeRemaining = 60;
     [SerializeField] private bool usingTimer = false;
     public bool isPlaying = false;
-
+    private bool isPaused = false;
 
     public float score;
 
@@ -56,9 +57,18 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.K))
+        // if (Input.GetKey(KeyCode.K))
+        // {
+        //     Play();
+        // }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
-            Play();
+            PauseGame();
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && isPaused)
+        {
+            ResumeGame();
         }
 
         if (!usingTimer)
@@ -156,7 +166,7 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        AudioManager.instance.PlayWin(false);
+        AudioController.instance.PlayWin(false);
         isPlaying = false;
         resultScreen.ShowSuccess(false);
         // board.GameOver();
@@ -165,7 +175,7 @@ public class LevelManager : MonoBehaviour
 
     public void Finish()
     {
-        AudioManager.instance.PlayWin(true);
+        AudioController.instance.PlayWin(true);
         Debug.Log("Finish");
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
@@ -202,5 +212,22 @@ public class LevelManager : MonoBehaviour
         DeliveryController.instance.SetDelivery(dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).type, targetRows, QuestActiveController.ActiveQuest.destination.ToString());
         DeliveryController.instance.Shipment();
         GameManager.instance.UnloadScene(1);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        _pauseView.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        _pauseView.SetActive(false);
+    }
+
+    public void Surrender()
+    {
+        GameManager.instance.ChangeSceneNormal(0);
     }
 }
