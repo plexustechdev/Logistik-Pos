@@ -14,6 +14,13 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         instance = this;
+        AddTempo(backsound, 1.5f);
+    }
+
+    public void AddTempo(AudioSource audioSource, float multiplier)
+    {
+        audioSource.pitch = multiplier;
+        audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / multiplier);
     }
 
     public void PlayPecah()
@@ -37,5 +44,7 @@ public class AudioController : MonoBehaviour
 
         as_WinLose.Play();
     }
+
+
 
 }
