@@ -11,6 +11,11 @@ public class LeaderboardView : MonoBehaviour
 
     public void Btn_Leaderboard()
     {
+        foreach (Transform child in _parent)
+        {
+            Destroy(child.gameObject);
+        }
+
         Authentication.instance.GetDataToken(Gateway.URI + Path.Leaderboard, (result) =>
         {
             ResponseLeaderboard response = JsonConvert.DeserializeObject<ResponseLeaderboard>(result);

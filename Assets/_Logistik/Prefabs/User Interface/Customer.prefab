@@ -353,8 +353,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pelanggan 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6fecf4cf54508e3418c449c9ee02fea9, type: 2}
-  m_sharedMaterial: {fileID: 8422586862891746239, guid: 6fecf4cf54508e3418c449c9ee02fea9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3afeb7addef0af949a3f6d2108b576d0, type: 2}
+  m_sharedMaterial: {fileID: 2267907925440034446, guid: 3afeb7addef0af949a3f6d2108b576d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

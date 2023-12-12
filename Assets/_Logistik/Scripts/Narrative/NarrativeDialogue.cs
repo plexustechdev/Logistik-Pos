@@ -9,6 +9,8 @@ public class NarrativeDialogue : MonoBehaviour
 
     public string CurrentDialogue => _dialogueList[0];
 
+    public void SetCount(int count) => this.count = count;
+
     public string NextDialogue
     {
         get

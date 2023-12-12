@@ -12,19 +12,19 @@ public class ProfileView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _walletTMP;
     [SerializeField] private TextMeshProUGUI _usernameLabel;
     [SerializeField] private TextMeshProUGUI _levelLabel;
+    [SerializeField] private TextMeshProUGUI _levelLabelPanel;
     [SerializeField] private Image _levelBar;
 
     [Header("View")]
     [SerializeField] private GameObject _officeView;
     [SerializeField] private GameObject _officeDialogue;
     [SerializeField] private GameObject _loadingView;
-    [SerializeField] private SettingView _settingView;
 
     private int _playerExp;
 
     public void Btn_GetProfile()
     {
-        _loadingView.gameObject.SetActive(true);
+        _loadingView.SetActive(true);
 
         Authentication.instance.GetDataToken(Gateway.URI + Path.GetProfile, (result) =>
         {
@@ -42,9 +42,8 @@ public class ProfileView : MonoBehaviour
 
         Authentication.instance.GetDataToken(Gateway.URI + Path.Wallets, (result) =>
         {
-            _settingView.OfficePosView();
-            _loadingView.gameObject.SetActive(false);
-            _officeDialogue.gameObject.SetActive(true);
+            _loadingView.SetActive(false);
+            _officeDialogue.SetActive(true);
             GuideView.instance.GuideOffice();
 
             ResponseWallet response = JsonConvert.DeserializeObject<ResponseWallet>(result);
@@ -54,6 +53,8 @@ public class ProfileView : MonoBehaviour
             if (response.Status == "success")
             {
                 _levelLabel.text = "LV. " + SetLevel().currentLevel.ToString();
+                _levelLabelPanel.text = "LV. " + SetLevel().currentLevel.ToString();
+
                 _walletTMP.text = _playerExp + "/" + SetLevel().maxLevel.ToString();
                 _levelBar.fillAmount = (float)_playerExp / (float)SetLevel().maxLevel;
             }

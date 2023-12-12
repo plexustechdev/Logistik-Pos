@@ -220,10 +220,22 @@ public class LevelManager : MonoBehaviour
         _pauseView.SetActive(true);
     }
 
+    public void PauseGame(GameObject obj)
+    {
+        Time.timeScale = 0;
+        obj.SetActive(true);
+    }
+
     public void ResumeGame()
     {
         Time.timeScale = 1;
         _pauseView.SetActive(false);
+    }
+
+    public void ResumeGame(GameObject obj)
+    {
+        Time.timeScale = 1;
+        obj.SetActive(false);
     }
 
     public void Surrender()

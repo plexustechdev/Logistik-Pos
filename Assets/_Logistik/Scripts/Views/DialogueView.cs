@@ -15,6 +15,7 @@ public class DialogueView : MonoBehaviour
 
     public void ShowDialogue()
     {
+        _dialogueData.SetCount(0);
         CurrentDialogue();
         gameObject.SetActive(true);
     }
