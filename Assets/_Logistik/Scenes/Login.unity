@@ -17814,14 +17814,14 @@ MonoBehaviour:
   - 'Bisnis logistik merupakan bagian dari Supply Chain Management (SCM) yang mencakup
     aktivitas perencanaan, penyimpanan, hingga distribusi produk kepada konsumen
     dengan berbagai jenis transportasi. '
-  - 'Di sebelah kananmu ada <font="Myriad Pro Black SDF">warehouse</font> sebagai
+  - 'Di sebelah kananmu ada <font="Myriad Pro Black SDF">Warehouse</font> sebagai
     tempat aktivitas logistik, sementara di sebelah kirimu terdapat <font="Myriad
-    Pro Black SDF">office</font> yang menjadi pusat operasional.
+    Pro Black SDF">Office</font> yang menjadi pusat operasional.
 
 
 
     Untuk memulai
-    misi pengantaran, silahkan masuk ke <font="Myriad Pro Black SDF">office</font>
+    misi pengantaran, silahkan masuk ke <font="Myriad Pro Black SDF">Office</font>
     dulu ya!'
 --- !u!4 &1359351718
 Transform:
@@ -22987,7 +22987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Selamat datang di <font="Myriad Pro Black SDF">office</font>.
+  m_text: 'Selamat datang di <font="Myriad Pro Black SDF">Office</font>.
 
     Yuk
     siap-siap untuk memulai misi pengiriman!
