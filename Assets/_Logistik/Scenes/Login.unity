@@ -12004,7 +12004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reset Password
+  m_text: Ubah Password
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3afeb7addef0af949a3f6d2108b576d0, type: 2}
   m_sharedMaterial: {fileID: 2267907925440034446, guid: 3afeb7addef0af949a3f6d2108b576d0, type: 2}

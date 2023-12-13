@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private bool usingTimer = false;
     public bool isPlaying = false;
     private bool isPaused = false;
+    private bool isFinished = false;
 
     public float score;
 
@@ -179,15 +180,16 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Finish");
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
-        _loadingView.SetActive(true);
         exp_txt.text = "Exp : " + score.ToString();
 
-        SendExp();
+        if (!isFinished)
+            SendExp();
         // DeliveryController.instance.Shipment(score);
     }
 
     private void SendExp()
     {
+        _loadingView.SetActive(true);
         FormUtils.SetFormWallet((int)score);
         Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>
         {
@@ -198,6 +200,7 @@ public class LevelManager : MonoBehaviour
             if (response.Status == "success") print("success");
             else print("error");
         });
+        isFinished = true;
     }
 
     public void FillBar(float amount)
