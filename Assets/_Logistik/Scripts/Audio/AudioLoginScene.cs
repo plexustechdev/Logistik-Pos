@@ -14,7 +14,8 @@ public class AudioLoginScene : MonoBehaviour
 
     private void Start()
     {
-        LoadVolume();
+        if (PlayerPrefs.HasKey(Volume.BGM_VOLUME.ToString()) && PlayerPrefs.HasKey(Volume.SFX_VOLUME.ToString()))
+            LoadVolume();
     }
 
     public void LoadVolume()

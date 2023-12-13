@@ -81,7 +81,8 @@ public class ProfileView : MonoBehaviour
             >= 220 and < 290 => 7,
             >= 290 and < 430 => 8,
             >= 430 and < 530 => 9,
-            >= 530 => 10
+            >= 530 => 10,
+            _ => 0
         };
 
         int _maxLevel = _currentLevel switch
@@ -96,7 +97,8 @@ public class ProfileView : MonoBehaviour
             7 => 290,
             8 => 430,
             9 => 530,
-            10 => 530
+            10 => 530,
+            _ => 0
         };
 
         return (currentLevel: _currentLevel, maxLevel: _maxLevel);

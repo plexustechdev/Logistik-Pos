@@ -7410,7 +7410,7 @@ GameObject:
   - component: {fileID: 584672732}
   - component: {fileID: 584672731}
   m_Layer: 0
-  m_Name: Text Name
+  m_Name: Text Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15912,6 +15912,7 @@ GameObject:
   - component: {fileID: 1178155821}
   - component: {fileID: 1178155820}
   - component: {fileID: 1178155823}
+  - component: {fileID: 1178155824}
   m_Layer: 0
   m_Name: Canvas Loading Screen
   m_TagString: Untagged
@@ -16018,6 +16019,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loadingImage: {fileID: 1837281677}
   _motorcycleImage: {fileID: 1119846657}
+--- !u!114 &1178155824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178155818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33bbe025a2e51c146a651fa96cf5b0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _funFactTMP: {fileID: 364193715}
+  _funFacts:
+  - Kementerian PANRB mengadakan monitoring dan evaluasi penyelenggaraan SP4N-LAPOR!
+    pada 41 BUMN dengan periode penilaian dari 1 Januari 2022 hingga 30 Juni 2023.
+    Pos masuk sebagai urutan pertama dari evaluasi SP4N-LAPOR! tersebut.
+  - POS IND meluncurkan mesin sortir robotik dan RFID di Pos Bloc Surabaya dengan
+    40 unit Autonomous Mobile Robots (AMR) berkecerdasan buatan yang dilengkapi sensor
+    dan teknologi komputasi, mampu menyortir 3.000 paket per jam di SPP Surabaya.
+  - 'Pos Indonesia memiliki sejumlah bangunan yang unik dan khas dari budaya setempat
+    atau kerap dikenal sebagai bangunan heritage, yakni :
+
+    - Gedung Kantor Pusat
+    Pos Indonesia.
+
+    - Pos Bloc Jakarta.
+
+    - Kantor Pos Kebon Rojo Surabaya.
+
+    -
+    Kantor Pos Kota Pekalongan.'
+  - Hari Bhakti Postel jatuh pada tanggal 27 September 1945.
+  - Indonesia telah menjadi anggota UPU sejak 1 Mei 1877. UPU menyertakan Pos Indonesia
 --- !u!1 &1199818625
 GameObject:
   m_ObjectHideFlags: 0

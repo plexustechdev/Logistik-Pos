@@ -9,6 +9,7 @@ public class FunFactView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _funFactTMP;
 
     [Header("Fun Fact Data")]
+    [TextArea]
     [SerializeField] private List<string> _funFacts = new();
 
     private void OnEnable()
