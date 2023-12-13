@@ -8,6 +8,8 @@ public class LoadingView : MonoBehaviour
     [SerializeField] private Image _loadingImage;
     [SerializeField] private Image _motorcycleImage;
 
+    private bool isDoneLoading = false;
+
     private void OnEnable()
     {
         AnimateBar();
@@ -17,9 +19,10 @@ public class LoadingView : MonoBehaviour
     {
         _loadingImage.fillAmount += Time.deltaTime * 0.2f;
         AnimateBar();
-        if (_loadingImage.fillAmount == 1)
+        if (_loadingImage.fillAmount == 1 && !isDoneLoading)
         {
             GameManager.instance.GoWerehouse();
+            isDoneLoading = true;
         }
     }
 
@@ -30,5 +33,11 @@ public class LoadingView : MonoBehaviour
         tempV.x = -width / 2;
         tempV.x += width * _loadingImage.fillAmount;
         _motorcycleImage.GetComponent<RectTransform>().anchoredPosition = tempV;
+    }
+
+    IEnumerator LoadScene()
+    {
+        yield return new WaitUntil(() => _loadingImage.fillAmount == 1);
+
     }
 }

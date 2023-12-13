@@ -49,10 +49,10 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: 73f21bf8827c4ef46825aebfb659d8bd, type: 3}
     quests:
     - Level: 3
-      GoodsAmount: 20
-      Description: Susun 20 baris kotak paket untuk menyelesaikan menyelesaikan misi
+      GoodsAmount: 15
+      Description: Susun 15 baris kotak paket untuk menyelesaikan menyelesaikan misi
         pesanan ini.
-      Narrative: "Ada 200 paket untuk dikirim ke Jakarta nih\u2026"
+      Narrative: "Ada 150 paket untuk dikirim ke Jakarta nih\u2026"
       destination: 1
       TransportationType: 1
       Timer: 0
@@ -65,10 +65,10 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: 3a47ef1dfd046e841b64b545ea6ac0ff, type: 3}
     quests:
     - Level: 4
-      GoodsAmount: 20
-      Description: Susun 20 baris kotak paket dalam waktu kurang dari 3 menit untuk
+      GoodsAmount: 15
+      Description: Susun 15 baris kotak paket dalam waktu kurang dari 3 menit untuk
         menyelesaikan misi pesanan ini.
-      Narrative: Ada 200 paket untuk dikirim ke Jakarta nih dalam waktu 3 hari!
+      Narrative: Ada 150 paket untuk dikirim ke Jakarta nih dalam waktu 3 hari!
       destination: 1
       TransportationType: 1
       Timer: 3
@@ -81,10 +81,10 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: eb1bf01e6c37cf1468c04d394a6491b4, type: 3}
     quests:
     - Level: 5
-      GoodsAmount: 40
-      Description: Ada 40 baris kotak paket untuk dirangkai dalam menyelesaikan misi
+      GoodsAmount: 20
+      Description: Ada 20 baris kotak paket untuk dirangkai dalam menyelesaikan misi
         pesanan ini!
-      Narrative: Tok, Tok, Tok! bisa kirim 400 paket ke Jogja?
+      Narrative: Tok, Tok, Tok! bisa kirim 20 paket ke Jogja?
       destination: 2
       TransportationType: 2
       Timer: 0
@@ -97,10 +97,10 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: 44c06472f19adc04b8502b6ede71e69b, type: 3}
     quests:
     - Level: 6
-      GoodsAmount: 40
-      Description: Ada 40 baris kotak paket untuk dirangkai dalam waktu kurang dari
+      GoodsAmount: 20
+      Description: Ada 20 baris kotak paket untuk dirangkai dalam waktu kurang dari
         4 menit untuk menyelesaikan misi pesanan ini!
-      Narrative: Tok, Tok, Tok! bisa kirim 400 paket ke Magelang dalam waktu 4 hari?
+      Narrative: Tok, Tok, Tok! bisa kirim 200 paket ke Magelang dalam waktu 4 hari?
       destination: 2
       TransportationType: 2
       Timer: 4
@@ -113,9 +113,9 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: 0f177667b0d4fad41a981ee8f7f13847, type: 3}
     quests:
     - Level: 7
-      GoodsAmount: 70
-      Description: Susun 70 baris kotak paket untuk menyelesaikan misi pesanan ini!
-      Narrative: Siap-siap guys! Ada 700 paket dikirim ke Pontianak!
+      GoodsAmount: 25
+      Description: Susun 25 baris kotak paket untuk menyelesaikan misi pesanan ini!
+      Narrative: Siap-siap guys! Ada 25 paket dikirim ke Pontianak!
       destination: 3
       TransportationType: 3
       Timer: 0
@@ -128,10 +128,10 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: d8187632f66bc1343a382842c48008fd, type: 3}
     quests:
     - Level: 8
-      GoodsAmount: 70
-      Description: Susun 70 baris kotak paket dalam waktu kurang dari 5 menit untuk
+      GoodsAmount: 25
+      Description: Susun 25 baris kotak paket dalam waktu kurang dari 5 menit untuk
         menyelesaikan misi pesanan ini.
-      Narrative: Siap-siap guys! Ada 700 paket dikirim ke Pontianak dalam waktu 5
+      Narrative: Siap-siap guys! Ada 250 paket dikirim ke Pontianak dalam waktu 5
         hari!
       destination: 3
       TransportationType: 3
@@ -145,9 +145,9 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: e494ce58e6157b842836fa80c8e0408c, type: 3}
     quests:
     - Level: 9
-      GoodsAmount: 100
-      Description: Susun 100 baris kotak paket untuk menyelesaikan misi pesanan ini!
-      Narrative: 1000 paket siap meluncur ke Papua!
+      GoodsAmount: 30
+      Description: Susun 30 baris kotak paket untuk menyelesaikan misi pesanan ini!
+      Narrative: 300 paket siap meluncur ke Papua!
       destination: 4
       TransportationType: 4
       Timer: 0
@@ -160,14 +160,14 @@ MonoBehaviour:
     SpriteThumbnail: {fileID: 21300000, guid: 9d9361d9baca04941b747f90687b4bf0, type: 3}
     quests:
     - Level: 10
-      GoodsAmount: 100
-      Description: Susun 100 baris kotak paket dalam waktu kurang dari 6 menit untuk
+      GoodsAmount: 30
+      Description: Susun 30 baris kotak paket dalam waktu kurang dari 6 menit untuk
         menyelesaikan misi pesanan ini.
-      Narrative: 1000 paket siap meluncur ke Merauke dalam waktu 6 hari!
+      Narrative: 300 paket siap meluncur ke Merauke dalam waktu 6 hari!
       destination: 4
       TransportationType: 4
       Timer: 6
-      IsActive: 0
+      IsActive: 1
       IsFinished: 0
       IsUsingTimer: 1
       spriteBg: {fileID: 21300000, guid: 21a4289cbf2381142b4208aff6612615, type: 3}
