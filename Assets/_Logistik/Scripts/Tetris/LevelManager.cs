@@ -165,6 +165,8 @@ public class LevelManager : MonoBehaviour
 
     private void CheckTarget()
     {
+        if (isFinished) return;
+
         if (this.score / scorePerColumn >= this.targetRows)
         {
             Finish();
@@ -177,6 +179,8 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
+        isFinished = true;
+
         AudioController.instance.PlayWin(false);
         isPlaying = false;
         resultScreen.ShowSuccess(false);
@@ -186,15 +190,15 @@ public class LevelManager : MonoBehaviour
 
     public void Finish()
     {
+        isFinished = true;
+
         AudioController.instance.PlayWin(true);
         Debug.Log("Finish");
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
         exp_txt.text = "Exp : " + score.ToString();
 
-        if (!isFinished)
-            SendExp();
-        // DeliveryController.instance.Shipment(score);
+        SendExp();
     }
 
     private void SendExp()
@@ -210,7 +214,6 @@ public class LevelManager : MonoBehaviour
             if (response.Status == "success") print("success");
             else print("error");
         });
-        isFinished = true;
     }
 
     public void FillBar(float amount)
