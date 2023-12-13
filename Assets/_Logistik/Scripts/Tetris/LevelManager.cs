@@ -182,6 +182,12 @@ public class LevelManager : MonoBehaviour
         _loadingView.SetActive(true);
         exp_txt.text = "Exp : " + score.ToString();
 
+        SendExp();
+        // DeliveryController.instance.Shipment(score);
+    }
+
+    private void SendExp()
+    {
         FormUtils.SetFormWallet((int)score);
         Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>
         {
@@ -192,7 +198,6 @@ public class LevelManager : MonoBehaviour
             if (response.Status == "success") print("success");
             else print("error");
         });
-        // DeliveryController.instance.Shipment(score);
     }
 
     public void FillBar(float amount)
@@ -240,6 +245,7 @@ public class LevelManager : MonoBehaviour
 
     public void Surrender()
     {
+        Time.timeScale = 1;
         GameManager.instance.ChangeSceneNormal(0);
     }
 }

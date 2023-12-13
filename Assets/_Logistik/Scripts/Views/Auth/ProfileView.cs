@@ -52,8 +52,10 @@ public class ProfileView : MonoBehaviour
 
             if (response.Status == "success")
             {
-                _levelLabel.text = "LV. " + SetLevel().currentLevel.ToString();
-                _levelLabelPanel.text = "LV. " + SetLevel().currentLevel.ToString();
+                string maxLevel = "LV. " + SetLevel().currentLevel.ToString();
+
+                _levelLabel.text = maxLevel;
+                _levelLabelPanel.text = maxLevel;
 
                 _walletTMP.text = _playerExp + "/" + SetLevel().maxLevel.ToString();
                 _levelBar.fillAmount = (float)_playerExp / (float)SetLevel().maxLevel;

@@ -7,11 +7,26 @@ public class Piece : MonoBehaviour
     public Vector3Int position { get; private set; }
     public Vector3Int[] cells { get; private set; }
     public int rotationIndex { get; private set; }
-    public float stepDelay = 1f;
+    private float stepDelay;
     public float lockDelay = 0.5f;
 
     private float stepTime;
     private float lockTime;
+
+    private void Start()
+    {
+        stepDelay = QuestActiveController.ActiveQuest.Level switch
+        {
+            <= 2 => 1f,
+            > 2 and <= 4 => 0.8f,
+            > 4 and <= 6 => 0.6f,
+            > 6 and <= 8 => 0.4f,
+            > 8 and <= 10 => 0.2f,
+            _ => 1f,
+        };
+
+        print(stepDelay);
+    }
 
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
