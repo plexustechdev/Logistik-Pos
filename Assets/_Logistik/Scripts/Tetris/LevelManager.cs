@@ -36,6 +36,10 @@ public class LevelManager : MonoBehaviour
     public int targetRows;
     public float scorePerColumn;
 
+    [Header("Progress Match")]
+    [SerializeField] private Image _progressImage;
+    [SerializeField] private TextMeshProUGUI _progressTmp;
+
     [Space(10)]
     [SerializeField] Board board;
 
@@ -86,6 +90,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void UpdateProgress()
+    {
+        _progressImage.fillAmount = (float)score / (float)targetRows;
+        _progressTmp.text = $"{score}/{targetRows}";
+    }
+
     public void Start()
     {
         popUp.SetContent(QuestActiveController.ActiveQuest.destination, QuestActiveController.ActiveQuest.GoodsAmount, QuestActiveController.ActiveQuest.Timer);
@@ -95,7 +105,7 @@ public class LevelManager : MonoBehaviour
 
         SetTime(timeRemaining);
         // Play();
-
+        UpdateProgress();
     }
 
     public void Initialize()
@@ -138,7 +148,7 @@ public class LevelManager : MonoBehaviour
         score_txt.text = this.score.ToString();
         FillBar(1f / (float)targetRows);
         CheckTarget();
-
+        UpdateProgress();
     }
 
     IEnumerator Countdown(int i)

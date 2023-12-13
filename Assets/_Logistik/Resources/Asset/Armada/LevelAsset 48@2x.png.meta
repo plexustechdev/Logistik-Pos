@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9df8df285fb168f42843477604a9bea0
+guid: c2abc88625b6e80439c5257850bbbbb8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,28 +147,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: CatalogAsset 27@2x_0
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 322
-        width: 1407
-        height: 773
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f1029abbf6579b4d9e8a17510b4072b
-      internalID: 1288577452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -179,12 +158,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      CatalogAsset 27@2x_0: 1288577452
-      CatalogAsset 27@2x_1: 235826959
-      CatalogAsset 27@2x_2: 1428206211
-      CatalogAsset 27@2x_3: 590404261
-      CatalogAsset 27@2x_4: -1044391923
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

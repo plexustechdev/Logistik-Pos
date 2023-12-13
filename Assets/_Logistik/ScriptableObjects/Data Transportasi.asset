@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armadas:
   - type: 0
-    Siluet: {fileID: 21300000, guid: 00e6384212cad794aa36d423d036b7df, type: 3}
-    fillImg: {fileID: -475362089, guid: 44c5ece4e1b5b4442ae6cc6201b64d0d, type: 3}
+    Siluet: {fileID: 21300000, guid: 823ddb809d004f04d9e711e16848a1cf, type: 3}
+    fillImg: {fileID: 21300000, guid: 413aa7e817f67fd4da2822fd592bd17a, type: 3}
   - type: 1
-    Siluet: {fileID: 21300000, guid: db6ad61d4972c4b4f868e3e00be5054d, type: 3}
-    fillImg: {fileID: -1852269292, guid: 7049a1f466cfb6c44b6a7202be4e83d9, type: 3}
+    Siluet: {fileID: 21300000, guid: 307bde85235b63b4ea006094aadbdf1c, type: 3}
+    fillImg: {fileID: 21300000, guid: db266652be9cb3a4db11c4a405abe993, type: 3}
   - type: 2
-    Siluet: {fileID: 21300000, guid: 8955a6e64b8b19241ac71e751c6d2671, type: 3}
-    fillImg: {fileID: 1288577452, guid: 9df8df285fb168f42843477604a9bea0, type: 3}
+    Siluet: {fileID: 21300000, guid: 58aa2c916669a554db0dfd7772a400e4, type: 3}
+    fillImg: {fileID: 21300000, guid: a75fe6f3700791147abed774a40e2394, type: 3}
   - type: 3
-    Siluet: {fileID: 21300000, guid: fab2c2feaf52afc46a3a5a02fe1f5489, type: 3}
-    fillImg: {fileID: 1705209194, guid: 63e5a7c7ad89b8946902912ae0f918bb, type: 3}
+    Siluet: {fileID: 21300000, guid: a713fe42b0402254c8a6b91a41ab2844, type: 3}
+    fillImg: {fileID: 21300000, guid: 3c8e44ad745d5de419601cda58df6f3b, type: 3}
   - type: 4
-    Siluet: {fileID: 21300000, guid: e8651a89f26b02545943487e9b8a3987, type: 3}
-    fillImg: {fileID: -462027142, guid: ff937584d5e6be144bec8c083985afc3, type: 3}
+    Siluet: {fileID: 21300000, guid: c2abc88625b6e80439c5257850bbbbb8, type: 3}
+    fillImg: {fileID: 21300000, guid: 5203e9838dcc6c243a843d3b1f8657b4, type: 3}
