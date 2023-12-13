@@ -24,14 +24,7 @@ public class AudioController : MonoBehaviour
     public void AddTempo(AudioSource audioSource, float multiplier)
     {
         audioSource.pitch = multiplier;
-        try
-        {
-            audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / multiplier);
-        }
-        catch
-        {
-            return;
-        }
+        audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / multiplier);
     }
 
     public void PlayPecah()
