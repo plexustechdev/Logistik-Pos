@@ -20,7 +20,8 @@ public class Authentication : MonoBehaviour
     // {
     //     if (AuthenticationSession.GetCachedToken != null)
     //     {
-    //         // overworld
+    //         AuthenticationSession.ClearCachedToken();
+    //         GameManager.instance.ChangeScene(0);
     //     }
     // }
 
@@ -87,7 +88,7 @@ public class Authentication : MonoBehaviour
     private IEnumerator GetUsingToken(Action<string> callback)
     {
         UnityWebRequest request = UnityWebRequest.Get(_url);
-        request.SetRequestHeader("authorization", "Bearer " + AuthenticationSession.GetCachedToken);
+        request.SetRequestHeader("Authorization", "Bearer " + AuthenticationSession.GetCachedToken);
 
         yield return request.SendWebRequest();
 

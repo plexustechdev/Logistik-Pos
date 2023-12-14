@@ -33,6 +33,8 @@ public class LeaderboardView : MonoBehaviour
             else
             {
                 _popUp.SetWarning("Silahkan login kembali!");
+                AuthenticationSession.ClearCachedToken();
+                GameManager.instance.ChangeScene(0);
             }
         });
     }

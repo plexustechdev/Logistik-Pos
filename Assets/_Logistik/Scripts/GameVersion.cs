@@ -20,4 +20,13 @@ public class GameVersion : MonoBehaviour
         string version = Application.version;
         _versionTMP.text = $"Version: {version}";
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            AuthenticationSession.ClearCachedToken();
+            GameManager.instance.ChangeScene(0);
+        }
+    }
 }

@@ -38,7 +38,8 @@ public class LogoutView : MonoBehaviour
             }
             else
             {
-                print(response.Message);
+                AuthenticationSession.ClearCachedToken();
+                GameManager.instance.ChangeScene(0);
             }
         });
     }

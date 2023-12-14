@@ -37,6 +37,8 @@ public class ProfileView : MonoBehaviour
             else
             {
                 print(response.Status);
+                AuthenticationSession.ClearCachedToken();
+                GameManager.instance.ChangeScene(0);
             }
         });
 
@@ -62,7 +64,9 @@ public class ProfileView : MonoBehaviour
             }
             else
             {
-                _walletTMP.text = 0 + "/" + SetLevel().maxLevel.ToString();
+                print(response.Status);
+                AuthenticationSession.ClearCachedToken();
+                GameManager.instance.ChangeScene(0);
             }
 
             _officeView.SetActive(true);

@@ -1625,6 +1625,7 @@ GameObject:
   - component: {fileID: 141014955}
   - component: {fileID: 141014954}
   - component: {fileID: 141014957}
+  - component: {fileID: 141014958}
   m_Layer: 0
   m_Name: InputField Password
   m_TagString: Untagged
@@ -1805,6 +1806,19 @@ MonoBehaviour:
   _eyeIcon: {fileID: 1240272104}
   showSprite: {fileID: 21300000, guid: 9942d78fb792ebd459d7f5ff104d0bf6, type: 3}
   hideSprite: {fileID: 21300000, guid: 7c0faceae79c6174e911e89955101c89, type: 3}
+--- !u!114 &141014958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141014952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &147544410
 GameObject:
   m_ObjectHideFlags: 0
@@ -11415,6 +11429,7 @@ GameObject:
   - component: {fileID: 813162741}
   - component: {fileID: 813162740}
   - component: {fileID: 813162739}
+  - component: {fileID: 813162742}
   m_Layer: 0
   m_Name: InputField Phone Number
   m_TagString: Untagged
@@ -11578,6 +11593,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813162737}
   m_CullTransparentMesh: 1
+--- !u!114 &813162742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813162737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &819633122
 GameObject:
   m_ObjectHideFlags: 0
@@ -13548,6 +13576,7 @@ GameObject:
   - component: {fileID: 984464371}
   - component: {fileID: 984464370}
   - component: {fileID: 984464373}
+  - component: {fileID: 984464374}
   m_Layer: 0
   m_Name: InputField New Password
   m_TagString: Untagged
@@ -13728,6 +13757,19 @@ MonoBehaviour:
   _eyeIcon: {fileID: 1864925641}
   showSprite: {fileID: 21300000, guid: 9942d78fb792ebd459d7f5ff104d0bf6, type: 3}
   hideSprite: {fileID: 21300000, guid: 7c0faceae79c6174e911e89955101c89, type: 3}
+--- !u!114 &984464374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984464368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1014761243
 GameObject:
   m_ObjectHideFlags: 0
@@ -17425,7 +17467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 303, y: -508}
+  m_AnchoredPosition: {x: 275, y: -508}
   m_SizeDelta: {x: 1243, y: 752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318414943
@@ -18758,6 +18800,7 @@ GameObject:
   - component: {fileID: 1451513379}
   - component: {fileID: 1451513378}
   - component: {fileID: 1451513377}
+  - component: {fileID: 1451513380}
   m_Layer: 0
   m_Name: InputField Email
   m_TagString: Untagged
@@ -18921,6 +18964,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451513375}
   m_CullTransparentMesh: 1
+--- !u!114 &1451513380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451513375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1503319251
 GameObject:
   m_ObjectHideFlags: 0
@@ -19274,6 +19330,7 @@ GameObject:
   - component: {fileID: 1516357532}
   - component: {fileID: 1516357531}
   - component: {fileID: 1516357530}
+  - component: {fileID: 1516357533}
   m_Layer: 0
   m_Name: InputField Email
   m_TagString: Untagged
@@ -19437,6 +19494,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516357528}
   m_CullTransparentMesh: 1
+--- !u!114 &1516357533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516357528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1522233502
 GameObject:
   m_ObjectHideFlags: 0
@@ -19576,6 +19646,7 @@ GameObject:
   - component: {fileID: 1530397044}
   - component: {fileID: 1530397043}
   - component: {fileID: 1530397046}
+  - component: {fileID: 1530397047}
   m_Layer: 0
   m_Name: InputField Old Password
   m_TagString: Untagged
@@ -19756,6 +19827,19 @@ MonoBehaviour:
   _eyeIcon: {fileID: 303796515}
   showSprite: {fileID: 21300000, guid: 9942d78fb792ebd459d7f5ff104d0bf6, type: 3}
   hideSprite: {fileID: 21300000, guid: 7c0faceae79c6174e911e89955101c89, type: 3}
+--- !u!114 &1530397047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530397041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1534978451
 GameObject:
   m_ObjectHideFlags: 0
@@ -20037,6 +20121,7 @@ GameObject:
   - component: {fileID: 1554207580}
   - component: {fileID: 1554207579}
   - component: {fileID: 1554207578}
+  - component: {fileID: 1554207581}
   m_Layer: 0
   m_Name: InputField Username
   m_TagString: Untagged
@@ -20200,6 +20285,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554207576}
   m_CullTransparentMesh: 1
+--- !u!114 &1554207581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554207576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1559564889
 GameObject:
   m_ObjectHideFlags: 0
@@ -23313,6 +23411,7 @@ GameObject:
   - component: {fileID: 1838937556}
   - component: {fileID: 1838937555}
   - component: {fileID: 1838937558}
+  - component: {fileID: 1838937559}
   m_Layer: 0
   m_Name: InputField Password
   m_TagString: Untagged
@@ -23493,6 +23592,19 @@ MonoBehaviour:
   _eyeIcon: {fileID: 1895376041}
   showSprite: {fileID: 21300000, guid: 9942d78fb792ebd459d7f5ff104d0bf6, type: 3}
   hideSprite: {fileID: 21300000, guid: 7c0faceae79c6174e911e89955101c89, type: 3}
+--- !u!114 &1838937559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838937553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1849899901
 GameObject:
   m_ObjectHideFlags: 0
@@ -25387,6 +25499,7 @@ GameObject:
   - component: {fileID: 2014103663}
   - component: {fileID: 2014103662}
   - component: {fileID: 2014103661}
+  - component: {fileID: 2014103664}
   m_Layer: 0
   m_Name: InputField Username
   m_TagString: Untagged
@@ -25550,6 +25663,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014103659}
   m_CullTransparentMesh: 1
+--- !u!114 &2014103664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014103659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &2015825935
 GameObject:
   m_ObjectHideFlags: 0
@@ -26616,7 +26742,7 @@ RectTransform:
   m_GameObject: {fileID: 2129738500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1926045322}

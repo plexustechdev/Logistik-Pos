@@ -42,7 +42,7 @@ public class LoginView : MonoBehaviour
                 else
                 {
                     if (response.Error_code == ErrorCode.USERNAME_OR_PASSWORD_INVALID.ToString())
-                        _popUpAuth.SetWarning("Username dan email tidak sesuai!\nSilahkan masuk kembali!");
+                        _popUpAuth.SetWarning("Username dan password tidak sesuai!\nSilahkan masuk kembali!");
 
                     if (response.Error_code == ErrorCode.NOT_VERIFIED.ToString())
                         _popUpAuth.SetWarning("AKUN BELUM TERVERIFIKASI!\nSilahkan cek email anda secara berkala, untuk memverifikasi akun anda!");
