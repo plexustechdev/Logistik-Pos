@@ -10,12 +10,13 @@ public class GameVersion : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-            Destroy(this);
+        if (instance != null && instance != this) Destroy(this);
         else
+        {
             instance = this;
+            DontDestroyOnLoad(this);
+        }
 
-        DontDestroyOnLoad(this);
 
         string version = Application.version;
         _versionTMP.text = $"Version: {version}";

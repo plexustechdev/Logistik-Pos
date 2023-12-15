@@ -2551,6 +2551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce9d3faa5f98b04db60d8fe190b8df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customerController: {fileID: 107467542}
   _nameTMP: {fileID: 2134639238}
   _walletTMP: {fileID: 1934556815}
   _usernameLabel: {fileID: 213083595}

@@ -130,7 +130,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 21300000, guid: 791d13f936eedc644be36535ef12da0b, type: 3}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customerImage: {fileID: 5164588489847941868}
+  _lockedImage: {fileID: 5659634270212510957}
   _customerNameTmp: {fileID: 4942309754907600643}
   _questBtn: {fileID: 5666170522319077401}
 --- !u!222 &2094261733926394552
@@ -509,7 +510,7 @@ GameObject:
   - component: {fileID: 7640691666757681688}
   - component: {fileID: 5659634270212510957}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Image Locked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -562,7 +563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7ec346104eebfc341a0d9b9a04433879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3eb054b9d3a7a6c4e9af36ee633a867f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

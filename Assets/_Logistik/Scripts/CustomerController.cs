@@ -28,9 +28,12 @@ public class CustomerController : MonoBehaviour
     [Space]
     [SerializeField] private List<SO_Customer> customers = new();
 
+    private int _countLevel = 1;
 
     public void InitaizeCustomer()
     {
+        _countLevel = 1;
+
         foreach (var customer in GameManager.instance.dataCustomer.Customers)
         {
             CustomerQuestView customerView = CreateCustomerView(customer);
@@ -52,6 +55,8 @@ public class CustomerController : MonoBehaviour
                 Quest availQuest = selectedCustomer.GetAvailableQuest();
                 _character.ShowQuest(availQuest.Description, availQuest.Narrative, selectedCustomer.SpriteCharacter);
             });
+
+            _countLevel++;
         }
     }
 
@@ -59,7 +64,10 @@ public class CustomerController : MonoBehaviour
     {
         CustomerQuestView customerView = Instantiate(_customerViewPrefab, _customerContainer);
 
-        customerView.SetCustomer(customer.SpriteThumbnail, customer.CustomerName);
+        bool isLocked = _countLevel > QuestActiveController.currentLevel;
+        print(isLocked);
+        customerView.SetCustomer(customer.SpriteThumbnail, customer.CustomerName, isLocked);
+
         return customerView;
     }
 }

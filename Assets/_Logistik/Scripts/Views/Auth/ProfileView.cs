@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class ProfileView : MonoBehaviour
 {
+    [Header("Dependency")]
+    [SerializeField] private CustomerController customerController;
+
+    [Header("Property")]
     [SerializeField] private TextMeshProUGUI _nameTMP;
     [SerializeField] private TextMeshProUGUI _walletTMP;
     [SerializeField] private TextMeshProUGUI _usernameLabel;
@@ -54,7 +58,10 @@ public class ProfileView : MonoBehaviour
 
             if (response.Status == "success")
             {
-                string maxLevel = "LV. " + SetLevel().currentLevel.ToString();
+                int level = SetLevel().currentLevel;
+                string maxLevel = "LV. " + level.ToString();
+
+                QuestActiveController.currentLevel = level;
 
                 _levelLabel.text = maxLevel;
                 _levelLabelPanel.text = maxLevel;
@@ -69,6 +76,7 @@ public class ProfileView : MonoBehaviour
                 GameManager.instance.ChangeScene(0);
             }
 
+            customerController.InitaizeCustomer();
             _officeView.SetActive(true);
         });
     }

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        customerController.InitaizeCustomer();
+        // customerController.InitaizeCustomer();
     }
 
     public void ChangeScene(int index)
