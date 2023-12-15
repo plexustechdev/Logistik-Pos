@@ -15,8 +15,8 @@ public class Tweening : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         target.DOMoveX(endPos.position.x, 0.2f);
         character.DOFade(1, 0.2f);
-        yield return new WaitForSeconds(0.6f);
-        dialogueBox.gameObject.transform.DOScale(1, 0.5f);
+        yield return new WaitForSeconds(0.15f);
+        dialogueBox.gameObject.transform.DOScale(1, 0.2f);
         yield return new WaitForSeconds(0.25f);
     }
 

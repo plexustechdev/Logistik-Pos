@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LeaderboardView : MonoBehaviour
 {
-    [SerializeField] private LeaderboardChildView _prefabGO;
+    [SerializeField] private LeaderboardChildView _prefabGO, _currentPlayerGO;
     [SerializeField] private Transform _parent;
     [SerializeField] private AuthNotifView _popUp;
 
@@ -19,6 +19,9 @@ public class LeaderboardView : MonoBehaviour
         Authentication.instance.GetDataToken(Gateway.URI + Path.Leaderboard, (result) =>
         {
             ResponseLeaderboard response = JsonConvert.DeserializeObject<ResponseLeaderboard>(result);
+
+            var yellowColor = new Color32(250, 183, 17, 255);
+
             if (response.Status == "success")
             {
                 if (response.Data is null) print("no leaderboard data");
@@ -27,8 +30,16 @@ public class LeaderboardView : MonoBehaviour
                 {
                     LeaderboardChildView obj = Instantiate(_prefabGO, _parent);
 
+                    if (data.Player_Id == response.Peringkat.Player_Id)
+                        obj.SetLeaderboard(data.Rank.ToString(), data.Username, data.Total_amount, yellowColor);
+
                     obj.SetLeaderboard(data.Rank.ToString(), data.Username, data.Total_amount);
                 }
+
+                if (response.Peringkat.Rank > 100)
+                    _currentPlayerGO.SetLeaderboard("N/A", response.Peringkat.Username, response.Peringkat.Total_amount, yellowColor);
+                else
+                    _currentPlayerGO.SetLeaderboard(response.Peringkat.Rank.ToString(), response.Peringkat.Username, response.Peringkat.Total_amount, yellowColor);
             }
             else
             {

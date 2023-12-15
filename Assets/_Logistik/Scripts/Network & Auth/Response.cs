@@ -84,7 +84,8 @@ public class ResponseLeaderboard : IResponse
 
 public class LeaderboardPeringkat
 {
-    public int PlayerId { get; set; }
+    public string Username { get; set; }
+    public int Player_Id { get; set; }
     public string Total_amount { get; set; }
     public int Rank { get; set; }
 }
@@ -92,7 +93,7 @@ public class LeaderboardPeringkat
 public class LeaderboardData
 {
     public string Username { get; set; }
-    public int PlayerId { get; set; }
+    public int Player_Id { get; set; }
     public string Total_amount { get; set; }
     public int Rank { get; set; }
 }
