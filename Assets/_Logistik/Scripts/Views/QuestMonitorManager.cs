@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,6 @@ using UnityEngine.UI;
 
 public class QuestMonitorManager : MonoBehaviour
 {
-    public static QuestMonitorManager instance;
-
     public Quest availableQuest;
     [SerializeField] private CustomerCharacter _customer;
     [SerializeField] private QuestActiveView _questActiveView;
@@ -23,10 +22,8 @@ public class QuestMonitorManager : MonoBehaviour
     [SerializeField] private CustomerController customerController;
     [SerializeField] private CustomerCharacter customerCharacter;
 
-    private void Start()
+    private void Awake()
     {
-        instance = this;
-        if (QuestActiveController.isFinished) CancelOrder();
         if (QuestActiveController.ActiveQuest is null) return;
 
         _customer.QuestActiveView();
@@ -92,9 +89,27 @@ public class QuestMonitorManager : MonoBehaviour
     {
         availableQuest.IsActive = false;
         // questController.SetActiveQuest(null);
+        QuestActiveController.isCompleteQuest = false;
         QuestActiveController.SetActiveQuest();
-        QuestActiveController.isFinished = false;
-        Debug.Log(QuestActiveController.ActiveQuest);
+        customerController.selectedCustomer = null;
+
+        HideActiveQuest();
+
+        customerCharacter.DialogueImage.gameObject.SetActive(true);
+        ShowBtns(false);
+        customerController.tweening.HideCustomer(_customer.CharacterImage, _customer.DialogueImage);
+
+        GuideView.instance.DeactivateGuide();
+    }
+
+    public void FinishOrder()
+    {
+        availableQuest.IsActive = false;
+        // questController.SetActiveQuest(null);
+        QuestActiveController.ActiveQuest.IsFinished = true;
+        QuestActiveController.isCompleteQuest = false;
+
+        QuestActiveController.SetActiveQuest();
         customerController.selectedCustomer = null;
 
         HideActiveQuest();

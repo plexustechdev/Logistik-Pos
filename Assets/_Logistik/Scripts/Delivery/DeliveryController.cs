@@ -181,8 +181,7 @@ public class DeliveryController : MonoBehaviour
 
     public void FinishQuest()
     {
-        // QuestMonitorManager.instance.CancelOrder();
-        QuestActiveController.isFinished = true;
+        QuestActiveController.isCompleteQuest = true;
     }
 }
 

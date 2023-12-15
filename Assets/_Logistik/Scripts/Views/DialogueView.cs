@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class DialogueView : MonoBehaviour
 {
+    public static DialogueView instance;
+    [SerializeField] private QuestMonitorManager _quest;
     [SerializeField] private NarrativeDialogue _dialogueData;
     [SerializeField] private TextMeshProUGUI _dialogueTmp;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void OnEnable()
     {
@@ -17,6 +24,12 @@ public class DialogueView : MonoBehaviour
     {
         _dialogueData.SetCount(0);
         CurrentDialogue();
+        gameObject.SetActive(true);
+    }
+
+    public void ShowLastDialogue()
+    {
+        _dialogueTmp.text = _dialogueData.FinDialogue;
         gameObject.SetActive(true);
     }
 

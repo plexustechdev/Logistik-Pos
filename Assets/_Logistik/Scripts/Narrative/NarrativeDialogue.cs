@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class NarrativeDialogue : MonoBehaviour
 {
+    [SerializeField] private QuestMonitorManager _quest;
+    [TextArea][SerializeField] private string _dialogueLast;
     [TextArea][SerializeField] private List<string> _dialogueList = new List<string>();
     private int count = 0;
 
+    public string FinDialogue => _dialogueLast;
     public string CurrentDialogue => _dialogueList[0];
-
     public void SetCount(int count) => this.count = count;
 
     public string NextDialogue

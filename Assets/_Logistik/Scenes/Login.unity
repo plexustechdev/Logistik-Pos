@@ -6091,6 +6091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24321c3da0dbf074cad3f7ff88cf0525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quest: {fileID: 1685330323}
   _dialogueData: {fileID: 1359351717}
   _dialogueTmp: {fileID: 279113772}
 --- !u!114 &421219067 stripped
@@ -18131,6 +18132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced81532e9eb9148ba347ee5ffd59ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quest: {fileID: 1685330323}
+  _dialogueLast: "Selamat! Kamu berhasil menyelesaikan semua misi pengiriman dalam
+    game <font=\"Myriad Pro Black SDF\">LOQUESTIC!</font> Jangan berhenti di sini,
+    ayo ulangi level-level sebelumnya untuk meraih poin sebanyak-banyaknya dan jadilah
+    yang terbaik di Leaderboard!\r\n\r\nSssst.. tetap pantau ya, karena Episode Ke-2
+    dari game <font=\"Myriad Pro Black SDF\">LOQUESTIC</font> akan segera tiba\u2026..\r"
   _dialogueList:
   - 'Selamat datang di game "Loquestic"!
 
@@ -18234,7 +18241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0d037795ef850514eb1f47d456ab0f56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea8090ba48f6cc24d94d4af4078f237b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22420,7 +22427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 741fd2418edd31d47ae0dbb4d9bf86ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fec551e5b8ea2e94094ccdc86c7d92b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27903,8 +27910,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1113811917}
   - {fileID: 385878586}
-  - {fileID: 107467541}
   - {fileID: 613230897}
+  - {fileID: 107467541}
   - {fileID: 1359351718}
   - {fileID: 1268970166}
   - {fileID: 1718491350}
