@@ -20,6 +20,12 @@ public class CustomerQuestView : MonoBehaviour
         CheckIsLocked(isLocked);
     }
 
+    public void SetCustomer(Sprite customerImage, string customerName)
+    {
+        _customerImage.sprite = customerImage;
+        _customerNameTmp.text = customerName;
+    }
+
     private void CheckIsLocked(bool isLocked)
     {
         if (isLocked)

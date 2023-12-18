@@ -140,7 +140,7 @@ MonoBehaviour:
       IsFinished: 0
       IsUsingTimer: 1
       spriteBg: {fileID: 21300000, guid: 74e3392f6a5a3164e8c5ff9ae2f05e62, type: 3}
-  - CustomerName: Sept
+  - CustomerName: Septi
     SpriteCharacter: {fileID: 21300000, guid: dddf24b7af8d8d1439e5e5a8f0f02590, type: 3}
     SpriteThumbnail: {fileID: 21300000, guid: e494ce58e6157b842836fa80c8e0408c, type: 3}
     quests:
@@ -152,7 +152,7 @@ MonoBehaviour:
       TransportationType: 4
       Timer: 0
       IsActive: 0
-      IsFinished: 1
+      IsFinished: 0
       IsUsingTimer: 0
       spriteBg: {fileID: 21300000, guid: 62b377085236acc448cd9d9d24b50d04, type: 3}
   - CustomerName: Bima
