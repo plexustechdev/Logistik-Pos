@@ -64,9 +64,9 @@ public class CustomerController : MonoBehaviour
     {
         CustomerQuestView customerView = Instantiate(_customerViewPrefab, _customerContainer);
 
-        // bool isLocked = _countLevel > QuestActiveController.currentLevel;
-        // print(isLocked);
-        customerView.SetCustomer(customer.SpriteThumbnail, customer.CustomerName);
+        bool isLocked = _countLevel > QuestActiveController.currentLevel;
+        print(isLocked);
+        customerView.SetCustomer(customer.SpriteThumbnail, customer.CustomerName, isLocked);
 
         return customerView;
     }
