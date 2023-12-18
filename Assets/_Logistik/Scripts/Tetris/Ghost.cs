@@ -15,6 +15,8 @@ public class Ghost : MonoBehaviour
 
     private void Awake()
     {
+        if (QuestActiveController.ActiveQuest.Level >= 7) this.gameObject.SetActive(false);
+
         this.tilemap = GetComponentInChildren<Tilemap>();
 
         this.cells = new Vector3Int[4];
