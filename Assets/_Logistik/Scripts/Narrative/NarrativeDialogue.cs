@@ -13,6 +13,15 @@ public class NarrativeDialogue : MonoBehaviour
     public string CurrentDialogue => _dialogueList[0];
     public void SetCount(int count) => this.count = count;
 
+    public bool IsFirstDialog
+    {
+        get
+        {
+            if (count == 0) return true;
+            else return false;
+        }
+    }
+
     public string NextDialogue
     {
         get

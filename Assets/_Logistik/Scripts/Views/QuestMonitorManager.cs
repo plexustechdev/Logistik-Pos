@@ -22,10 +22,14 @@ public class QuestMonitorManager : MonoBehaviour
     [SerializeField] private CustomerController customerController;
     [SerializeField] private CustomerCharacter customerCharacter;
 
-    private void Awake()
+    private void Start()
     {
         if (QuestActiveController.ActiveQuest is null) return;
+        ShowAvailableQuest();
+    }
 
+    private void ShowAvailableQuest()
+    {
         _customer.QuestActiveView();
         SetActiveQuest(QuestActiveController.ActiveQuest.Description);
         customerController.selectedCustomer = GameManager.instance.dataCustomer.Customers[QuestActiveController.ActiveQuest.Level - 1];
@@ -33,8 +37,6 @@ public class QuestMonitorManager : MonoBehaviour
         ShowAcceptButton(false);
         _customer.GetComponent<Image>().color = Color.white;
         ShowActiveQuest();
-
-        print(customerController.selectedCustomer.SpriteCharacter);
     }
 
     public void ShowActiveQuest()
@@ -88,7 +90,6 @@ public class QuestMonitorManager : MonoBehaviour
     public void CancelOrder()
     {
         availableQuest.IsActive = false;
-        // questController.SetActiveQuest(null);
         QuestActiveController.isCompleteQuest = false;
         QuestActiveController.SetActiveQuest();
         customerController.selectedCustomer = null;
@@ -104,11 +105,6 @@ public class QuestMonitorManager : MonoBehaviour
 
     public void FinishOrder()
     {
-        availableQuest.IsActive = false;
-        // questController.SetActiveQuest(null);
-        QuestActiveController.ActiveQuest.IsFinished = true;
-        QuestActiveController.isCompleteQuest = false;
-
         QuestActiveController.SetActiveQuest();
         customerController.selectedCustomer = null;
 
@@ -119,5 +115,13 @@ public class QuestMonitorManager : MonoBehaviour
         customerController.tweening.HideCustomer(_customer.CharacterImage, _customer.DialogueImage);
 
         GuideView.instance.DeactivateGuide();
+    }
+
+    public void CompleteQuest()
+    {
+        QuestActiveController.ActiveQuest.IsFinished = true;
+        QuestActiveController.ActiveQuest.IsActive = false;
+
+        QuestActiveController.isCompleteQuest = false;
     }
 }

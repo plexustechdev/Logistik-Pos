@@ -12,8 +12,8 @@ public class Customer
     {
         for (int i = 0; i < quests.Count; i++)
         {
-            if (!quests[i].IsFinished)
-                return quests[i];
+            // if (!quests[i].IsFinished)
+            return quests[i];
         }
 
         return null;

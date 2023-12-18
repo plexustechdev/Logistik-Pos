@@ -152,7 +152,7 @@ MonoBehaviour:
       TransportationType: 4
       Timer: 0
       IsActive: 0
-      IsFinished: 0
+      IsFinished: 1
       IsUsingTimer: 0
       spriteBg: {fileID: 21300000, guid: 62b377085236acc448cd9d9d24b50d04, type: 3}
   - CustomerName: Bima

@@ -7,6 +7,7 @@ public class GameVersion : MonoBehaviour
 {
     public static GameVersion instance;
     [SerializeField] private TextMeshProUGUI _versionTMP;
+    [SerializeField] private GameObject _popUpUnconnected;
 
     private void Awake()
     {
@@ -26,8 +27,19 @@ public class GameVersion : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Delete))
         {
-            AuthenticationSession.ClearCachedToken();
-            GameManager.instance.ChangeScene(0);
+            Reset();
         }
+
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            _popUpUnconnected.SetActive(true);
+        }
+    }
+
+    public void Reset()
+    {
+        _popUpUnconnected.SetActive(false);
+        AuthenticationSession.ClearCachedToken();
+        GameManager.instance.ChangeScene(0);
     }
 }

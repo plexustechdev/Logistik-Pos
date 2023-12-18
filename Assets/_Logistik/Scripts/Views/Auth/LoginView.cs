@@ -37,7 +37,7 @@ public class LoginView : MonoBehaviour
                     AuthenticationSession.CacheToken(response.Data.Token);
                     _overworldCanvas.gameObject.SetActive(true);
                     _loginCanvas.gameObject.SetActive(false);
-                    _dialogue.gameObject.SetActive(true);
+                    _dialogue.ShowDialogue();
                 }
                 else
                 {
