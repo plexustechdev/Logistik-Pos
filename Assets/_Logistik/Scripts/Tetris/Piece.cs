@@ -98,10 +98,10 @@ public class Piece : MonoBehaviour
 
         Move(Vector2Int.down);
 
-        if (this.lockTime >= this.lockDelay)
-        {
-            Lock();
-        }
+        // if (this.lockTime >= this.lockDelay)
+        // {
+        //     Lock();
+        // }
     }
 
     private void Lock()
@@ -124,14 +124,46 @@ public class Piece : MonoBehaviour
         {
             this.position = newPosition;
             this.lockTime = 0f;
+
+
+
         }
+
+        if (!CheckBottom())
+            Lock();
 
         return valid;
     }
 
+    private bool MoveHD(Vector2Int translation)
+    {
+        Vector3Int newPosition = this.position;
+        newPosition.x += translation.x;
+        newPosition.y += translation.y;
+
+        bool valid = this.board.IsValidPosition(this, newPosition);
+
+        if (valid)
+        {
+            this.position = newPosition;
+            this.lockTime = 0f;
+        }            
+        return valid;
+    }
+
+    private bool CheckBottom()
+    {
+        Vector3Int newPosition = this.position;
+        newPosition.x += Vector2Int.down.x;
+        newPosition.y += Vector2Int.down.y;
+
+
+        return this.board.IsValidPosition(this, newPosition);
+    }
+
     private void HardDrop()
     {
-        while (Move(Vector2Int.down))
+        while (MoveHD(Vector2Int.down))
         {
             continue;
         }
