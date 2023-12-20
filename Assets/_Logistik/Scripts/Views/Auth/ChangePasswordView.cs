@@ -15,8 +15,6 @@ public class ChangePasswordView : MonoBehaviour
 
     public void Btn_ChangePassword()
     {
-        _loadingPanel.SetActive(true);
-
         string oldPassword = _oldPasswordTMP.text;
         string newPassword = _newPasswordTMP.text;
         
@@ -31,6 +29,8 @@ public class ChangePasswordView : MonoBehaviour
             _popUp.SetWarning("Password minimal 6 karakter!");
             return;
         }
+
+        _loadingPanel.SetActive(true);
 
         FormUtils.SetFormChangePassword(oldPassword, newPassword);
         Authentication.instance.PostDataToken(Gateway.URI + Path.ChangePassword, FormUtils.GetForm, (result) =>
