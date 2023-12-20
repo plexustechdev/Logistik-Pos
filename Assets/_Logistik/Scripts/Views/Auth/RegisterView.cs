@@ -24,6 +24,12 @@ public class RegisterView : MonoBehaviour
         string email = _email.text;
         string password = _password.text;
 
+        if (password.Length < 6)
+        {
+            _popUpAuth.SetWarning("Password minimal 6 karakter!");
+            return;
+        }
+        
         if (username != string.Empty && phoneNumber != string.Empty && email != string.Empty && password != string.Empty)
         {
             _loadingPanel.SetActive(true);

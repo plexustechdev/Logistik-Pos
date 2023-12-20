@@ -18,6 +18,12 @@ public class ChangePasswordView : MonoBehaviour
         string oldPassword = _oldPasswordTMP.text;
         string newPassword = _newPasswordTMP.text;
 
+        if (oldPassword.Length < 6 || newPassword.Length < 6)
+        {
+            _popUp.SetWarning("Password minimal 6 karakter!");
+            return;
+        }
+
         FormUtils.SetFormChangePassword(oldPassword, newPassword);
         Authentication.instance.PostDataToken(Gateway.URI + Path.ChangePassword, FormUtils.GetForm, (result) =>
         {

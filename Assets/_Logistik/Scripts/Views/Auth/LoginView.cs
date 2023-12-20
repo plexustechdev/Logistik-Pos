@@ -21,6 +21,12 @@ public class LoginView : MonoBehaviour
     {
         string username = _username.text;
         string password = _password.text;
+        
+        if (password.Length < 6)
+        {
+            _popUpAuth.SetWarning("Password minimal 6 karakter!");
+            return;
+        }
 
         if (username != string.Empty && password != string.Empty)
         {
