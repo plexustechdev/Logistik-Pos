@@ -59,11 +59,10 @@ public class ProfileView : MonoBehaviour
             if (response.Status == "success")
             {
                 int level = SetLevel().currentLevel;
-                int playerLevel = level >= 10 ? 10 : level + 1;
-                string showLevel = "LV. " + playerLevel.ToString();
-
                 QuestActiveController.currentLevel = level;
-
+                customerController.InitaizeCustomer();
+                
+                string showLevel = "LV. " + level.ToString();
                 _levelLabel.text = showLevel;
                 _levelLabelPanel.text = showLevel;
 
@@ -77,7 +76,6 @@ public class ProfileView : MonoBehaviour
                 GameManager.instance.ChangeScene(0);
             }
 
-            customerController.InitaizeCustomer();
             _officeView.SetActive(true);
         });
     }
@@ -86,7 +84,7 @@ public class ProfileView : MonoBehaviour
     {
         int _currentLevel = _playerExp switch
         {
-            > 0 and < 10 => 1,
+            >= 0 and < 10 => 1,
             >= 10 and < 40 => 2,
             >= 40 and < 60 => 3,
             >= 60 and < 100 => 4,
