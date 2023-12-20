@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -17,6 +19,12 @@ public class ChangePasswordView : MonoBehaviour
 
         string oldPassword = _oldPasswordTMP.text;
         string newPassword = _newPasswordTMP.text;
+        
+        if (newPassword.Any(Char.IsWhiteSpace) || oldPassword.Any(Char.IsWhiteSpace))
+        {
+            _popUp.SetWarning("Password baru memiliki spasi!");
+            return;
+        }
 
         if (oldPassword.Length < 6 || newPassword.Length < 6)
         {

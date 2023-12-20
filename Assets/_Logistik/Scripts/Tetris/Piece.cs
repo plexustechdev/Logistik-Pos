@@ -124,13 +124,13 @@ public class Piece : MonoBehaviour
         {
             this.position = newPosition;
             this.lockTime = 0f;
-
+            if (!CheckBottom())
+                Lock();
 
 
         }
 
-        if (!CheckBottom())
-            Lock();
+
 
         return valid;
     }
@@ -147,7 +147,7 @@ public class Piece : MonoBehaviour
         {
             this.position = newPosition;
             this.lockTime = 0f;
-        }            
+        }
         return valid;
     }
 

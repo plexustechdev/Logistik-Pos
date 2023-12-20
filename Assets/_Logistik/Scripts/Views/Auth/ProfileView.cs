@@ -59,12 +59,13 @@ public class ProfileView : MonoBehaviour
             if (response.Status == "success")
             {
                 int level = SetLevel().currentLevel;
-                string maxLevel = "LV. " + level.ToString();
+                int playerLevel = level >= 10 ? 10 : level + 1;
+                string showLevel = "LV. " + playerLevel.ToString();
 
                 QuestActiveController.currentLevel = level;
 
-                _levelLabel.text = maxLevel;
-                _levelLabelPanel.text = maxLevel;
+                _levelLabel.text = showLevel;
+                _levelLabelPanel.text = showLevel;
 
                 _walletTMP.text = _playerExp + "/" + SetLevel().maxLevel.ToString();
                 _levelBar.fillAmount = (float)_playerExp / (float)SetLevel().maxLevel;
@@ -85,7 +86,6 @@ public class ProfileView : MonoBehaviour
     {
         int _currentLevel = _playerExp switch
         {
-            0 => 0,
             > 0 and < 10 => 1,
             >= 10 and < 40 => 2,
             >= 40 and < 60 => 3,
@@ -101,7 +101,6 @@ public class ProfileView : MonoBehaviour
 
         int _maxLevel = _currentLevel switch
         {
-            0 => 0,
             1 => 10,
             2 => 40,
             3 => 60,

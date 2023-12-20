@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -23,6 +25,12 @@ public class RegisterView : MonoBehaviour
         string phoneNumber = _phoneNumber.text;
         string email = _email.text;
         string password = _password.text;
+        
+        if (password.Any(Char.IsWhiteSpace))
+        {
+            _popUpAuth.SetWarning("Password memiliki spasi!");
+            return;
+        }
 
         if (password.Length < 6)
         {
