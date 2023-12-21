@@ -165,6 +165,8 @@ public class LevelManager : MonoBehaviour
 
     private void CheckTarget()
     {
+        if (isFinished) return;
+
         if (this.score / scorePerColumn >= this.targetRows)
         {
             Finish();
@@ -173,8 +175,6 @@ public class LevelManager : MonoBehaviour
         {
             GameOver();
         }
-        
-        if (isFinished) return;
     }
 
     public void GameOver()
@@ -193,18 +193,52 @@ public class LevelManager : MonoBehaviour
         isFinished = true;
 
         AudioController.instance.PlayWin(true);
-        Debug.Log("Finish " + score);
+        Debug.Log("Finish ");
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
         exp_txt.text = "Exp : " + score;
+        
+        int resultScore = (int)score;
+        if (maxTimer != 0)
+        {
+            print(resultScore + ", "+ BonusScore());
+            resultScore += BonusScore();
+        }
 
-        SendExp();
+        DeliveryController.instance.currentScore = resultScore;
+        SendExp(resultScore);
     }
 
-    private void SendExp()
+    private int BonusScore()
+    {
+        float total = maxTimer - timeRemaining;
+
+        float offset1 = maxTimer * 0.3f;
+        float offset2 = maxTimer * 0.5f;
+        float offset3 = maxTimer * 0.7f;
+
+        if (total < offset1)
+        {
+            return 3;
+        } 
+        else if (total >= offset1 && total < offset2)
+        {
+            return 2;
+        }
+        else if (total >= offset2 && total < offset3)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    private void SendExp(int resultScore)
     {
         _loadingView.SetActive(true);
-        FormUtils.SetFormWallet((int)score);
+        FormUtils.SetFormWallet(resultScore);
         Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>
         {
             _loadingView.SetActive(false);

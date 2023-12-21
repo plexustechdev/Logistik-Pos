@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DeliveryController : MonoBehaviour
@@ -26,6 +27,7 @@ public class DeliveryController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject popUpUI;
     [SerializeField] private Camera _camera;
+    [SerializeField] private TextMeshProUGUI scoreTMP;
 
     [Header("Audio")]
     [SerializeField] private AudioSource _bgmAudio;
@@ -98,6 +100,8 @@ public class DeliveryController : MonoBehaviour
 
         yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
         _vehicle.SetEffect(false);
+
+        scoreTMP.text = "EXP: " + currentScore;
         popUpUI.SetActive(true);
     }
 
@@ -121,9 +125,9 @@ public class DeliveryController : MonoBehaviour
 
         yield return new WaitForSeconds(_vehicle.GetTimeDeliver);
         _vehicle.SetEffect(false);
+        
+        scoreTMP.text = "EXP: " + currentScore;
         popUpUI.SetActive(true);
-
-        // apiManager.PostEXP((int)currentScore);
     }
 
     private void SetMap()
