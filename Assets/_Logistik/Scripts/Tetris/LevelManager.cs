@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text time_txt;
     [SerializeField] private TMP_Text quest_txt;
     [SerializeField] private TMP_Text countdown_txt;
-    [SerializeField] private TextMeshProUGUI exp_txt;
+    [SerializeField] private TMP_Text exp_txt;
 
     [SerializeField] private Camera mainCamera;
 
@@ -147,8 +147,8 @@ public class LevelManager : MonoBehaviour
         this.score += score;
         score_txt.text = this.score.ToString();
         FillBar(1f / (float)targetRows);
-        CheckTarget();
         UpdateProgress();
+        CheckTarget();
     }
 
     IEnumerator Countdown(int i)
@@ -165,8 +165,6 @@ public class LevelManager : MonoBehaviour
 
     private void CheckTarget()
     {
-        if (isFinished) return;
-
         if (this.score / scorePerColumn >= this.targetRows)
         {
             Finish();
@@ -175,6 +173,8 @@ public class LevelManager : MonoBehaviour
         {
             GameOver();
         }
+        
+        if (isFinished) return;
     }
 
     public void GameOver()
@@ -193,10 +193,10 @@ public class LevelManager : MonoBehaviour
         isFinished = true;
 
         AudioController.instance.PlayWin(true);
-        Debug.Log("Finish");
+        Debug.Log("Finish " + score);
         isPlaying = false;
         board.GetComponent<Piece>().enabled = false;
-        exp_txt.text = "Exp : " + score.ToString();
+        exp_txt.text = "Exp : " + score;
 
         SendExp();
     }

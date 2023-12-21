@@ -31,15 +31,15 @@ public class LeaderboardView : MonoBehaviour
                     LeaderboardChildView obj = Instantiate(_prefabGO, _parent);
 
                     if (data.Player_Id == response.Peringkat.Player_Id)
-                        obj.SetLeaderboard(data.Rank.ToString(), data.Username, data.Total_amount, yellowColor);
+                        obj.SetLeaderboard(data.Rank.ToString(), data.Username, (int)data.Total_amount, yellowColor);
 
-                    obj.SetLeaderboard(data.Rank.ToString(), data.Username, data.Total_amount);
+                    obj.SetLeaderboard(data.Rank.ToString(), data.Username, (int)data.Total_amount);
                 }
 
                 if (response.Peringkat.Rank > 100)
-                    _currentPlayerGO.SetLeaderboard("N/A", response.Peringkat.Username, response.Peringkat.Total_amount, yellowColor);
+                    _currentPlayerGO.SetLeaderboard("N/A", response.Peringkat.Username, (int)response.Peringkat.Total_amount, yellowColor);
                 else
-                    _currentPlayerGO.SetLeaderboard(response.Peringkat.Rank.ToString(), response.Peringkat.Username, response.Peringkat.Total_amount, yellowColor);
+                    _currentPlayerGO.SetLeaderboard(response.Peringkat.Rank.ToString(), response.Peringkat.Username, (int)response.Peringkat.Total_amount, yellowColor);
             }
             else
             {

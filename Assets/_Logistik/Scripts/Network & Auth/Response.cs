@@ -86,7 +86,7 @@ public class LeaderboardPeringkat
 {
     public string Username { get; set; }
     public int Player_Id { get; set; }
-    public string Total_amount { get; set; }
+    public float Total_amount { get; set; }
     public int Rank { get; set; }
 }
 
@@ -94,7 +94,7 @@ public class LeaderboardData
 {
     public string Username { get; set; }
     public int Player_Id { get; set; }
-    public string Total_amount { get; set; }
+    public float Total_amount { get; set; }
     public int Rank { get; set; }
 }
 
