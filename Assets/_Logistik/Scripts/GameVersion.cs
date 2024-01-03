@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class GameVersion : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern string GetBaseUrl();
+
     public static GameVersion instance;
     [SerializeField] private TextMeshProUGUI _versionTMP;
     [SerializeField] private GameObject _popUpUnconnected;
@@ -18,7 +22,7 @@ public class GameVersion : MonoBehaviour
             DontDestroyOnLoad(this);
         }
 
-
+        Gateway.SetUri(GetBaseUrl());
         string version = Application.version;
         _versionTMP.text = $"Version: {version}";
     }

@@ -16,15 +16,6 @@ public class Authentication : MonoBehaviour
         instance = this;
     }
 
-    // private void Start()
-    // {
-    //     if (AuthenticationSession.GetCachedToken != null)
-    //     {
-    //         AuthenticationSession.ClearCachedToken();
-    //         GameManager.instance.ChangeScene(0);
-    //     }
-    // }
-
     private IEnumerator Post(Action<string> callback)
     {
         UnityWebRequest request = UnityWebRequest.Post(_url, _data);

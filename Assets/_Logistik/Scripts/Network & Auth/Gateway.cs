@@ -1,6 +1,11 @@
+using System;
+
 public static class Gateway
 {
-    public static string URI = "https://sandbox.plexustechdev.com/loquestic/laravel/public/api/";
+    private static string uri;
+
+    public static string URI => uri;
+    public static string SetUri(string newUri) => uri = newUri;
 }
 
 public static class Path
