@@ -2,7 +2,7 @@ using System;
 
 public static class Gateway
 {
-    private static string uri;
+    private static string uri = "http://10.27.0.237/laravel/public/api/";
 
     public static string URI => uri;
     public static string SetUri(string newUri) => uri = newUri;

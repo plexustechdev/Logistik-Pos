@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System.Runtime.InteropServices;
+// using System.Runtime.InteropServices;
 
 public class GameVersion : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern string GetBaseUrl();
+    // [DllImport("__Internal")]
+    // private static extern string GetBaseUrl();
 
     public static GameVersion instance;
     [SerializeField] private TextMeshProUGUI _versionTMP;
@@ -22,7 +22,7 @@ public class GameVersion : MonoBehaviour
             DontDestroyOnLoad(this);
         }
 
-        Gateway.SetUri(GetBaseUrl());
+        // Gateway.SetUri(GetBaseUrl());
         string version = Application.version;
         _versionTMP.text = $"Version: {version}";
     }
@@ -34,10 +34,10 @@ public class GameVersion : MonoBehaviour
             Reset();
         }
 
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            _popUpUnconnected.SetActive(true);
-        }
+        // if (Application.internetReachability == NetworkReachability.NotReachable)
+        // {
+        //     _popUpUnconnected.SetActive(true);
+        // }
     }
 
     public void Reset()
