@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,5 +44,16 @@ public class GameManager : MonoBehaviour
     {
         if (QuestActiveController.ActiveQuest != null)
             loadingView.gameObject.SetActive(true);
+    }
+
+    public IEnumerator ChangeSceneAsync(Action waitLoading)
+    {
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(0);
+
+        while (!loadOperation.isDone)
+        {
+            waitLoading();
+            yield return null;
+        }
     }
 }
