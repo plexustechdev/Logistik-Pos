@@ -127,3 +127,10 @@ public class ResponseChangePassword : IResponse
     public string Status { get; set; }
     public string Message { get; set; }
 }
+
+[Serializable]
+public class ResponsePlay : IResponse
+{
+    public string Status { get; set; }
+    public string Message { get; set; }
+}

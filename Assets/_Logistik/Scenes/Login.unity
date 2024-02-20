@@ -380,7 +380,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 932.96, y: 305.12}
+  m_SizeDelta: {x: 949.2, y: 305.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41635851
 MonoBehaviour:
@@ -5728,7 +5728,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &364193716
@@ -6867,11 +6867,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0.2767334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.15570068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6891,15 +6891,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379361127761411884, guid: 08f09d0d2098c3245b531a04ec88f3ed, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8873,6 +8873,7 @@ MonoBehaviour:
   dataCustomer: {fileID: 11400000, guid: af66721342e0c574bb0a2f1574c09ec3, type: 2}
   customerController: {fileID: 107467542}
   loadingView: {fileID: 1178155823}
+  panelLoading: {fileID: 292092439}
 --- !u!4 &613230897
 Transform:
   m_ObjectHideFlags: 0
@@ -25228,8 +25229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 466.48, y: -152.56}
-  m_SizeDelta: {x: 772.96, y: 145.12}
+  m_AnchoredPosition: {x: 474.6, y: -152.56}
+  m_SizeDelta: {x: 789.2, y: 145.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914346144
 MonoBehaviour:
