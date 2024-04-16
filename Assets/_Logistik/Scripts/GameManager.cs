@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        // customerController.InitaizeCustomer();
+        Authentication.instance.PostDataToken(Gateway.URI + Path.Play, new WWWForm(), (result) =>
+        {
+            ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
+        });
         authNotifView = FindAnyObjectByType<AuthNotifView>();
     }
 
@@ -46,23 +49,21 @@ public class GameManager : MonoBehaviour
 
     public void Btn_LoadingCanvas()
     {
-        if (QuestActiveController.ActiveQuest != null)
+        if (QuestActiveController.ActiveQuest == null) return;
+        panelLoading.SetActive(true);
+        Authentication.instance.PostDataToken(Gateway.URI + Path.Play, new WWWForm(), (result) =>
         {
-            panelLoading.SetActive(true);
-            Authentication.instance.PostDataToken(Gateway.URI + Path.Play, new WWWForm(), (result) =>
+            panelLoading.SetActive(false);
+            ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
+            if (response.Status == "success")
             {
-                panelLoading.SetActive(false);
-                ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
-                if (response.Status == "success")
-                {
-                    loadingView.gameObject.SetActive(true);
-                }
-                else
-                {
-                    authNotifView.SetWarning("Koneksi anda tidak stabil.\nAnda akan kembali ke tampilan login");
-                }
-            });
-        }
+                loadingView.gameObject.SetActive(true);
+            }
+            else
+            {
+                authNotifView.SetWarning("Koneksi anda tidak stabil.\nAnda akan kembali ke tampilan login");
+            }
+        });
     }
 
     public IEnumerator ChangeSceneAsync(Action waitLoading)

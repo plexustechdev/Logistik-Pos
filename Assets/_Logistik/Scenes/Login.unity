@@ -13287,11 +13287,11 @@ GameObject:
   - component: {fileID: 921950474}
   m_Layer: 0
   m_Name: Guide UI
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &921950474
 RectTransform:
   m_ObjectHideFlags: 0

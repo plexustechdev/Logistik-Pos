@@ -2,7 +2,7 @@ using System;
 
 public static class Gateway
 {
-    private static string uri = "https://doddi.plexustechdev.com/logistic-quest/public/api/";
+    private static string uri = "https://loquestic.posindonesia.co.id/api/";
 
     public static string URI => uri;
     public static string SetUri(string newUri) => uri = newUri;

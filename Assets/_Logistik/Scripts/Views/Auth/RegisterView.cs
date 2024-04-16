@@ -64,6 +64,8 @@ public class RegisterView : MonoBehaviour
                             _popUpAuth.SetWarning("Nomor telpon tidak valid!\nSilahkan masukkan nomor telepon\nminimal 10 digit");
                         else if (message.Key == "username")
                             _popUpAuth.SetWarning("Username telah terdaftar!");
+                        else if(message.Key == "password")
+                            _popUpAuth.SetWarning("<align=\"left\">Sepertinya kata sandi anda lemah, silakan pilih kata sandi yang kuat!\nKata sandi anda harus mengandung:\n<indent=2%>1. Satu huruf besar [AB],</indent>\n<indent=2%>2. Satu huruf kecil [ab],</indent>\n<indent=2%>3. Satu angka [123],</indent>\n<indent=2%>4. Satu karakter khusus [!@#].</indent>");
                     }
                 }
             });
