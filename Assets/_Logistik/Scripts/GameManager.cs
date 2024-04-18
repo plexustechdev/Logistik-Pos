@@ -16,10 +16,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        Authentication.instance.PostDataToken(Gateway.URI + Path.Play, new WWWForm(), (result) =>
-        {
-            ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
-        });
         authNotifView = FindAnyObjectByType<AuthNotifView>();
     }
 
@@ -51,13 +47,14 @@ public class GameManager : MonoBehaviour
     {
         if (QuestActiveController.ActiveQuest == null) return;
         panelLoading.SetActive(true);
-        Authentication.instance.PostDataToken(Gateway.URI + Path.Play, new WWWForm(), (result) =>
+        Authentication.instance.PostDataToken(Gateway.URI + Path.Play + "true", new WWWForm(), (result) =>
         {
             panelLoading.SetActive(false);
             ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
             if (response.Status == "success")
             {
                 loadingView.gameObject.SetActive(true);
+                Debug.Log("status play");
             }
             else
             {

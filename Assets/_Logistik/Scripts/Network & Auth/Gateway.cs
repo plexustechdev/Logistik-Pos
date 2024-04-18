@@ -3,6 +3,7 @@ using System;
 public static class Gateway
 {
     private static string uri = "https://loquestic.posindonesia.co.id/api/";
+    // private static string uri = "https://doddi.plexustechdev.com/logistic-quest/public/api/";
 
     public static string URI => uri;
     public static string SetUri(string newUri) => uri = newUri;
@@ -26,6 +27,6 @@ public static class Path
 
     #region User
     public static string Leaderboard = "leaderboards?page=1";
-    public static string Play = "play";
+    public static string Play = "play?status=";
     #endregion
 }

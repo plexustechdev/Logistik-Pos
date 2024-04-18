@@ -12,6 +12,18 @@ public class LogoutView : MonoBehaviour
         if (AuthenticationSession.GetCachedToken != string.Empty)
         {
             SetLogged();
+            Authentication.instance.PostDataToken(Gateway.URI + Path.Play + "false", new WWWForm(), (result) =>
+            {
+                ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
+                if (response.Status == "success")
+                {
+                    Debug.Log("status not play");
+                }
+                else
+                {
+                    Debug.Log("error connection");
+                }
+            });
         }
     }
 

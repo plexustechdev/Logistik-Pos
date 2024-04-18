@@ -17,7 +17,6 @@ public class InputFieldManager : MonoBehaviour
             _countSelected++;
             if (_countSelected > _inputFields.Count - 1) _countSelected = 0;
             _inputFields[_countSelected].Select();
-            print(_countSelected);
         }
     }
 }

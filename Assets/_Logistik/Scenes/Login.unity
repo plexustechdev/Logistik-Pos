@@ -13287,11 +13287,11 @@ GameObject:
   - component: {fileID: 921950474}
   m_Layer: 0
   m_Name: Guide UI
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &921950474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23033,7 +23033,6 @@ MonoBehaviour:
   _questActiveView: {fileID: 1963822128}
   _questListContainer: {fileID: 66328158}
   _questListTitle: {fileID: 1914805580}
-  _questCharacter: {fileID: 1119268171}
   _acceptBtn: {fileID: 1716629000}
   _denyBtn: {fileID: 1146222803}
   customerController: {fileID: 107467542}

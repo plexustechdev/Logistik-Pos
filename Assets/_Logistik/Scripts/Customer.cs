@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -10,12 +11,6 @@ public class Customer
 
     public Quest GetAvailableQuest()
     {
-        for (int i = 0; i < quests.Count; i++)
-        {
-            // if (!quests[i].IsFinished)
-            return quests[i];
-        }
-
-        return null;
+        return quests.FirstOrDefault();
     }
 }

@@ -30,16 +30,20 @@ public class LeaderboardView : MonoBehaviour
                 {
                     LeaderboardChildView obj = Instantiate(_prefabGO, _parent);
 
-                    if (data.Player_Id == response.Peringkat.Player_Id)
-                        obj.SetLeaderboard(data.Rank.ToString(), data.Username, (int)data.Total_amount, yellowColor);
-
+                    if (response.Peringkat != null)
+                    {
+                        if (data.Player_Id == response.Peringkat.Player_Id)
+                            obj.SetLeaderboard(data.Rank.ToString(), data.Username, (int)data.Total_amount, yellowColor);
+                    }
+                    
                     obj.SetLeaderboard(data.Rank.ToString(), data.Username, (int)data.Total_amount);
                 }
 
-                if (response.Peringkat.Rank > 100)
-                    _currentPlayerGO.SetLeaderboard("N/A", response.Peringkat.Username, (int)response.Peringkat.Total_amount, yellowColor);
-                else
-                    _currentPlayerGO.SetLeaderboard(response.Peringkat.Rank.ToString(), response.Peringkat.Username, (int)response.Peringkat.Total_amount, yellowColor);
+                if (response.Peringkat == null) return;
+
+                _currentPlayerGO.SetLeaderboard(
+                    response.Peringkat.Rank > 100 ? "N/A" : response.Peringkat.Rank.ToString(),
+                    response.Peringkat.Username, (int)response.Peringkat.Total_amount, yellowColor);
             }
             else
             {
