@@ -43,7 +43,7 @@ public class ChangePasswordView : MonoBehaviour
         {
             _loadingPanel.SetActive(false);
 
-            ResponseChangePassword response = JsonConvert.DeserializeObject<ResponseChangePassword>(result);
+            var response = JsonConvert.DeserializeObject<ResponseChangePassword>(result);
             if (response.Status == "success")
             {
                 _objView.SetActive(false);

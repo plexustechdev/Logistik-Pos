@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private SO_Transportation dataTransportation;
     [SerializeField] private ResultScreen resultScreen;
 
+    [SerializeField] private Canvas canvasPopup;
     [Space(10)]
 
     [Header("Level Params")]
@@ -281,6 +282,7 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
+                canvasPopup.gameObject.SetActive(true);
                 print(response.Message[0].Value);
                 print("error");
             }

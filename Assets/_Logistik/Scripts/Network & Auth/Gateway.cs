@@ -27,6 +27,6 @@ public static class Path
 
     #region User
     public static string Leaderboard = "leaderboards?page=1";
-    public static string Play = "play?status=";
+    public static string Play = "play";
     #endregion
 }

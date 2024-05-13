@@ -33,6 +33,7 @@ public class ResponseRegister
     public string Error_code { get; set; }
 }
 
+[Serializable]
 public class Message
 {
     public string Key { get; set; }
@@ -137,11 +138,11 @@ public class ResponseForgotPassword
 }
 
 [Serializable]
-public class ResponseChangePassword : IResponse
+public class ResponseChangePassword
 {
     public string Status { get; set; }
-    public string Key { get; set; }
-    public string Message { get; set; }
+    public List<Message> Message { get; set; }
+    public string Error_Code { get; set; }
 }
 
 [Serializable]
