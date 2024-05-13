@@ -14,7 +14,7 @@ public class SceneHandlerView : MonoBehaviour
 
     public void btn_RestartLevel()
     {
-        GameManager.instance.GoWerehouse();
+        GameManager.instance.GoWarehouse();
     }
 
     public void btn_BackLoginSceneAfterDeliver()

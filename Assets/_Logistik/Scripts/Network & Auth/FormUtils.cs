@@ -35,10 +35,17 @@ public static class FormUtils
         _form.AddField(FormField.EMAIL, email);
     }
 
-    public static void SetFormWallet(int score)
+    public static void SetFormWallet(int amount, string key)
     {
         _form = new WWWForm();
-        _form.AddField(FormField.WALLET, score);
+        _form.AddField(FormField.WALLET, amount);
+        _form.AddField(FormField.KEY, key);
+    }
+
+    public static void SetFormPlay(string key)
+    {
+        _form = new WWWForm();
+        _form.AddField(FormField.KEY, key);
     }
 }
 
@@ -51,4 +58,5 @@ public static class FormField
     public static string PHONE_NUMBER = "phone_number";
     public static string EMAIL = "email";
     public static string WALLET = "amount";
+    public static string KEY = "key";
 }

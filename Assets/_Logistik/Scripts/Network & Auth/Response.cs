@@ -107,6 +107,21 @@ public class ResponseWallet : IResponse
 }
 
 [Serializable]
+public class ResponseWalletSend
+{
+    public string Status { get; set; }
+    public List<WalletData> Message { get; set; }
+    public string Error_Code { get; set; }
+}
+
+[Serializable]
+public class WalletData
+{
+    public string Key { get; set; }
+    public string Value { get; set; }
+}
+
+[Serializable]
 public class ResponseLogout : IResponse
 {
     public string Status { get; set; }
@@ -125,6 +140,7 @@ public class ResponseForgotPassword
 public class ResponseChangePassword : IResponse
 {
     public string Status { get; set; }
+    public string Key { get; set; }
     public string Message { get; set; }
 }
 

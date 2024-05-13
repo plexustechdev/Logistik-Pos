@@ -21,6 +21,12 @@ public class GameVersion : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+        
+#if UNITY_EDITOR
+        Debug.unityLogger.logEnabled = true;
+#else
+ Debug.unityLogger.logEnabled = false;
+#endif
 
         // Gateway.SetUri(GetBaseUrl());
         string version = Application.version;

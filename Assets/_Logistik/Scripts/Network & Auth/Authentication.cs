@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Security.Cryptography;
+using System.Text;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -107,12 +109,50 @@ public class Authentication : MonoBehaviour
 
 public static class AuthenticationSession
 {
-    private static string SESSION_TOKEN_KEY = "session_token";
+    private const string SESSION_TOKEN_KEY = "session_token";
 
     public static string GetCachedToken => PlayerPrefs.GetString(SESSION_TOKEN_KEY);
     public static void CacheToken(string sessionToken) => PlayerPrefs.SetString(SESSION_TOKEN_KEY, sessionToken);
     public static void ClearCachedToken() => PlayerPrefs.DeleteKey(SESSION_TOKEN_KEY);
+    
+    public static (string rawKey, string generatedKey) GetKey
+    {
+        get
+        {
+            var token = GetCachedToken;
+            var tokenLength = token.Length;
+            const int tokenCount = 6;
+
+            var resultKey = new StringBuilder();
+
+            for (int i = tokenLength - 1; i >= tokenLength - tokenCount; i--)
+            {
+                resultKey.Insert(0, token[i]);
+            }
+
+            var rawKey = resultKey.ToString();
+            var generatedKey = GenerateMD5(rawKey);
+
+            return (rawKey, generatedKey);
+        }
+    }
+
+    private static string GenerateMD5(string input)
+    {
+        var md5Hasher = MD5.Create();
+        var data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input));
+        var sBuilder = new StringBuilder();
+        
+        foreach (var t in data)
+        {
+            sBuilder.Append(t.ToString("x2"));
+        }
+        
+        return sBuilder.ToString();
+    }
 }
+
+
 
 public enum ErrorCode
 {

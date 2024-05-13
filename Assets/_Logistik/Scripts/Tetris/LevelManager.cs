@@ -52,6 +52,7 @@ public class LevelManager : MonoBehaviour
     public bool isPlaying = false;
     private bool isPaused = false;
     private bool isFinished = false;
+    private int _resultScore;
 
     public float score;
 
@@ -198,17 +199,17 @@ public class LevelManager : MonoBehaviour
         board.GetComponent<Piece>().enabled = false;
         exp_txt.text = "Exp : " + score;
         
-        int resultScore = (int)score;
+        _resultScore = (int)score;
         if (maxTimer != 0)
         {
-            print(resultScore + ", "+ BonusScore());
-            resultScore += BonusScore();
+            print(_resultScore + ", "+ BonusScore());
+            _resultScore += BonusScore();
         }
 
-        DeliveryController.instance.currentScore = resultScore;
-        SendExp(resultScore);
+        DeliveryController.instance.currentScore = _resultScore;
+        SendToken();
     }
-
+    
     private int BonusScore()
     {
         float total = maxTimer - timeRemaining;
@@ -235,18 +236,17 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void SendExp(int resultScore)
+    private void SendToken()
     {
         _loadingView.SetActive(true);
-        FormUtils.SetFormWallet(resultScore);
-        Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>
+        FormUtils.SetFormPlay(AuthenticationSession.GetKey.rawKey);
+        Authentication.instance.PostDataToken(Gateway.URI + Path.Play, FormUtils.GetForm, (result) =>
         {
             _loadingView.SetActive(false);
             resultScreen.ShowSuccess(true);
-            ResponseWallet response = JsonConvert.DeserializeObject<ResponseWallet>(result);
+            var response = JsonConvert.DeserializeObject<ResponsePlay>(result);
 
-            if (response.Status == "success") print("success");
-            else print("error");
+            print(response.Status == "success" ? "success send key" : "error");
         });
     }
 
@@ -263,10 +263,28 @@ public class LevelManager : MonoBehaviour
 
     public void KirimBarang()
     {
-        mainCamera.enabled = false;
-        DeliveryController.instance.SetDelivery(dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).type, targetRows, QuestActiveController.ActiveQuest.destination.ToString());
-        DeliveryController.instance.Shipment();
-        GameManager.instance.UnloadScene(1);
+        _loadingView.SetActive(true);
+        FormUtils.SetFormWallet(_resultScore, AuthenticationSession.GetKey.generatedKey);
+        Authentication.instance.PostDataToken(Gateway.URI + Path.Wallets, FormUtils.GetForm, (result) =>
+        {
+            _loadingView.SetActive(false);
+            resultScreen.ShowSuccess(true);
+            var response = JsonConvert.DeserializeObject<ResponseWalletSend>(result);
+
+            if (response.Status == "success")
+            {
+                mainCamera.enabled = false;
+                DeliveryController.instance.SetDelivery(dataTransportation.GetTransportasi(QuestActiveController.ActiveQuest.TransportationType).type, targetRows, QuestActiveController.ActiveQuest.destination.ToString());
+                DeliveryController.instance.Shipment();
+                GameManager.instance.UnloadScene(1);
+                print("success");
+            }
+            else
+            {
+                print(response.Message[0].Value);
+                print("error");
+            }
+        });
     }
 
     public void PauseGame()

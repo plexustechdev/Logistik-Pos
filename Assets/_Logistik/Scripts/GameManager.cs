@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Security.Cryptography;
+using System.Text;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(index);
     }
 
-    public void GoWerehouse()
+    public void GoWarehouse()
     {
         if (QuestActiveController.ActiveQuest != null)
         {
@@ -46,21 +48,23 @@ public class GameManager : MonoBehaviour
     public void Btn_LoadingCanvas()
     {
         if (QuestActiveController.ActiveQuest == null) return;
-        panelLoading.SetActive(true);
-        Authentication.instance.PostDataToken(Gateway.URI + Path.Play + "true", new WWWForm(), (result) =>
-        {
-            panelLoading.SetActive(false);
-            ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
-            if (response.Status == "success")
-            {
-                loadingView.gameObject.SetActive(true);
-                Debug.Log("status play");
-            }
-            else
-            {
-                authNotifView.SetWarning("Koneksi anda tidak stabil.\nAnda akan kembali ke tampilan login");
-            }
-        });
+        
+        loadingView.gameObject.SetActive(true);
+        // FormUtils.SetFormPlay();
+        // panelLoading.SetActive(true);
+        // Authentication.instance.PostDataToken(Gateway.URI + Path.Play + "true", FormUtils.GetForm, (result) =>
+        // {
+        //     panelLoading.SetActive(false);
+        //     ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
+        //     if (response.Status == "success")
+        //     {
+        //         Debug.Log("status play");
+        //     }
+        //     else
+        //     {
+        //         authNotifView.SetWarning("Koneksi anda tidak stabil.\nAnda akan kembali ke tampilan login");
+        //     }
+        // });
     }
 
     public IEnumerator ChangeSceneAsync(Action waitLoading)

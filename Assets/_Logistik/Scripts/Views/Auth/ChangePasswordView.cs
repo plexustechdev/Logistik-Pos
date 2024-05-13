@@ -18,15 +18,21 @@ public class ChangePasswordView : MonoBehaviour
         string oldPassword = _oldPasswordTMP.text;
         string newPassword = _newPasswordTMP.text;
         
-        if (oldPassword.Length < 6 || newPassword.Length < 6)
+        if (newPassword.Length < 6 || newPassword.Length < 6)
         {
             _popUp.SetWarning("Password minimal 6 karakter!");
             return;
         }
 
-        if (newPassword.Any(Char.IsWhiteSpace) || oldPassword.Any(Char.IsWhiteSpace))
+        if (newPassword.Any(Char.IsWhiteSpace) || newPassword.Any(Char.IsWhiteSpace))
         {
             _popUp.SetWarning("Password baru memiliki spasi!");
+            return;
+        }
+
+        if (!IsPasswordValid(newPassword))
+        {
+            _popUp.SetWarning("<align=\"left\">Sepertinya kata sandi anda lemah, silakan pilih kata sandi yang kuat!\nKata sandi anda harus mengandung:\n<indent=2%>1. Satu huruf besar [AB],</indent>\n<indent=2%>2. Satu huruf kecil [ab],</indent>\n<indent=2%>3. Satu angka [123],</indent>\n<indent=2%>4. Satu karakter khusus [!@#].</indent>");
             return;
         }
         
@@ -48,5 +54,13 @@ public class ChangePasswordView : MonoBehaviour
                 _popUp.SetWarning("Password lama tidak sesuai!");
             }
         });
+    }
+
+    private bool IsPasswordValid(string password)
+    {
+        return password.Length >= 6 &&
+               password.Any(char.IsDigit) &&
+               password.Any(char.IsLetter) &&
+               (password.Any(char.IsSymbol) || password.Any(char.IsPunctuation)) ;
     }
 }

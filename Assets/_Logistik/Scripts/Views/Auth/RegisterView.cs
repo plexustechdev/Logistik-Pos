@@ -25,16 +25,22 @@ public class RegisterView : MonoBehaviour
         string phoneNumber = _phoneNumber.text;
         string email = _email.text;
         string password = _password.text;
+
+        if (IsFormEmpty(username, phoneNumber, email, password))
+        {
+            _popUpAuth.SetWarning("Registrasi form masih ada yang kosong!");
+            return;
+        }
+        
+        if (password.Length < 8)
+        {
+            _popUpAuth.SetWarning("Password minimal 6 karakter!");
+            return;
+        }
         
         if (password.Any(Char.IsWhiteSpace))
         {
             _popUpAuth.SetWarning("Password memiliki spasi!");
-            return;
-        }
-
-        if (password.Length < 6)
-        {
-            _popUpAuth.SetWarning("Password minimal 6 karakter!");
             return;
         }
         
@@ -74,5 +80,13 @@ public class RegisterView : MonoBehaviour
         {
             _popUpAuth.SetWarning("Form tidak boleh kosong!");
         }
+    }
+
+    private bool IsFormEmpty(string uname, string phone, string email, string password)
+    {
+        return string.IsNullOrEmpty(uname) ||
+               string.IsNullOrEmpty(phone) ||
+               string.IsNullOrEmpty(email) ||
+               string.IsNullOrEmpty(password);
     }
 }

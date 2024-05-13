@@ -21,7 +21,7 @@ public class LoadingView : MonoBehaviour
         AnimateBar();
         if (_loadingImage.fillAmount == 1 && !isDoneLoading)
         {
-            GameManager.instance.GoWerehouse();
+            GameManager.instance.GoWarehouse();
             isDoneLoading = true;
         }
     }

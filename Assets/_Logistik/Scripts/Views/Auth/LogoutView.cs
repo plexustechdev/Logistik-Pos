@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -9,22 +11,9 @@ public class LogoutView : MonoBehaviour
 
     private void Start()
     {
-        if (AuthenticationSession.GetCachedToken != string.Empty)
-        {
-            SetLogged();
-            Authentication.instance.PostDataToken(Gateway.URI + Path.Play + "false", new WWWForm(), (result) =>
-            {
-                ResponsePlay response = JsonConvert.DeserializeObject<ResponsePlay>(result);
-                if (response.Status == "success")
-                {
-                    Debug.Log("status not play");
-                }
-                else
-                {
-                    Debug.Log("error connection");
-                }
-            });
-        }
+        if (string.IsNullOrEmpty(AuthenticationSession.GetCachedToken)) return;
+        
+        SetLogged();
     }
 
     private void SetLogged()

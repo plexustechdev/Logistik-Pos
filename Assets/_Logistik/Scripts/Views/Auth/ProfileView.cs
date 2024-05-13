@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -54,7 +55,9 @@ public class ProfileView : MonoBehaviour
 
             ResponseWallet response = JsonConvert.DeserializeObject<ResponseWallet>(result);
 
-            _playerExp = (int)float.Parse(response.Total_wallet);
+            var culture = CultureInfo.InvariantCulture;
+            _playerExp = (int)float.Parse(response.Total_wallet, culture);
+            print(response.Total_wallet);
 
             if (response.Status == "success")
             {
