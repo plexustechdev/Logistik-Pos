@@ -18,9 +18,9 @@ public class ChangePasswordView : MonoBehaviour
         string oldPassword = _oldPasswordTMP.text;
         string newPassword = _newPasswordTMP.text;
         
-        if (newPassword.Length < 6 || newPassword.Length < 6)
+        if (oldPassword.Length < 8 || newPassword.Length < 8)
         {
-            _popUp.SetWarning("Password minimal 6 karakter!");
+            _popUp.SetWarning("Password minimal 8 karakter!");
             return;
         }
 

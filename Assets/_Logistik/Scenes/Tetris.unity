@@ -6789,7 +6789,7 @@ MonoBehaviour:
   m_text: 'Sepertinya terjadi masalah ketika menyimpan score.
 
     Anda akan dikembalikan
-    ke Warehouse!'
+    ke Office!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fecf4cf54508e3418c449c9ee02fea9, type: 2}
   m_sharedMaterial: {fileID: 8422586862891746239, guid: 6fecf4cf54508e3418c449c9ee02fea9, type: 2}

@@ -34,7 +34,7 @@ public class RegisterView : MonoBehaviour
         
         if (password.Length < 8)
         {
-            _popUpAuth.SetWarning("Password minimal 6 karakter!");
+            _popUpAuth.SetWarning("Password minimal 8 karakter!");
             return;
         }
         
